@@ -29,7 +29,7 @@ environment = SubResource("Environment_k4132")
 mesh = SubResource("PlaneMesh_pb32r")
 
 [node name="Player" parent="." unique_id=1787083053 instance=ExtResource("1_2p1rj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7273073, 0.97501385, 9.792202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0315876, 0.97501385, 9.792202)
 
 [node name="DinerObjects" type="Node3D" parent="." unique_id=1725515699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
@@ -64,103 +64,166 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.137032, 0, 4.941712)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032043457, 1.1260978, 0.73929405)
 size = Vector3(3.206665, 0.1463623, 1.9463484)
 
-[node name="DinerObjects2" type="Node3D" parent="." unique_id=658553108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, -3.561451)
+[node name="Booth2" type="Node3D" parent="DinerObjects" unique_id=1834944655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.2030735)
 
-[node name="Booth" type="Node3D" parent="DinerObjects2" unique_id=1834944655]
+[node name="Chair1" type="CSGCombiner3D" parent="DinerObjects/Booth2" unique_id=1693998913]
 
-[node name="Chair1" type="CSGCombiner3D" parent="DinerObjects2/Booth" unique_id=1693998913]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects2/Booth/Chair1" unique_id=208971020]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth2/Chair1" unique_id=208971020]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054483, 0.8921392, 7.9350033)
 size = Vector3(3.0544434, 2.5578918, 0.64160156)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects2/Booth/Chair1" unique_id=429160034]
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Booth2/Chair1" unique_id=429160034]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054769, 0.11195731, 6.9326754)
 size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
-[node name="Chair2" type="CSGCombiner3D" parent="DinerObjects2/Booth" unique_id=1264526098]
+[node name="Chair2" type="CSGCombiner3D" parent="DinerObjects/Booth2" unique_id=1264526098]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18.12233, -4.7683716e-07, 9.521378)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects2/Booth/Chair2" unique_id=1327464219]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth2/Chair2" unique_id=1327464219]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054474, 0.8320806, 5.9855995)
 size = Vector3(3.0544434, 2.4377747, 0.5958252)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects2/Booth/Chair2" unique_id=1624054607]
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Booth2/Chair2" unique_id=1624054607]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054766, 0.11195731, 5.0061593)
 size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
-[node name="Table" type="CSGCombiner3D" parent="DinerObjects2/Booth" unique_id=234285717]
+[node name="Table" type="CSGCombiner3D" parent="DinerObjects/Booth2" unique_id=234285717]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.137032, 0, 4.941712)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects2/Booth/Table" unique_id=1299368329]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth2/Table" unique_id=1299368329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032043457, 1.1260978, 0.73929405)
 size = Vector3(3.206665, 0.1463623, 1.9463484)
 
-[node name="DinerObjects3" type="Node3D" parent="." unique_id=1767234546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, -9.218214)
+[node name="Booth3" type="Node3D" parent="DinerObjects" unique_id=1562657481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.859837)
 
-[node name="Booth" type="Node3D" parent="DinerObjects3" unique_id=1562657481]
+[node name="Chair1" type="CSGCombiner3D" parent="DinerObjects/Booth3" unique_id=452401363]
 
-[node name="Chair1" type="CSGCombiner3D" parent="DinerObjects3/Booth" unique_id=452401363]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects3/Booth/Chair1" unique_id=7495]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth3/Chair1" unique_id=7495]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054483, 0.8921392, 7.9350033)
 size = Vector3(3.0544434, 2.5578918, 0.64160156)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects3/Booth/Chair1" unique_id=713935984]
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Booth3/Chair1" unique_id=713935984]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054769, 0.11195731, 6.9326754)
 size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
-[node name="Chair2" type="CSGCombiner3D" parent="DinerObjects3/Booth" unique_id=975971166]
+[node name="Chair2" type="CSGCombiner3D" parent="DinerObjects/Booth3" unique_id=975971166]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18.12233, -4.7683716e-07, 9.521378)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects3/Booth/Chair2" unique_id=1311492613]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth3/Chair2" unique_id=1311492613]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054474, 0.8320806, 5.9855995)
 size = Vector3(3.0544434, 2.4377747, 0.5958252)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects3/Booth/Chair2" unique_id=1590754530]
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Booth3/Chair2" unique_id=1590754530]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054766, 0.11195731, 5.0061593)
 size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
-[node name="Table" type="CSGCombiner3D" parent="DinerObjects3/Booth" unique_id=1942426979]
+[node name="Table" type="CSGCombiner3D" parent="DinerObjects/Booth3" unique_id=1942426979]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.137032, 0, 4.941712)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects3/Booth/Table" unique_id=690997101]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth3/Table" unique_id=690997101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032043457, 1.1260978, 0.73929405)
 size = Vector3(3.206665, 0.1463623, 1.9463484)
 
-[node name="DinerObjects4" type="Node3D" parent="." unique_id=1569703010]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, -14.97236)
+[node name="Booth4" type="Node3D" parent="DinerObjects" unique_id=690447176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.613983)
 
-[node name="Booth" type="Node3D" parent="DinerObjects4" unique_id=690447176]
+[node name="Chair1" type="CSGCombiner3D" parent="DinerObjects/Booth4" unique_id=1419462769]
 
-[node name="Chair1" type="CSGCombiner3D" parent="DinerObjects4/Booth" unique_id=1419462769]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects4/Booth/Chair1" unique_id=718495995]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth4/Chair1" unique_id=718495995]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054483, 0.8921392, 7.9350033)
 size = Vector3(3.0544434, 2.5578918, 0.64160156)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects4/Booth/Chair1" unique_id=204985411]
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Booth4/Chair1" unique_id=204985411]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054769, 0.11195731, 6.9326754)
 size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
-[node name="Chair2" type="CSGCombiner3D" parent="DinerObjects4/Booth" unique_id=1236545290]
+[node name="Chair2" type="CSGCombiner3D" parent="DinerObjects/Booth4" unique_id=1236545290]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18.12233, -4.7683716e-07, 9.521378)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects4/Booth/Chair2" unique_id=841327769]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth4/Chair2" unique_id=841327769]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054474, 0.8320806, 5.9855995)
 size = Vector3(3.0544434, 2.4377747, 0.5958252)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects4/Booth/Chair2" unique_id=249372843]
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Booth4/Chair2" unique_id=249372843]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.054766, 0.11195731, 5.0061593)
 size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
-[node name="Table" type="CSGCombiner3D" parent="DinerObjects4/Booth" unique_id=1837202743]
+[node name="Table" type="CSGCombiner3D" parent="DinerObjects/Booth4" unique_id=1837202743]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.137032, 0, 4.941712)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects4/Booth/Table" unique_id=2053936631]
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth4/Table" unique_id=2053936631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032043457, 1.1260978, 0.73929405)
 size = Vector3(3.206665, 0.1463623, 1.9463484)
+
+[node name="Bar" type="Node3D" parent="DinerObjects" unique_id=1772096863]
+
+[node name="BarTable" type="CSGCombiner3D" parent="DinerObjects/Bar" unique_id=1909648150]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Bar/BarTable" unique_id=30726169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7608399, 1.2804139, -2.8776455)
+size = Vector3(2.0732422, 0.6187439, 16.446712)
+
+[node name="Backing" type="CSGCombiner3D" parent="DinerObjects/Bar" unique_id=1072574822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7456203, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Bar/Backing" unique_id=1385303605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3993669, 1.9783263, -2.693512)
+size = Vector3(1, 4.1966553, 21.50824)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Bar/Backing" unique_id=1702548430]
+transform = Transform3D(0.8433914, -0.53729963, 0, 0.53729963, 0.8433914, 0, 0, 0, 1, 2.6961112, 5.1287174, -2.6811237)
+size = Vector3(0.9161377, 3.60437, 21.330048)
+
+[node name="Stools" type="CSGCombiner3D" parent="DinerObjects/Bar" unique_id=591304154]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=1996649947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, 4.5337667)
+height = 1.1835938
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=441536687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, 2.430616)
+height = 1.1835938
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=962983105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, 0.41341972)
+height = 1.1835938
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=451730557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, -1.7920494)
+height = 1.1835938
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=672704381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, -3.9494677)
+height = 1.1835938
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=2026442589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, -6.1220684)
+height = 1.1835938
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=1828181667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, -8.270222)
+height = 1.1835938
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="DinerObjects/Bar/Stools" unique_id=157728098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4089558, -10.379063)
+height = 1.1835938
+
+[node name="Jukebox" type="Node3D" parent="DinerObjects" unique_id=812819079]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="DinerObjects/Jukebox" unique_id=1073110089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3423076, 0.49828792, 7.888713)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Jukebox/CSGCombiner3D" unique_id=421851673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9945128, 0.3800913, -0.0053710938)
+size = Vector3(1.3151245, 1.8791504, 0.7080078)
+
+[node name="Door" type="CSGCombiner3D" parent="DinerObjects" unique_id=1876779877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.005203, 0.7274499, -13.639708)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Door" unique_id=983157088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42326593, 1.0505455, -0.7218876)
+size = Vector3(2.8234863, 3.6567383, 0.3895874)
 
 [editable path="Player"]
