@@ -29,6 +29,18 @@ environment = SubResource("Environment_k4132")
 mesh = SubResource("PlaneMesh_pb32r")
 
 [node name="Player" parent="." unique_id=1787083053 instance=ExtResource("1_2p1rj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.226894, 1.0527066, 6.812578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.985661, 0.97501385, 6.812578)
+
+[node name="DinerObjects" type="Node3D" parent="." unique_id=1725515699]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="DinerObjects" unique_id=136111254]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/CSGCombiner3D" unique_id=2026783698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.054483, 1.056339, 8.1142025)
+size = Vector3(3.0544434, 2.8862915, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/CSGCombiner3D" unique_id=1281190227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.054769, 0.11195731, 6.9326754)
+size = Vector3(3.0544434, 0.8119583, 1.6533203)
 
 [editable path="Player"]
