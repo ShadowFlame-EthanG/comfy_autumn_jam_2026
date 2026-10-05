@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://wpmatbhhskoa"]
 
+[ext_resource type="PackedScene" uid="uid://b4v2pv375xej5" path="res://Scenes/player.tscn" id="1_2p1rj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_lwn67"]
+sky_material = SubResource("ProceduralSkyMaterial_2p1rj")
+
+[sub_resource type="Environment" id="Environment_k4132"]
+background_mode = 2
+sky = SubResource("Sky_lwn67")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pb32r"]
+size = Vector2(25, 25)
+
 [node name="Diner" type="Node3D" unique_id=1599357620]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324498035]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=675597158]
+environment = SubResource("Environment_k4132")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1584187324]
+mesh = SubResource("PlaneMesh_pb32r")
+
+[node name="Player" parent="." unique_id=1787083053 instance=ExtResource("1_2p1rj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.226894, 1.0527066, 6.812578)
+
+[editable path="Player"]
