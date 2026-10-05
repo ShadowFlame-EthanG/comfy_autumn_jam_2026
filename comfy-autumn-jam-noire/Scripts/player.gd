@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var look_sensitivity: float = 0.005
+@export var look_sensitivity: float = 0.0005
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
