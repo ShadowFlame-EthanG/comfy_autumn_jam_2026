@@ -4,6 +4,8 @@ extends Node3D
 @export var outlineMaterial: Material
 @export var selectionMaterial: Material
 
+@onready var static_body = $"../EvidenceBag/StaticBody3D"
+
 var selected = false
 
 func show_ui() -> void:
@@ -14,6 +16,7 @@ func show_ui() -> void:
 func _on_area_3d_mouse_entered() -> void:
 	if not selected:
 		mesh.material_overlay = outlineMaterial
+		
 
 
 func _on_area_3d_mouse_exited() -> void:
@@ -29,3 +32,13 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 				if name == "Files":
 					show_ui()
 				selected = false
+
+
+func _on_static_body_3d_mouse_entered() -> void:
+	if not selected:
+		mesh.material_overlay = outlineMaterial
+
+
+func _on_static_body_3d_mouse_exited() -> void:
+	if not selected:
+		mesh.material_overlay = null

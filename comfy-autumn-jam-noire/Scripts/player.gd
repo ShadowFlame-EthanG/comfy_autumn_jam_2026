@@ -1,17 +1,16 @@
 extends CharacterBody3D
 
+class_name Player
+
 @export var look_sensitivity: float = 0.001
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
-var current_item = ""
-var held_item = ""
 
-
-		
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CONFINED:
