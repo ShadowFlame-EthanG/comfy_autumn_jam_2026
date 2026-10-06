@@ -6,6 +6,10 @@ extends Node3D
 
 var selected = false
 
+func show_ui() -> void:
+	var ui = $"../../../Files UI"
+	ui.show()
+
 
 func _on_area_3d_mouse_entered() -> void:
 	if not selected:
@@ -22,6 +26,6 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and !event.is_echo():
 			selected = not selected
 			if selected:
-				mesh.material_overlay = selectionMaterial
-			else:
-				mesh.material_overlay = outlineMaterial
+				if name == "Files":
+					show_ui()
+				selected = false
