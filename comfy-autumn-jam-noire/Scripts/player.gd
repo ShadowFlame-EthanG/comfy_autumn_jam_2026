@@ -5,30 +5,10 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
-@onready var Ray_cast: RayCast3D = $Head/Camera3D/RayCast3D
-
-@onready var newspaper_overlay: CanvasLayer = $"../NewspaperUI"
-
-@onready var newspaper: StaticBody3D = $"../props/Newspaper"
-
 var current_item = ""
 var held_item = ""
 
-func _process(delta):
-	
-	if Ray_cast.is_colliding():
-		var rawitem = Ray_cast.get_collider()
-		current_item = rawitem.name
-		print(rawitem)
-	else:
-		current_item = ""
-		
-	if held_item == "newspaper":
-		newspaper.visible = false
-		newspaper_overlay.visible = true
-	else:
-		newspaper.visible = true
-		newspaper_overlay.visible = false
+
 		
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
