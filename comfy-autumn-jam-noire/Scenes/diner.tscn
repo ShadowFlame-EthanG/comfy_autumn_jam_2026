@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://wpmatbhhskoa"]
 
 [ext_resource type="PackedScene" uid="uid://b4v2pv375xej5" path="res://Scenes/player.tscn" id="1_2p1rj"]
+[ext_resource type="Script" uid="uid://cjo17m1kwclrh" path="res://Scripts/select_highlight.gd" id="2_k4132"]
+[ext_resource type="Shader" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="2_lwn67"]
+[ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="4_jla63"]
+[ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,6 +19,56 @@ sky = SubResource("Sky_lwn67")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pb32r"]
 size = Vector2(20, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4132"]
+albedo_color = Color(0.5987617, 0.39108008, 0.28649783, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jla63"]
+render_priority = 0
+shader = ExtResource("2_lwn67")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp1bs"]
+albedo_color = Color(0.64624923, 0.48742408, 0.23738623, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j7oc2"]
+size = Vector3(0.6300049, 1, 0.045776367)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nh6gm"]
+points = PackedVector3Array(-0.31500244, -0.5, -0.022888184, -0.31500244, -0.5, 0.022888184, -0.31500244, 0.5, -0.022888184, 0.31500244, -0.5, -0.022888184, 0.31500244, -0.5, 0.022888184, -0.31500244, 0.5, 0.022888184, 0.31500244, 0.5, -0.022888184, 0.31500244, 0.5, 0.022888184)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0m8sl"]
+render_priority = 0
+shader = ExtResource("2_lwn67")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq1f4"]
+albedo_color = Color(0.90301937, 0.81627756, 0.7252105, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pb32r"]
+top_radius = 0.099121094
+bottom_radius = 0.099121094
+height = 0.24615479
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d7ods"]
+points = PackedVector3Array(-0.099121094, -0.12307739, 0, -0.09865537, -0.12307739, -0.009721935, -0.09865537, -0.12307739, 0.009702541, -0.099121094, 0.12307739, 0, -0.0972194, -0.12307739, -0.019346848, -0.09865537, 0.12307739, -0.009721935, -0.0972194, -0.12307739, 0.019327454, -0.09865537, 0.12307739, 0.009702541, -0.09487139, -0.12307739, -0.028777719, -0.0972194, 0.12307739, -0.019346848, -0.09487139, -0.12307739, 0.028758317, -0.0972194, 0.12307739, 0.019327454, -0.091591924, -0.12307739, -0.037936907, -0.09487139, 0.12307739, -0.028777719, -0.091591924, -0.12307739, 0.03791751, -0.09487139, 0.12307739, 0.028758317, -0.08741984, -0.12307739, -0.046727404, -0.091591924, 0.12307739, -0.037936907, -0.08741984, -0.12307739, 0.046708003, -0.091591924, 0.12307739, 0.03791751, -0.08243273, -0.12307739, -0.055071585, -0.08741984, 0.12307739, -0.046727404, -0.08243273, -0.12307739, 0.05505219, -0.08741984, 0.12307739, 0.046708003, -0.07663062, -0.12307739, -0.062891826, -0.08243273, 0.12307739, -0.055071585, -0.07663062, -0.12307739, 0.062872425, -0.08243273, 0.12307739, 0.05505219, -0.07009111, -0.12307739, -0.07009111, -0.07663062, 0.12307739, -0.062891826, -0.07009111, -0.12307739, 0.07007171, -0.07663062, 0.12307739, 0.062872425, -0.062891826, -0.12307739, -0.07663062, -0.07009111, 0.12307739, -0.07009111, -0.062891826, -0.12307739, 0.07661122, -0.07009111, 0.12307739, 0.07007171, -0.055071585, -0.12307739, -0.08243273, -0.062891826, 0.12307739, -0.07663062, -0.055071585, -0.12307739, 0.08241333, -0.062891826, 0.12307739, 0.07661122, -0.046727404, -0.12307739, -0.08741984, -0.055071585, 0.12307739, -0.08243273, -0.046727404, -0.12307739, 0.08740044, -0.055071585, 0.12307739, 0.08241333, -0.037936907, -0.12307739, -0.091591924, -0.046727404, 0.12307739, -0.08741984, -0.037936907, -0.12307739, 0.09157252, -0.046727404, 0.12307739, 0.08740044, -0.028777719, -0.12307739, -0.09487139, -0.037936907, 0.12307739, -0.091591924, -0.028777719, -0.12307739, 0.094851986, -0.037936907, 0.12307739, 0.09157252, -0.019346848, -0.12307739, -0.0972194, -0.028777719, 0.12307739, -0.09487139, -0.019346848, -0.12307739, 0.09719999, -0.028777719, 0.12307739, 0.094851986, -0.009721935, -0.12307739, -0.09865537, -0.019346848, 0.12307739, -0.0972194, -0.009721935, -0.12307739, 0.09863597, -0.019346848, 0.12307739, 0.09719999, 0, -0.12307739, -0.099121094, -0.009721935, 0.12307739, -0.09865537, 0, -0.12307739, 0.099121094, -0.009721935, 0.12307739, 0.09863597, 0.009702541, -0.12307739, -0.09865537, 0, 0.12307739, -0.099121094, 0.009702541, -0.12307739, 0.09863597, 0, 0.12307739, 0.099121094, 0.019327454, -0.12307739, -0.0972194, 0.009702541, 0.12307739, -0.09865537, 0.019327454, -0.12307739, 0.09719999, 0.009702541, 0.12307739, 0.09863597, 0.028758317, -0.12307739, -0.09487139, 0.019327454, 0.12307739, -0.0972194, 0.028758317, -0.12307739, 0.094851986, 0.019327454, 0.12307739, 0.09719999, 0.03791751, -0.12307739, -0.091591924, 0.028758317, 0.12307739, -0.09487139, 0.03791751, -0.12307739, 0.09157252, 0.028758317, 0.12307739, 0.094851986, 0.046708003, -0.12307739, -0.08741984, 0.03791751, 0.12307739, -0.091591924, 0.046708003, -0.12307739, 0.08740044, 0.03791751, 0.12307739, 0.09157252, 0.05505219, -0.12307739, -0.08243273, 0.046708003, 0.12307739, -0.08741984, 0.05505219, -0.12307739, 0.08241333, 0.046708003, 0.12307739, 0.08740044, 0.062872425, -0.12307739, -0.07663062, 0.05505219, 0.12307739, -0.08243273, 0.062872425, -0.12307739, 0.07661122, 0.05505219, 0.12307739, 0.08241333, 0.07007171, -0.12307739, -0.07009111, 0.062872425, 0.12307739, -0.07663062, 0.07007171, -0.12307739, 0.07007171, 0.062872425, 0.12307739, 0.07661122, 0.07661122, -0.12307739, -0.062891826, 0.07007171, 0.12307739, -0.07009111, 0.07661122, -0.12307739, 0.062872425, 0.07007171, 0.12307739, 0.07007171, 0.08241333, -0.12307739, -0.055071585, 0.07661122, 0.12307739, -0.062891826, 0.08241333, -0.12307739, 0.05505219, 0.07661122, 0.12307739, 0.062872425, 0.08740044, -0.12307739, -0.046727404, 0.08241333, 0.12307739, -0.055071585, 0.08740044, -0.12307739, 0.046708003, 0.08241333, 0.12307739, 0.05505219, 0.09157252, -0.12307739, -0.037936907, 0.08740044, 0.12307739, -0.046727404, 0.09157252, -0.12307739, 0.03791751, 0.08740044, 0.12307739, 0.046708003, 0.094851986, -0.12307739, -0.028777719, 0.09157252, 0.12307739, -0.037936907, 0.094851986, -0.12307739, 0.028758317, 0.09157252, 0.12307739, 0.03791751, 0.09719999, -0.12307739, -0.019346848, 0.094851986, 0.12307739, -0.028777719, 0.09719999, -0.12307739, 0.019327454, 0.094851986, 0.12307739, 0.028758317, 0.09863597, -0.12307739, -0.009721935, 0.09719999, 0.12307739, -0.019346848, 0.09863597, -0.12307739, 0.009702541, 0.09719999, 0.12307739, 0.019327454, 0.099121094, -0.12307739, 0, 0.09863597, 0.12307739, -0.009721935, 0.09863597, 0.12307739, 0.009702541, 0.099121094, 0.12307739, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4132"]
+render_priority = 0
+shader = ExtResource("2_lwn67")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7oc2"]
+albedo_color = Color(0.40196836, 0.40196842, 0.40196836, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pb32r"]
+size = Vector3(0.7292557, 0.009277344, 0.6055908)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lwn67"]
+points = PackedVector3Array(-0.36462784, -0.004638672, -0.3027954, -0.36462784, 0.004638672, -0.3027954, 0.36462784, -0.004638672, -0.3027954, -0.36462784, -0.004638672, 0.3027954, -0.36462784, 0.004638672, 0.3027954, 0.36462784, 0.004638672, -0.3027954, 0.36462784, -0.004638672, 0.3027954, 0.36462784, 0.004638672, 0.3027954)
 
 [node name="Diner" type="Node3D" unique_id=1599357620]
 
@@ -63,6 +117,7 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -9.137032, 0, 4.941712)
 [node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Booth/Table" unique_id=1069094332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032043457, 1.1260978, 0.73929405)
 size = Vector3(3.206665, 0.1463623, 1.9463484)
+material = SubResource("StandardMaterial3D_k4132")
 
 [node name="Booth2" type="Node3D" parent="DinerObjects" unique_id=1834944655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.2030735)
@@ -225,5 +280,118 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.005203, 0.7274499, -13.639
 [node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Door" unique_id=983157088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42326593, 1.0505455, -0.7218876)
 size = Vector3(2.8234863, 3.6567383, 0.3895874)
+
+[node name="TableObjects" type="Node3D" parent="DinerObjects" unique_id=412588839]
+
+[node name="Files" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1605252048 node_paths=PackedStringArray("mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.753766, 0.992859, 5.9495354)
+script = ExtResource("2_k4132")
+mesh = NodePath("MeshInstance3D")
+outlineMaterial = SubResource("ShaderMaterial_jla63")
+selectionMaterial = ExtResource("4_jla63")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Files" unique_id=841415493]
+transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
+material_override = SubResource("StandardMaterial3D_pp1bs")
+mesh = SubResource("BoxMesh_j7oc2")
+
+[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Files" unique_id=585412037]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Files/Area3D" unique_id=1624561049]
+transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
+shape = SubResource("ConvexPolygonShape3D_nh6gm")
+
+[node name="Coffee" type="Node3D" parent="DinerObjects/TableObjects" unique_id=202812140 node_paths=PackedStringArray("mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.132055, 1.5345252, 5.6390724)
+script = ExtResource("2_k4132")
+mesh = NodePath("MeshInstance3D")
+outlineMaterial = SubResource("ShaderMaterial_0m8sl")
+selectionMaterial = ExtResource("4_jla63")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Coffee" unique_id=88432536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41246128)
+material_override = SubResource("StandardMaterial3D_sq1f4")
+mesh = SubResource("CylinderMesh_pb32r")
+
+[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Coffee" unique_id=471470730]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Coffee/Area3D" unique_id=534505086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41246128)
+shape = SubResource("ConvexPolygonShape3D_d7ods")
+
+[node name="Newspaper" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1679693088 node_paths=PackedStringArray("mesh")]
+script = ExtResource("2_k4132")
+mesh = NodePath("MeshInstance3D")
+outlineMaterial = SubResource("ShaderMaterial_k4132")
+selectionMaterial = ExtResource("4_jla63")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=1320290083]
+transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
+material_override = SubResource("StandardMaterial3D_j7oc2")
+mesh = SubResource("BoxMesh_pb32r")
+
+[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=821288583]
+transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Area3D" unique_id=627158317]
+shape = SubResource("ConvexPolygonShape3D_lwn67")
+
+[node name="Window" type="Node3D" parent="DinerObjects" unique_id=1841079072]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="DinerObjects/Window" unique_id=738226420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.738085, 1.2370195, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=409317549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8538427, -0.92842793, -2.5758438)
+size = Vector3(0.5151367, 1, 24.47496)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=972912773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8953266, 2.632941, -2.5758438)
+size = Vector3(0.43115234, 1, 24.47496)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=918098766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8287096, -0.019813776, 7.983164)
+size = Vector3(0.52381706, 6.2381897, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=828316347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8287096, -0.019813776, 3.8506866)
+size = Vector3(0.52381706, 6.2381897, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=484573650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8287096, -0.019813776, -0.038647175)
+size = Vector3(0.52381706, 6.2381897, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=1224001610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8287096, -0.019813776, -4.1689935)
+size = Vector3(0.52381706, 6.2381897, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=1394048914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8287096, -0.019813776, -8.570396)
+size = Vector3(0.52381706, 6.2381897, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="DinerObjects/Window/CSGCombiner3D" unique_id=709223229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8287096, -0.019813776, -13.383077)
+size = Vector3(0.52381706, 6.2381897, 1)
+
+[node name="Outside" type="Node3D" parent="DinerObjects" unique_id=2017774135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.264088, 0, 0)
+
+[node name="Tree" type="CSGCylinder3D" parent="DinerObjects/Outside" unique_id=819379101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4359708, 2.3607244)
+radius = 1.0668945
+height = 7.753174
+
+[node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
+visible = false
+
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Area3D" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Area3D" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Area3D" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
 
 [editable path="Player"]

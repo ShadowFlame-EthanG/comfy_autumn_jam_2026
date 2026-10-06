@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var look_sensitivity: float = 0.0005
+@export var look_sensitivity: float = 0.001
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -31,10 +31,10 @@ func _process(delta):
 		newspaper_overlay.visible = false
 		
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CONFINED:
 		head.rotate_y(-event.relative.x * look_sensitivity)
 		camera.rotate_x(-event.relative.y * look_sensitivity)
 		camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-40), deg_to_rad(40))
@@ -44,11 +44,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if event is InputEventMouseButton and event.pressed:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
-	if event.is_action_pressed("interact"):
-		if held_item != "":
-			held_item = ""
-		elif held_item == "":
-			held_item = current_item
-			print (held_item)
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
