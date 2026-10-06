@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4v2pv375xej5"]
 
 [ext_resource type="Script" uid="uid://dja8ny86r3jof" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://i27iqckfciqg" path="res://Assets/cone.glb" id="2_cvnsp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pb32r"]
 
@@ -19,3 +20,5 @@ shape = SubResource("CapsuleShape3D_pb32r")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=675538514]
 transform = Transform3D(1, 0, 0, 0, 0.9335804, 0.35836795, 0, -0.35836795, 0.9335804, 0, 0.6698556, -0.32717776)
+
+[node name="cone" parent="." unique_id=1734431788 instance=ExtResource("2_cvnsp")]
