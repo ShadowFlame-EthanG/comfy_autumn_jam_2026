@@ -5,6 +5,11 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+var current_item = ""
+var held_item = ""
+
+
+		
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://d5b2vrdwdd4y"]
+
+[ext_resource type="Script" uid="uid://r0182cqoqrps" path="res://Files UI.gd" id="1_iveyx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ucufk"]
+
+[node name="InGameUI" type="Control" unique_id=429166608]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iveyx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=295731097]
+custom_minimum_size = Vector2(1700, 1000)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 40.0
+offset_right = 1810.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.9019608, 0.8666667, 0.5764706, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=334813690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 880.0
+offset_top = 50.0
+offset_right = -90.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ColorRect/ColorRect" unique_id=353077478]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 100.0
+grow_horizontal = 0
+text = "X
+"
+icon = SubResource("PlaceholderTexture2D_ucufk")
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=1124822526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 50.0
+offset_right = -880.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ColorRect/ColorRect/Button" to="." method="_on_button_pressed"]
