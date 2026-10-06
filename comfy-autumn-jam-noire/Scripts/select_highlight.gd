@@ -6,8 +6,8 @@ extends Node3D
 
 var selected = false
 
-func show_ui() -> void:
-	var ui = $"../../../Files UI"
+func show_ui(loaction) -> void:
+	var ui = loaction
 	ui.show()
 
 
@@ -27,5 +27,7 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 			selected = not selected
 			if selected:
 				if name == "Files":
-					show_ui()
+					show_ui($"../../../Files UI")
 				selected = false
+				if name == "Newspaper":
+					show_ui($"../../../NewsPaperUI")

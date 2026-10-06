@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="2_lwn67"]
 [ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="4_jla63"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
+[ext_resource type="PackedScene" uid="uid://bmhol54nhe7ht" path="res://news_paper_ui.tscn" id="6_0m8sl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -382,6 +383,9 @@ radius = 1.0668945
 height = 7.753174
 
 [node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
+visible = false
+
+[node name="NewsPaperUI" parent="." unique_id=323853108 instance=ExtResource("6_0m8sl")]
 visible = false
 
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
