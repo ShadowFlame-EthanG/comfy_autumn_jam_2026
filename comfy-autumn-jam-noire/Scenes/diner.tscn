@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
 [ext_resource type="PackedScene" uid="uid://bmhol54nhe7ht" path="res://news_paper_ui.tscn" id="6_0m8sl"]
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
+[ext_resource type="PackedScene" uid="uid://dmwg0asmtcsy8" path="res://notes_ui.tscn" id="7_d7ods"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -94,7 +95,11 @@ transform = Transform3D(1, 0, 0, 0, 0.93358034, 0.35836792, 0, -0.35836792, 0.93
 [node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D" index="0" unique_id=1105766475]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -5, 0)
+collision_mask = 2
 collide_with_areas = true
+
+[node name="VisonArea" parent="Player/Head" parent_id_path=PackedInt32Array(1787083053, 1930568842) index="1" unique_id=1217002574]
+priority = -1
 
 [node name="DinerObjects" type="Node3D" parent="." unique_id=1725515699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
@@ -303,6 +308,7 @@ material_override = SubResource("StandardMaterial3D_pp1bs")
 mesh = SubResource("BoxMesh_j7oc2")
 
 [node name="Files" type="Area3D" parent="DinerObjects/TableObjects/Files" unique_id=585412037]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Files/Files" unique_id=1624561049]
 transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
@@ -316,7 +322,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41
 material_override = SubResource("StandardMaterial3D_sq1f4")
 mesh = SubResource("CylinderMesh_pb32r")
 
-[node name="Coffee" type="StaticBody3D" parent="DinerObjects/TableObjects/Coffee" unique_id=260831426]
+[node name="Coffee" type="Area3D" parent="DinerObjects/TableObjects/Coffee" unique_id=1390146386]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Coffee/Coffee" unique_id=534505086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41246128)
@@ -332,6 +339,8 @@ mesh = SubResource("BoxMesh_pb32r")
 
 [node name="Newspaper" type="Area3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=821288583]
 transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
+collision_layer = 2
+priority = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Newspaper" unique_id=627158317]
 shape = SubResource("ConvexPolygonShape3D_lwn67")
@@ -343,7 +352,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.929436, 3.0292616, 6.65116
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)
 mesh = SubResource("CylinderMesh_j7oc2")
 
-[node name="EvidenceBag" type="StaticBody3D" parent="DinerObjects/TableObjects/EvidenceBag" unique_id=1370599928]
+[node name="EvidenceBag" type="Area3D" parent="DinerObjects/TableObjects/EvidenceBag" unique_id=258627094]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" unique_id=643125016]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)
@@ -357,7 +367,8 @@ transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.939
 material_override = SubResource("StandardMaterial3D_nh6gm")
 mesh = SubResource("BoxMesh_pp1bs")
 
-[node name="Notepad" type="StaticBody3D" parent="DinerObjects/TableObjects/Notepad" unique_id=1828412022]
+[node name="Notepad" type="Area3D" parent="DinerObjects/TableObjects/Notepad" unique_id=1805613836]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Notepad/Notepad" unique_id=1513815652]
 transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.43040037, 0.038656473, 0.41342258)
@@ -428,9 +439,12 @@ visible = false
 [node name="NewsPaperUI" parent="." unique_id=323853108 instance=ExtResource("6_0m8sl")]
 visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119697816]
+[node name="NotesUI" parent="." unique_id=1551830860 instance=ExtResource("7_d7ods")]
+visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=788003477]
+[node name="Crosshair" type="CanvasLayer" parent="." unique_id=1119697816]
+
+[node name="ColorRect" type="ColorRect" parent="Crosshair" unique_id=788003477]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

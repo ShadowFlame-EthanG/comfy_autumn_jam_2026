@@ -31,12 +31,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.pressed:
 		var item = Ray_cast.get_collider()
-		if item and (item.name == "Files" or item.name == "Newspaper"):
+		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad"):
 			if item.name == "Files":
 				show_ui($"../Files UI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 			if item.name == "Newspaper":
 				show_ui($"../NewsPaperUI")
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			if item.name == "Notepad":
+				show_ui($"../NotesUI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 

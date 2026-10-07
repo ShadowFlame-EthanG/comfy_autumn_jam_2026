@@ -35,5 +35,5 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fikxm")
 
 [node name="Cone" type="MeshInstance3D" unique_id=646895640]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, -4.371139e-08, -2, 0, 1, -8.742278e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_v26m5")
