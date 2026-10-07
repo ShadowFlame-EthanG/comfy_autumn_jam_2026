@@ -7,11 +7,10 @@
 [ext_resource type="Script" uid="uid://2ce754jaxnoa" path="res://Scripts/tree.gd" id="5_0m8sl"]
 [ext_resource type="Script" uid="uid://sw6fh4k5tb1k" path="res://Scripts/change_tree.gd" id="5_d7ods"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
-<<<<<<< HEAD
+
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
-=======
+
 [ext_resource type="PackedScene" uid="uid://bmhol54nhe7ht" path="res://news_paper_ui.tscn" id="6_0m8sl"]
->>>>>>> Reyfly_branch
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
