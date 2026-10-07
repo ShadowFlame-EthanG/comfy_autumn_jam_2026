@@ -7,7 +7,11 @@
 [ext_resource type="Script" uid="uid://2ce754jaxnoa" path="res://Scripts/tree.gd" id="5_0m8sl"]
 [ext_resource type="Script" uid="uid://sw6fh4k5tb1k" path="res://Scripts/change_tree.gd" id="5_d7ods"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
+<<<<<<< HEAD
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
+=======
+[ext_resource type="PackedScene" uid="uid://bmhol54nhe7ht" path="res://news_paper_ui.tscn" id="6_0m8sl"]
+>>>>>>> Reyfly_branch
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -119,6 +123,15 @@ mesh = SubResource("PlaneMesh_pb32r")
 
 [node name="Player" parent="." unique_id=1787083053 instance=ExtResource("1_2p1rj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0315876, 0.97501385, 9.792202)
+
+[node name="Camera3D" parent="Player/Head" parent_id_path=PackedInt32Array(1787083053, 1930568842) index="0" unique_id=675538514]
+transform = Transform3D(1, 0, 0, 0, 0.93358034, 0.35836792, 0, -0.35836792, 0.93358034, 0, 0.6698556, -0.32717776)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Head/Camera3D" index="0" unique_id=1105766475]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -5, 0)
+collision_mask = 3
+collide_with_areas = true
 
 [node name="DinerObjects" type="Node3D" parent="." unique_id=1725515699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
@@ -330,7 +343,7 @@ transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-0
 material_override = SubResource("StandardMaterial3D_pp1bs")
 mesh = SubResource("BoxMesh_j7oc2")
 
-[node name="Files" type="StaticBody3D" parent="DinerObjects/TableObjects/Files" unique_id=562866946]
+[node name="Files" type="Area3D" parent="DinerObjects/TableObjects/Files" unique_id=585412037]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Files/Files" unique_id=1624561049]
 transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
@@ -366,10 +379,13 @@ transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.961
 material_override = SubResource("StandardMaterial3D_j7oc2")
 mesh = SubResource("BoxMesh_pb32r")
 
-[node name="Newspaper" type="StaticBody3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=2067894100]
+
+[node name="Newspaper" type="Area3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=821288583]
+transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Newspaper" unique_id=627158317]
-transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
+
 shape = SubResource("ConvexPolygonShape3D_lwn67")
 
 [node name="EvidenceBag" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1826168384 node_paths=PackedStringArray("mesh")]
@@ -469,17 +485,35 @@ autostart = true
 [node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
 visible = false
 
-[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_exited"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_exited"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_exited"]
-[connection signal="timeout" from="DinerObjects/Outside/OutsideTree/Timer" to="DinerObjects/Outside/OutsideTree" method="_on_timer_timeout"]
+
+[node name="NewsPaperUI" parent="." unique_id=323853108 instance=ExtResource("6_0m8sl")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119697816]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=788003477]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
+
 
 [editable path="Player"]
