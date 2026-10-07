@@ -27,6 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.pressed:
 		var item = Ray_cast.get_collider()
+		print(item.name)
 		if item and (item.name == "Files" or item.name == "Newspaper"):
 			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
