@@ -4,7 +4,10 @@
 [ext_resource type="Script" uid="uid://cjo17m1kwclrh" path="res://Scripts/select_highlight.gd" id="2_k4132"]
 [ext_resource type="Shader" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="2_lwn67"]
 [ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="4_jla63"]
+[ext_resource type="Script" uid="uid://2ce754jaxnoa" path="res://Scripts/tree.gd" id="5_0m8sl"]
+[ext_resource type="Script" uid="uid://sw6fh4k5tb1k" path="res://Scripts/change_tree.gd" id="5_d7ods"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
+[ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -98,6 +101,9 @@ size = Vector3(0.3088379, 0.048461914, 0.45788574)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y2hby"]
 points = PackedVector3Array(0.15441895, 0.024230957, 0.22894287, 0.15441895, -0.024230957, 0.22894287, 0.15441895, 0.024230957, -0.22894287, -0.15441895, 0.024230957, 0.22894287, -0.15441895, -0.024230957, 0.22894287, 0.15441895, -0.024230957, -0.22894287, -0.15441895, 0.024230957, -0.22894287, -0.15441895, -0.024230957, -0.22894287)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_caap6"]
+points = PackedVector3Array(-1.5947266, -4.023926, 0, -1.5872337, -4.023926, -0.15641308, -1.5872337, -4.023926, 0.15610099, -1.5947266, 4.023926, 0, -1.5641308, -4.023926, -0.3112651, -1.5872337, 4.023926, -0.15641308, -1.5641308, -4.023926, 0.31095302, -1.5872337, 4.023926, 0.15610099, -1.5263543, -4.023926, -0.46299517, -1.5641308, 4.023926, -0.3112651, -1.5263543, -4.023926, 0.46268296, -1.5641308, 4.023926, 0.31095302, -1.4735923, -4.023926, -0.6103544, -1.5263543, 4.023926, -0.46299517, -1.4735923, -4.023926, 0.61004233, -1.5263543, 4.023926, 0.46268296, -1.4064689, -4.023926, -0.7517818, -1.4735923, 4.023926, -0.6103544, -1.4064689, -4.023926, 0.7514696, -1.4735923, 4.023926, 0.61004233, -1.326233, -4.023926, -0.8860285, -1.4064689, 4.023926, -0.7517818, -1.326233, -4.023926, 0.88571644, -1.4064689, 4.023926, 0.7514696, -1.2328846, -4.023926, -1.0118458, -1.326233, 4.023926, -0.8860285, -1.2328846, -4.023926, 1.0115337, -1.326233, 4.023926, 0.88571644, -1.1276727, -4.023926, -1.1276727, -1.2328846, 4.023926, -1.0118458, -1.1276727, -4.023926, 1.1273606, -1.2328846, 4.023926, 1.0115337, -1.0118458, -4.023926, -1.2328846, -1.1276727, 4.023926, -1.1276727, -1.0118458, -4.023926, 1.2325726, -1.1276727, 4.023926, 1.1273606, -0.8860285, -4.023926, -1.326233, -1.0118458, 4.023926, -1.2328846, -0.8860285, -4.023926, 1.325921, -1.0118458, 4.023926, 1.2325726, -0.7517818, -4.023926, -1.4064689, -0.8860285, 4.023926, -1.326233, -0.7517818, -4.023926, 1.4061568, -0.8860285, 4.023926, 1.325921, -0.6103544, -4.023926, -1.4735923, -0.7517818, 4.023926, -1.4064689, -0.6103544, -4.023926, 1.4732802, -0.7517818, 4.023926, 1.4061568, -0.46299517, -4.023926, -1.5263543, -0.6103544, 4.023926, -1.4735923, -0.46299517, -4.023926, 1.5260422, -0.6103544, 4.023926, 1.4732802, -0.3112651, -4.023926, -1.5641308, -0.46299517, 4.023926, -1.5263543, -0.3112651, -4.023926, 1.5638187, -0.46299517, 4.023926, 1.5260422, -0.15641308, -4.023926, -1.5872337, -0.3112651, 4.023926, -1.5641308, -0.15641308, -4.023926, 1.5869217, -0.3112651, 4.023926, 1.5638187, 0, -4.023926, -1.5947266, -0.15641308, 4.023926, -1.5872337, 0, -4.023926, 1.5947266, -0.15641308, 4.023926, 1.5869217, 0.15610099, -4.023926, -1.5872337, 0, 4.023926, -1.5947266, 0.15610099, -4.023926, 1.5869217, 0, 4.023926, 1.5947266, 0.31095302, -4.023926, -1.5641308, 0.15610099, 4.023926, -1.5872337, 0.31095302, -4.023926, 1.5638187, 0.15610099, 4.023926, 1.5869217, 0.46268296, -4.023926, -1.5263543, 0.31095302, 4.023926, -1.5641308, 0.46268296, -4.023926, 1.5260422, 0.31095302, 4.023926, 1.5638187, 0.61004233, -4.023926, -1.4735923, 0.46268296, 4.023926, -1.5263543, 0.61004233, -4.023926, 1.4732802, 0.46268296, 4.023926, 1.5260422, 0.7514696, -4.023926, -1.4064689, 0.61004233, 4.023926, -1.4735923, 0.7514696, -4.023926, 1.4061568, 0.61004233, 4.023926, 1.4732802, 0.88571644, -4.023926, -1.326233, 0.7514696, 4.023926, -1.4064689, 0.88571644, -4.023926, 1.325921, 0.7514696, 4.023926, 1.4061568, 1.0115337, -4.023926, -1.2328846, 0.88571644, 4.023926, -1.326233, 1.0115337, -4.023926, 1.2325726, 0.88571644, 4.023926, 1.325921, 1.1273606, -4.023926, -1.1276727, 1.0115337, 4.023926, -1.2328846, 1.1273606, -4.023926, 1.1273606, 1.0115337, 4.023926, 1.2325726, 1.2325726, -4.023926, -1.0118458, 1.1273606, 4.023926, -1.1276727, 1.2325726, -4.023926, 1.0115337, 1.1273606, 4.023926, 1.1273606, 1.325921, -4.023926, -0.8860285, 1.2325726, 4.023926, -1.0118458, 1.325921, -4.023926, 0.88571644, 1.2325726, 4.023926, 1.0115337, 1.4061568, -4.023926, -0.7517818, 1.325921, 4.023926, -0.8860285, 1.4061568, -4.023926, 0.7514696, 1.325921, 4.023926, 0.88571644, 1.4732802, -4.023926, -0.6103544, 1.4061568, 4.023926, -0.7517818, 1.4732802, -4.023926, 0.61004233, 1.4061568, 4.023926, 0.7514696, 1.5260422, -4.023926, -0.46299517, 1.4732802, 4.023926, -0.6103544, 1.5260422, -4.023926, 0.46268296, 1.4732802, 4.023926, 0.61004233, 1.5638187, -4.023926, -0.3112651, 1.5260422, 4.023926, -0.46299517, 1.5638187, -4.023926, 0.31095302, 1.5260422, 4.023926, 0.46268296, 1.5869217, -4.023926, -0.15641308, 1.5638187, 4.023926, -0.3112651, 1.5869217, -4.023926, 0.15610099, 1.5638187, 4.023926, 0.31095302, 1.5947266, -4.023926, 0, 1.5869217, 4.023926, -0.15641308, 1.5869217, 4.023926, 0.15610099, 1.5947266, 4.023926, 0)
 
 [node name="Diner" type="Node3D" unique_id=1599357620]
 
@@ -324,9 +330,9 @@ transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-0
 material_override = SubResource("StandardMaterial3D_pp1bs")
 mesh = SubResource("BoxMesh_j7oc2")
 
-[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Files" unique_id=585412037]
+[node name="Files" type="StaticBody3D" parent="DinerObjects/TableObjects/Files" unique_id=562866946]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Files/Area3D" unique_id=1624561049]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Files/Files" unique_id=1624561049]
 transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
 shape = SubResource("ConvexPolygonShape3D_nh6gm")
 
@@ -342,9 +348,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41
 material_override = SubResource("StandardMaterial3D_sq1f4")
 mesh = SubResource("CylinderMesh_pb32r")
 
-[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Coffee" unique_id=471470730]
+[node name="Coffee" type="StaticBody3D" parent="DinerObjects/TableObjects/Coffee" unique_id=260831426]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Coffee/Area3D" unique_id=534505086]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Coffee/Coffee" unique_id=534505086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41246128)
 shape = SubResource("ConvexPolygonShape3D_d7ods")
 
@@ -360,10 +366,10 @@ transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.961
 material_override = SubResource("StandardMaterial3D_j7oc2")
 mesh = SubResource("BoxMesh_pb32r")
 
-[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=821288583]
-transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
+[node name="Newspaper" type="StaticBody3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=2067894100]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Area3D" unique_id=627158317]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Newspaper" unique_id=627158317]
+transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
 shape = SubResource("ConvexPolygonShape3D_lwn67")
 
 [node name="EvidenceBag" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1826168384 node_paths=PackedStringArray("mesh")]
@@ -377,9 +383,9 @@ selectionMaterial = ExtResource("4_jla63")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)
 mesh = SubResource("CylinderMesh_j7oc2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DinerObjects/TableObjects/EvidenceBag" unique_id=1370599928]
+[node name="EvidenceBag" type="StaticBody3D" parent="DinerObjects/TableObjects/EvidenceBag" unique_id=1370599928]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/EvidenceBag/StaticBody3D" unique_id=643125016]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" unique_id=643125016]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)
 shape = SubResource("ConvexPolygonShape3D_0m8sl")
 
@@ -391,14 +397,14 @@ outlineMaterial = SubResource("ShaderMaterial_d7ods")
 selectionMaterial = ExtResource("4_jla63")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Notepad" unique_id=2034212608]
-transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.3434806, 0.038656473, 0.60471153)
+transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.43040037, 0.038656473, 0.41342258)
 material_override = SubResource("StandardMaterial3D_nh6gm")
 mesh = SubResource("BoxMesh_pp1bs")
 
-[node name="Area3D" type="Area3D" parent="DinerObjects/TableObjects/Notepad" unique_id=614493398]
+[node name="Notepad" type="StaticBody3D" parent="DinerObjects/TableObjects/Notepad" unique_id=1828412022]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Notepad/Area3D" unique_id=1781468148]
-transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.3434806, 0.038656473, 0.60471153)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Notepad/Notepad" unique_id=1513815652]
+transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.43040037, 0.038656473, 0.41342258)
 shape = SubResource("ConvexPolygonShape3D_y2hby")
 
 [node name="Window" type="Node3D" parent="DinerObjects" unique_id=1841079072]
@@ -441,27 +447,39 @@ size = Vector3(0.52381706, 6.2381897, 1)
 [node name="Outside" type="Node3D" parent="DinerObjects" unique_id=2017774135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.264088, 0, 0)
 
-[node name="Tree" type="CSGCylinder3D" parent="DinerObjects/Outside" unique_id=819379101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4359708, 2.3607244)
-radius = 1.0668945
-height = 7.753174
+[node name="OutsideTree" type="Node3D" parent="DinerObjects/Outside" unique_id=276451406 node_paths=PackedStringArray("model")]
+script = ExtResource("5_d7ods")
+model = NodePath("InstanceMesh3D")
+
+[node name="InstanceMesh3D" type="MeshInstance3D" parent="DinerObjects/Outside/OutsideTree" unique_id=903157196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.014248, -0.099487305, 2.8352294)
+mesh = ExtResource("6_y2hby")
+script = ExtResource("5_0m8sl")
+
+[node name="OutsideTree" type="StaticBody3D" parent="DinerObjects/Outside/OutsideTree" unique_id=634796963]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/Outside/OutsideTree/OutsideTree" unique_id=1129274887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.014248, 0, 2.8352294)
+shape = SubResource("ConvexPolygonShape3D_caap6")
+
+[node name="Timer" type="Timer" parent="DinerObjects/Outside/OutsideTree" unique_id=1014575878]
+wait_time = 5.0
+autostart = true
 
 [node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
 visible = false
 
-[connection signal="input_event" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Area3D" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
-[connection signal="input_event" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Area3D" to="DinerObjects/TableObjects/Coffee" method="_on_area_3d_mouse_exited"]
-[connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Area3D" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Area3D" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Area3D" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/StaticBody3D" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/EvidenceBag/StaticBody3D" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_exited"]
-[connection signal="input_event" from="DinerObjects/TableObjects/Notepad/Area3D" to="DinerObjects/TableObjects/Notepad" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Area3D" to="DinerObjects/TableObjects/Notepad" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Area3D" to="DinerObjects/TableObjects/Notepad" method="_on_area_3d_mouse_exited"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_exited"]
+[connection signal="timeout" from="DinerObjects/Outside/OutsideTree/Timer" to="DinerObjects/Outside/OutsideTree" method="_on_timer_timeout"]
 
 [editable path="Player"]

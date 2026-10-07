@@ -7,10 +7,11 @@ class_name Player
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
-
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	
+func _process(_delta: float) -> void:
+	pass
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CONFINED:
@@ -24,3 +25,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+
+
+func _on_vison_timer_timeout() -> void:
+	var overlaps = $Head/VisonArea.get_overlapping_bodies()
+	if overlaps.size() > 0:
+		for overlap in overlaps:
+			if overlap.name == "OutsideTree":
+				Watching.i_see_you()
+				print("I see " + overlap.name)
+			else:
+				Watching.i_can_change()
