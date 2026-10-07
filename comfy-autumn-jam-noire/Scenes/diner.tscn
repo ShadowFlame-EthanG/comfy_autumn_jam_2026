@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://sw6fh4k5tb1k" path="res://Scripts/change_tree.gd" id="5_d7ods"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
+[ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -468,6 +469,22 @@ autostart = true
 
 [node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
 visible = false
+
+[node name="NarrativePanel" parent="." unique_id=881028243 instance=ExtResource("9_caap6")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -176.0
+offset_right = 431.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]

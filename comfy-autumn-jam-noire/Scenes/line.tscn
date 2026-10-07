@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ddv6yj65aicds"]
+
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_syjhi"]
+
+[sub_resource type="GDScript" id="GDScript_pb32r"]
+script/source = "extends Control
+var _line: String
+@onready var timer = $Timer
+
+var line: String :
+	set(val):
+		_line = val
+		%Label.text = _line
+	get:
+		return _line
+	
+func _ready() -> void:
+	animate_label()
+	NarrationManager.skipping.connect(skipped)
+
+func _on_timer_timeout() -> void:
+	if %Label.visible_characters == %Label.text.length() - 1:
+		NarrationManager.skipped += 1
+		print(NarrationManager.skipped)
+	else:
+		animate_label()
+
+func animate_label() -> void:
+	%Label.visible_characters += 1
+	
+	if %Label.visible_ratio != 1.0:
+		timer.start()
+
+func skipped() -> void:
+	if Modes.current_mode == Enums.GameplayMode.NARRATION:
+		if %Label.visible_ratio != 1.0:
+			%Label.visible_characters = -1
+			timer.stop()
+			NarrationManager.skipped += 1
+			print(NarrationManager.skipped)
+		else:
+			NarrationManager.skipped += 1
+			print(NarrationManager.skipped)
+"
+
+[node name="Line" type="MarginContainer" unique_id=787841519]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -170.5
+offset_right = 20.0
+offset_bottom = 170.5
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_pb32r")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1717174412]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_syjhi")
+theme_override_font_sizes/normal_font_size = 30
+text = "This is a rich text label."
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="Timer" type="Timer" parent="." unique_id=141013320]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
