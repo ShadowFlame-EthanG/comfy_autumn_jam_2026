@@ -28,6 +28,10 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 			if selected:
 				if name == "Files":
 					show_ui($"../../../Files UI")
+					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 				selected = false
 				if name == "Newspaper":
 					show_ui($"../../../NewsPaperUI")
+					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+
+	

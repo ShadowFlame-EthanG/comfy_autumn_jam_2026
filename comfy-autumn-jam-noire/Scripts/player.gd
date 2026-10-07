@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 @export var look_sensitivity: float = 0.001
 
+@onready var Ray_cast: RayCast3D = $Head/Camera3D/RayCast3D
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
@@ -19,4 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if event is InputEventMouseButton and event.pressed:
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+		var item = Ray_cast.get_collider()
+		if item and (item.name == "Files" or item.name == "Newspaper"):
+			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
