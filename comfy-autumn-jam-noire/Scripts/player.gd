@@ -9,6 +9,10 @@ class_name Player
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+func show_ui(location) -> void:
+	var ui = location
+	ui.show()
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -27,9 +31,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.pressed:
 		var item = Ray_cast.get_collider()
-		print(item.name)
 		if item and (item.name == "Files" or item.name == "Newspaper"):
-			Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			if item.name == "Files":
+				show_ui($"../Files UI")
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			if item.name == "Newspaper":
+				show_ui($"../NewsPaperUI")
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 
 func _on_vison_timer_timeout() -> void:
