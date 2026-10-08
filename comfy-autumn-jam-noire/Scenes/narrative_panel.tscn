@@ -11,11 +11,11 @@ func _ready() -> void:
 	
 func talking():
 	show()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func done_talking():
 	hide()
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 "
 
 [sub_resource type="GDScript" id="GDScript_syjhi"]

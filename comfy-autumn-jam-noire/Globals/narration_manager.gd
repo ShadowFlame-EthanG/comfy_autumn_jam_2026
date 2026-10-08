@@ -5,6 +5,7 @@ signal dialogue_finished()
 signal skipping()
 
 var skipped: int = 0
+var interact = true
 
 func _ready() -> void:
 	ink_file = load("res://Story/story.json")
