@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dd3dkoijushhh"]
+
+[ext_resource type="PackedScene" uid="uid://ddv6yj65aicds" path="res://Scenes/line.tscn" id="1_u64o8"]
+
+[sub_resource type="GDScript" id="GDScript_ha0tk"]
+script/source = "extends Control
+
+func _ready() -> void:
+	NarrationManager.dialogue_engaged.connect(talking)
+	NarrationManager.dialogue_finished.connect(done_talking)
+	
+func talking():
+	show()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func done_talking():
+	hide()
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+"
+
+[sub_resource type="GDScript" id="GDScript_syjhi"]
+script/source = "extends VBoxContainer
+@export var narration_text: PackedScene
+
+
+
+var newline_text
+var curline_text
+
+func _ready() -> void:
+	NarrationManager.continued.connect(update_dialogue)
+	NarrationManager.dialogue_engaged.connect(new_dialogue)
+	
+	
+func new_dialogue() -> void:
+	for child in get_children():
+		child.queue_free()
+
+func update_dialogue(text: String, _tags) -> void:
+	if text.strip_edges(true, true).length() > 0:
+		newline_text = narration_text.instantiate()
+		if curline_text == null:
+			curline_text = newline_text
+			curline_text.line = text
+			add_child(curline_text)
+		else:
+			curline_text.queue_free()
+			curline_text = newline_text
+			curline_text.line = text
+			add_child(curline_text)
+"
+
+[node name="NarrativePanel" type="PanelContainer" unique_id=881028243]
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_ha0tk")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=665400512]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=801522792]
+layout_mode = 2
+
+[node name="NarrationManager" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=596296806]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/NarrationManager" unique_id=1269447184]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="NarrativeLines" type="VBoxContainer" parent="PanelContainer/MarginContainer/NarrationManager" unique_id=99237442]
+layout_mode = 2
+size_flags_vertical = 6
+script = SubResource("GDScript_syjhi")
+narration_text = ExtResource("1_u64o8")
