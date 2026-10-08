@@ -15,7 +15,6 @@ func talking():
 
 func done_talking():
 	hide()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 "
 
 [sub_resource type="GDScript" id="GDScript_syjhi"]

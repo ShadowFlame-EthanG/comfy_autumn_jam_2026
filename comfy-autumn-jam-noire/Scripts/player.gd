@@ -9,7 +9,7 @@ class_name Player
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
-var interact = true
+var prev_high = ""
 
 func show_ui(location) -> void:
 	var ui = location
@@ -17,10 +17,11 @@ func show_ui(location) -> void:
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	NarrationManager.dialogue_finished.connect(interaction)
+	Modes.mode_changed.connect(interaction)
+	add_to_group("player")
 	
 func _process(_delta: float) -> void:
-	pass
+	print(NarrationManager.interact)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Modes.current_mode == Enums.GameplayMode.DINER:
@@ -29,25 +30,31 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-40), deg_to_rad(40))
 		head.rotation.y = clampf(head.rotation.y, deg_to_rad(-80), deg_to_rad(80))
 		
+		var highlight = Ray_cast.get_collider()
+		if highlight != null and NarrationManager.interact == true:
+			MousePosition.highlighted.emit(highlight.name)
+			prev_high = highlight.name
+		else:
+			MousePosition.gone.emit(prev_high)
+		
 	if Input.is_action_just_pressed("escape"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
+	
 	if event is InputEventMouseButton and event.pressed:
 		var item = Ray_cast.get_collider()
-		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad") and interact == true:
+		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if item.name == "Files":
 				show_ui($"../Files UI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-				interact = false
 			if item.name == "Newspaper":
 				show_ui($"../NewsPaperUI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-				interact = false
+				#interact = false
 			if item.name == "Notepad":
 				show_ui($"../NotesUI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-				interact = false
-
+				#interact = false
 
 func _on_vison_timer_timeout() -> void:
 	var overlaps = $Head/VisonArea.get_overlapping_bodies()
@@ -58,12 +65,19 @@ func _on_vison_timer_timeout() -> void:
 				print("I see " + overlap.name)
 			else:
 				Watching.i_can_change()
+	else:
+		Watching.i_can_change()
 
 
 func _on_interaction_timer_timeout() -> void:
-	interact = true
+	if Modes.current_mode == Enums.GameplayMode.DINER:
+		NarrationManager.interact = true
+	else:
+		$InteractionTimer.start()
+		print("Hello!!")
 
-func interaction() -> void:
-	$InteractionTimer.start()
-	print("Here!")
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+func interaction(new_mode: Enums.GameplayMode) -> void:
+	if new_mode == Enums.GameplayMode.DINER:
+		$InteractionTimer.start()
+		print("Here!")
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

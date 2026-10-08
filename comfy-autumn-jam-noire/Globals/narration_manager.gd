@@ -26,6 +26,7 @@ func start_dialogue(path: String) -> void:
 	dialogue_engaged.emit()
 	skipped = 0
 	Modes.change_mode(Enums.GameplayMode.NARRATION)
+	interact = false
 	choose_path(path)
 	advance()
 
@@ -35,5 +36,5 @@ func advance():
 	if not can_continue:
 		if skipped == 2:
 			dialogue_finished.emit()
-			Modes.change_mode(Modes.previous_mode)
+			Modes.change_mode(Enums.GameplayMode.DINER)
 			skipped = 0

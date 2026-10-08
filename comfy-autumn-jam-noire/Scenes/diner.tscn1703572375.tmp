@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://wpmatbhhskoa"]
 
 [ext_resource type="PackedScene" uid="uid://b4v2pv375xej5" path="res://Scenes/player.tscn" id="1_2p1rj"]
-[ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="2_caap6"]
-[ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="3_0k504"]
-[ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_skfe1"]
 [ext_resource type="Script" uid="uid://2ce754jaxnoa" path="res://Scripts/tree.gd" id="5_0m8sl"]
 [ext_resource type="Script" uid="uid://sw6fh4k5tb1k" path="res://Scripts/change_tree.gd" id="5_d7ods"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
@@ -303,11 +300,8 @@ size = Vector3(2.8234863, 3.6567383, 0.3895874)
 
 [node name="TableObjects" type="Node3D" parent="DinerObjects" unique_id=412588839]
 
-[node name="Files" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1605252048 node_paths=PackedStringArray("mesh")]
+[node name="Files" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1605252048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.753766, 0.992859, 5.9495354)
-script = ExtResource("2_caap6")
-mesh = NodePath("MeshInstance3D")
-outlineMaterial = ExtResource("3_0k504")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Files" unique_id=841415493]
 transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
@@ -321,11 +315,8 @@ collision_layer = 2
 transform = Transform3D(0.47840723, -0.3943685, -1.7238396e-08, 0, -2.7101061e-08, 0.62, -0.3943685, -0.47840723, -2.0911845e-08, 0.23391914, 0.103713155, 0.15780926)
 shape = SubResource("ConvexPolygonShape3D_nh6gm")
 
-[node name="Coffee" type="Node3D" parent="DinerObjects/TableObjects" unique_id=202812140 node_paths=PackedStringArray("mesh")]
+[node name="Coffee" type="Node3D" parent="DinerObjects/TableObjects" unique_id=202812140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.996084, 1.5345252, 5.773678)
-script = ExtResource("2_caap6")
-mesh = NodePath("MeshInstance3D")
-outlineMaterial = ExtResource("4_skfe1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Coffee" unique_id=88432536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41246128)
@@ -339,11 +330,8 @@ collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15195704, -0.33480954, 0.41246128)
 shape = SubResource("ConvexPolygonShape3D_d7ods")
 
-[node name="Newspaper" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1679693088 node_paths=PackedStringArray("mesh")]
+[node name="Newspaper" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1679693088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07422924, 0, -0.20977592)
-script = ExtResource("2_caap6")
-mesh = NodePath("MeshInstance3D")
-outlineMaterial = ExtResource("4_skfe1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=1320290083]
 transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, -8.738539, 1.0876993, 5.9923344)
@@ -358,11 +346,8 @@ priority = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Newspaper" unique_id=627158317]
 shape = SubResource("ConvexPolygonShape3D_lwn67")
 
-[node name="EvidenceBag" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1826168384 node_paths=PackedStringArray("mesh")]
+[node name="EvidenceBag" type="Node3D" parent="DinerObjects/TableObjects" unique_id=1826168384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.929436, 3.0292616, 6.6511602)
-script = ExtResource("2_caap6")
-mesh = NodePath("MeshInstance3D")
-outlineMaterial = ExtResource("4_skfe1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/EvidenceBag" unique_id=1501672130]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)
@@ -375,11 +360,8 @@ collision_layer = 2
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)
 shape = SubResource("ConvexPolygonShape3D_0m8sl")
 
-[node name="Notepad" type="Node3D" parent="DinerObjects/TableObjects" unique_id=638322035 node_paths=PackedStringArray("mesh")]
+[node name="Notepad" type="Node3D" parent="DinerObjects/TableObjects" unique_id=638322035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.546945, 1.0672636, 5.4757433)
-script = ExtResource("2_caap6")
-mesh = NodePath("MeshInstance3D")
-outlineMaterial = ExtResource("4_skfe1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/Notepad" unique_id=2034212608]
 transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.43040037, 0.038656473, 0.41342258)
