@@ -20,9 +20,6 @@ func _ready() -> void:
 	Modes.mode_changed.connect(interaction)
 	add_to_group("player")
 	
-func _process(_delta: float) -> void:
-	print(NarrationManager.interact)
-	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Modes.current_mode == Enums.GameplayMode.DINER:
 		head.rotate_y(-event.relative.x * look_sensitivity)
@@ -74,10 +71,8 @@ func _on_interaction_timer_timeout() -> void:
 		NarrationManager.interact = true
 	else:
 		$InteractionTimer.start()
-		print("Hello!!")
 
 func interaction(new_mode: Enums.GameplayMode) -> void:
 	if new_mode == Enums.GameplayMode.DINER:
 		$InteractionTimer.start()
-		print("Here!")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

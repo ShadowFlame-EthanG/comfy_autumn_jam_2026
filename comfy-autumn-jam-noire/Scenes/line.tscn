@@ -20,7 +20,7 @@ func _ready() -> void:
 	NarrationManager.skipping.connect(skipped)
 
 func _on_timer_timeout() -> void:
-	if %Label.visible_characters == %Label.text.length() - 1:
+	if %Label.visible_characters == %Label.text.length() - 1 and not NarrationManager.has_choices:
 		NarrationManager.skipped += 1
 		print(NarrationManager.skipped)
 	else:

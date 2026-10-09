@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bla738h85sxyf"]
+
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_y0ppu"]
+
+[sub_resource type="GDScript" id="GDScript_ow48a"]
+script/source = "extends MarginContainer
+
+@export var button : Button
+
+var _choice : InkChoice
+var choice : InkChoice :
+	set(val) :
+		_choice = val
+		button.text = str(choice.index+1) + \". \" + _choice.text
+	get :
+		return _choice
+	
+func _on_button_pressed() -> void:
+	NarrationManager.choose_choice_index(choice.index)
+	NarrationManager.advance()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2n1f"]
+bg_color = Color(0.70980394, 0.49803922, 0.15294118, 0.68235296)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow48a"]
+bg_color = Color(0.47058824, 0.3137255, 0.039215688, 0.8666667)
+
+[node name="ChoiceWidget" type="MarginContainer" unique_id=901877363 node_paths=PackedStringArray("button")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ow48a")
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=89331281]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_y0ppu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2n1f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ow48a")
+text = "This is a choice"
+alignment = 0
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dd3dkoijushhh"]
 
 [ext_resource type="PackedScene" uid="uid://ddv6yj65aicds" path="res://Scenes/line.tscn" id="1_u64o8"]
+[ext_resource type="PackedScene" uid="uid://bla738h85sxyf" path="res://Scenes/choice.tscn" id="2_p2icb"]
 
 [sub_resource type="GDScript" id="GDScript_ha0tk"]
 script/source = "extends Control
@@ -49,9 +50,37 @@ func update_dialogue(text: String, _tags) -> void:
 			add_child(curline_text)
 "
 
+[sub_resource type="GDScript" id="GDScript_ow48a"]
+script/source = "extends VBoxContainer
+@export var choice_widget: PackedScene
+
+func _ready() -> void:
+	NarrationManager.dialogue_engaged.connect(start_dialogue)
+	NarrationManager.continued.connect(update_dialogue)
+	
+func start_dialogue() -> void:
+	for child in get_children():
+		child.queue_free()
+
+func update_dialogue(_text, _tags) -> void:
+	if NarrationManager.has_choices:
+		for choice in NarrationManager.current_choices:
+			print(choice)
+			var new_choice = choice_widget.instantiate()
+			new_choice.choice = choice
+			add_child(new_choice)
+	else:
+		for child in get_children():
+			child.queue_free()
+			
+"
+
 [node name="NarrativePanel" type="PanelContainer" unique_id=881028243]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = SubResource("GDScript_ha0tk")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=665400512]
@@ -73,3 +102,13 @@ layout_mode = 2
 size_flags_vertical = 6
 script = SubResource("GDScript_syjhi")
 narration_text = ExtResource("1_u64o8")
+
+[node name="ChoiceDisplay" type="VBoxContainer" parent="PanelContainer" unique_id=1633369272]
+layout_mode = 2
+offset_transform_enabled = true
+script = SubResource("GDScript_ow48a")
+choice_widget = ExtResource("2_p2icb")
+
+[node name="PortraitDisplay" type="VBoxContainer" parent="PanelContainer" unique_id=597315735]
+visible = false
+layout_mode = 2
