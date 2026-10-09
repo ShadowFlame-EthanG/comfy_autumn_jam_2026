@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bmhol54nhe7ht" path="res://news_paper_ui.tscn" id="6_0m8sl"]
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
 [ext_resource type="PackedScene" uid="uid://dmwg0asmtcsy8" path="res://notes_ui.tscn" id="7_d7ods"]
+[ext_resource type="PackedScene" uid="uid://8oh1cwssr3f7" path="res://Assets/Sister_Rig_Posed.fbx" id="8_lkiu4"]
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
@@ -451,6 +452,9 @@ shape = SubResource("ConvexPolygonShape3D_caap6")
 [node name="Timer" type="Timer" parent="DinerObjects/Outside/OutsideTree" unique_id=1014575878]
 wait_time = 5.0
 autostart = true
+
+[node name="Sister_Rig_Posed" parent="DinerObjects" unique_id=1332264291 instance=ExtResource("8_lkiu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.157986, 0.48458505, 4.2928057)
 
 [node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
 visible = false
