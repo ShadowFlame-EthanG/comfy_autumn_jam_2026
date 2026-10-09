@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddv6yj65aicds" path="res://Scenes/line.tscn" id="1_u64o8"]
 [ext_resource type="PackedScene" uid="uid://bla738h85sxyf" path="res://Scenes/choice.tscn" id="2_p2icb"]
+[ext_resource type="Texture2D" uid="uid://blbt4cbqct430" path="res://icon.svg" id="3_d2n1f"]
 
 [sub_resource type="GDScript" id="GDScript_ha0tk"]
 script/source = "extends Control
@@ -103,12 +104,21 @@ size_flags_vertical = 6
 script = SubResource("GDScript_syjhi")
 narration_text = ExtResource("1_u64o8")
 
+[node name="PortraitDisplay" type="VBoxContainer" parent="PanelContainer" unique_id=597315735]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/PortraitDisplay" unique_id=110869402]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(800, -100)
+texture = ExtResource("3_d2n1f")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="PanelContainer/PortraitDisplay" unique_id=59275482]
+layout_mode = 2
+
 [node name="ChoiceDisplay" type="VBoxContainer" parent="PanelContainer" unique_id=1633369272]
 layout_mode = 2
 offset_transform_enabled = true
 script = SubResource("GDScript_ow48a")
 choice_widget = ExtResource("2_p2icb")
-
-[node name="PortraitDisplay" type="VBoxContainer" parent="PanelContainer" unique_id=597315735]
-visible = false
-layout_mode = 2
