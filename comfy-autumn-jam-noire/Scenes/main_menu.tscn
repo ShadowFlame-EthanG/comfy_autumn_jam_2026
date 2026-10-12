@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://c3dd3oyndslmh"]
+
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_28flt"]
+
+[sub_resource type="GDScript" id="GDScript_28flt"]
+script/source = "extends PanelContainer
+
+@onready var menu = $HBoxContainer/Menu
+@onready var settings = $HBoxContainer/Panels/SettingsPanel
+@onready var credits = $HBoxContainer/Panels/CreditsPanel
+
+func _ready() -> void:
+	menu.visible = true
+	
+
+
+func _on_settings_button_pressed() -> void:
+	if settings.visible == false:
+		settings.visible = true
+		if credits.visible == true:
+			credits.visible = false
+	else:
+		settings.visible = false
+
+
+func _on_credits_button_pressed() -> void:
+	if credits.visible == false:
+		credits.visible = true
+		if settings.visible == true:
+			settings.visible = false
+	else:
+		credits.visible = false
+"
+
+[sub_resource type="GDScript" id="GDScript_48xlc"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	NavigationManager.go_to_diner()
+"
+
+[sub_resource type="GDScript" id="GDScript_erv1k"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pb32r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7oc2"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_28flt"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_48xlc"]
+color = Color(0.34509805, 0.7921569, 0.9254902, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1ehe0"]
+color = Color(0.34509805, 0.7921569, 0.9254902, 1)
+thickness = 6
+
+[sub_resource type="GDScript" id="GDScript_j3pel"]
+script/source = "extends HSlider
+
+@export var audio_bus: String
+
+var audio_bus_id
+
+func _ready() -> void:
+	audio_bus_id = AudioServer.get_bus_index(audio_bus)
+
+func _on_value_changed(value: float) -> void:
+	var db = linear_to_db(value)
+	AudioServer.set_bus_volume_db(audio_bus_id, db)
+"
+
+[node name="MainMenu" type="PanelContainer" unique_id=1673446691]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_28flt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1417581852]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2014790652]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1047544002]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="HBoxContainer" unique_id=795075633]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Menu" type="VBoxContainer" parent="HBoxContainer" unique_id=225031959]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/Menu" unique_id=2015681130]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartButton" type="Button" parent="HBoxContainer/Menu" unique_id=1862420641]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+script = SubResource("GDScript_48xlc")
+
+[node name="SettingsButton" type="Button" parent="HBoxContainer/Menu" unique_id=1072074112]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="HBoxContainer/Menu" unique_id=85895454]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer/Menu" unique_id=1684992423]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+script = SubResource("GDScript_erv1k")
+
+[node name="Control2" type="Control" parent="HBoxContainer/Menu" unique_id=186948915]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panels" type="PanelContainer" parent="HBoxContainer" unique_id=515465152]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pb32r")
+
+[node name="SettingsPanel" type="PanelContainer" parent="HBoxContainer/Panels" unique_id=430947669]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j7oc2")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Panels/SettingsPanel" unique_id=62756839]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer" unique_id=1579353393]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer" unique_id=399297241]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=131404731]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=999587932]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 24
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioSlider" type="HSlider" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=580928129]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_28flt")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_48xlc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_1ehe0")
+max_value = 1.0
+step = 0.05
+value = 0.75
+script = SubResource("GDScript_j3pel")
+audio_bus = "Music"
+
+[node name="CreditsPanel" type="PanelContainer" parent="HBoxContainer/Panels" unique_id=1235396422]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j7oc2")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Panels/CreditsPanel" unique_id=548237686]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panels/CreditsPanel/CenterContainer" unique_id=918493567]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Panels/CreditsPanel/CenterContainer/MarginContainer" unique_id=224103343]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Panels/CreditsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=53164797]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/Panels/CreditsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=474383947]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Created by Tim, Chris, Christina, Alx, arrowtothejess, ShadowFlameDragn, Reyfly, Poisoned Horn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/Panels/CreditsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=139204450]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 25
+text = "Assets Used:"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="HBoxContainer/Menu/StartButton" to="HBoxContainer/Menu/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Menu/QuitButton" to="HBoxContainer/Menu/QuitButton" method="_on_pressed"]
+[connection signal="value_changed" from="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/AudioSlider" to="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/AudioSlider" method="_on_value_changed"]

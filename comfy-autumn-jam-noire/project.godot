@@ -24,6 +24,7 @@ __InkRuntime="*uid://bw0xutgj2dsxf"
 NarrationManager="*uid://c3wdswtwfw30r"
 Enums="*uid://c5wjheqlt2uor"
 Modes="*uid://dpna7hgodonx8"
+NavigationManager="*uid://bn2evkggsah5k"
 
 [display]
 
