@@ -15,6 +15,10 @@ run/main_scene="uid://wpmatbhhskoa"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dpejrr4ia8u7j"
+
 [autoload]
 
 PhantomCameraManager="*uid://duq6jhf6unyis"
@@ -25,6 +29,7 @@ NarrationManager="*uid://c3wdswtwfw30r"
 Enums="*uid://c5wjheqlt2uor"
 Modes="*uid://dpna7hgodonx8"
 NavigationManager="*uid://bn2evkggsah5k"
+TransitionScreen="*uid://h8smrbl22dl5"
 
 [display]
 

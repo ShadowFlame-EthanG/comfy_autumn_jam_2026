@@ -1,3 +1,5 @@
+VAR newspaper = false
+
 === intro
 This is a dialogue test.
 
@@ -11,8 +13,8 @@ This sentence is meant to test how the animated text looks when you have a lot o
     -> choice1
 * Can you tell me the time?
     -> choice2
-* ->
-    No more questions. The time is now.
+* {newspaper} What did you see on the newspaper?
+    -> choice3
 -> DONE
 
 === choice1
@@ -23,6 +25,12 @@ a
 
 === choice2
 I dunno, can you read analog?
+
+a
+-> DONE
+
+=== choice3
+A blank slate. Ripe for creativity.
 
 a
 -> DONE
