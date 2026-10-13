@@ -40,18 +40,19 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton and event.pressed:
 		var item = Ray_cast.get_collider()
-		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
+		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if item.name == "Files":
-				show_ui($"../Files UI")
+				show_ui($"../Items/Files UI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 			if item.name == "Newspaper":
-				show_ui($"../NewsPaperUI")
+				show_ui($"../Items/NewsPaperUI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-				#interact = false
 			if item.name == "Notepad":
-				show_ui($"../NotesUI")
+				show_ui($"../Items/NotesUI")
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-				#interact = false
+			if item.name == "Coffee":
+				show_ui($"../Items/Coffee")
+				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func _on_vison_timer_timeout() -> void:
 	var overlaps = $Head/VisonArea.get_overlapping_bodies()

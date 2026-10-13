@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://d0x0xdp166vv3"]
+
+[ext_resource type="Texture2D" uid="uid://cy8bn5ad2vjdt" path="res://Assets/2D_assets/Coffee.png" id="1_oopha"]
+[ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="2_u4wqq"]
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_u4wqq"]
+[ext_resource type="AudioStream" uid="uid://cwqu0blbujf7d" path="res://Assets/SFX/Sipping Coffee variations/sipcffeesip 3.wav" id="4_tcwtp"]
+
+[sub_resource type="GDScript" id="GDScript_pb32r"]
+script/source = "extends Control
+
+var drinkable = false
+
+func _on_texture_button_pressed() -> void:
+	hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_texture_rect_mouse_entered() -> void:
+	$Label.visible = true
+	drinkable = true
+
+
+func _on_texture_rect_mouse_exited() -> void:
+	$Label.visible = false
+	drinkable = false
+
+
+func _on_texture_rect_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and drinkable == true:
+		$AudioStreamPlayer.play()
+"
+
+[node name="Coffee" type="Control" unique_id=715525205]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_pb32r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=301857448]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -278.0
+offset_right = 365.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_oopha")
+stretch_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=604708779]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -193.0
+offset_right = 55.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_u4wqq")
+texture_pressed = ExtResource("2_u4wqq")
+texture_hover = ExtResource("2_u4wqq")
+
+[node name="Label" type="Label" parent="." unique_id=1411751365]
+visible = false
+layout_mode = 0
+offset_left = 905.0
+offset_top = 152.0
+offset_right = 1024.0
+offset_bottom = 203.0
+theme_override_fonts/font = ExtResource("3_u4wqq")
+theme_override_font_sizes/font_size = 50
+text = "Drink"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1918659249]
+stream = ExtResource("4_tcwtp")
+bus = &"SFX"
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_texture_rect_gui_input"]
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

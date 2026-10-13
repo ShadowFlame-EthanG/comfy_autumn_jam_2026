@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c3dd3oyndslmh"]
 
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://ch8t7r6rrqv7l" path="res://Assets/2D_assets/main menu 2.png" id="1_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6flb"]
 
 [sub_resource type="GDScript" id="GDScript_28flt"]
 script/source = "extends PanelContainer
@@ -32,6 +35,9 @@ func _on_credits_button_pressed() -> void:
 		credits.visible = false
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="GDScript" id="GDScript_48xlc"]
 script/source = "extends Button
 
@@ -39,6 +45,15 @@ script/source = "extends Button
 func _on_pressed() -> void:
 	NavigationManager.go_to_diner()
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3w2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="GDScript" id="GDScript_erv1k"]
 script/source = "extends Button
@@ -85,12 +100,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f6flb")
 script = SubResource("GDScript_28flt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1417581852]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2014790652]
 layout_mode = 2
+texture = ExtResource("1_48xlc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1047544002]
 layout_mode = 2
@@ -98,7 +115,7 @@ layout_mode = 2
 [node name="Control3" type="Control" parent="HBoxContainer" unique_id=795075633]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.2
+size_flags_stretch_ratio = 0.9
 
 [node name="Menu" type="VBoxContainer" parent="HBoxContainer" unique_id=225031959]
 layout_mode = 2
@@ -107,30 +124,35 @@ size_flags_horizontal = 3
 [node name="Control" type="Control" parent="HBoxContainer/Menu" unique_id=2015681130]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 5.6
 
 [node name="StartButton" type="Button" parent="HBoxContainer/Menu" unique_id=1862420641]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
 text = "Play"
 script = SubResource("GDScript_48xlc")
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer/Menu" unique_id=1072074112]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
 text = "Settings"
 
 [node name="CreditsButton" type="Button" parent="HBoxContainer/Menu" unique_id=85895454]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ce3w2")
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="HBoxContainer/Menu" unique_id=1684992423]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_28flt")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_n45e2")
 text = "Quit"
 script = SubResource("GDScript_erv1k")
 

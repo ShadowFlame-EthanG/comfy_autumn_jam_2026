@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwg0asmtcsy8" path="res://notes_ui.tscn" id="7_d7ods"]
 [ext_resource type="PackedScene" uid="uid://8oh1cwssr3f7" path="res://Assets/Sister_Rig_Posed.fbx" id="8_lkiu4"]
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
+[ext_resource type="PackedScene" uid="uid://d0x0xdp166vv3" path="res://Scenes/coffee.tscn" id="12_f6flb"]
 [ext_resource type="PackedScene" uid="uid://do5py0tctfsuv" path="res://Scenes/police_timer.tscn" id="13_wi4wa"]
 
 [sub_resource type="GDScript" id="GDScript_28flt"]
@@ -470,15 +471,6 @@ autostart = true
 [node name="Sister_Rig_Posed" parent="DinerObjects" unique_id=1332264291 instance=ExtResource("8_lkiu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.157986, 0.48458505, 4.2928057)
 
-[node name="Files UI" parent="." unique_id=429166608 instance=ExtResource("5_nh6gm")]
-visible = false
-
-[node name="NewsPaperUI" parent="." unique_id=323853108 instance=ExtResource("6_0m8sl")]
-visible = false
-
-[node name="NotesUI" parent="." unique_id=1551830860 instance=ExtResource("7_d7ods")]
-visible = false
-
 [node name="Crosshair" type="CanvasLayer" parent="." unique_id=1119697816]
 
 [node name="ColorRect" type="ColorRect" parent="Crosshair" unique_id=788003477]
@@ -495,20 +487,36 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="NarrativePanel" parent="Crosshair" unique_id=881028243 instance=ExtResource("9_caap6")]
+[node name="Items" type="CanvasLayer" parent="." unique_id=179031353]
+
+[node name="Files UI" parent="Items" unique_id=429166608 instance=ExtResource("5_nh6gm")]
+visible = false
+
+[node name="NewsPaperUI" parent="Items" unique_id=323853108 instance=ExtResource("6_0m8sl")]
+visible = false
+
+[node name="NotesUI" parent="Items" unique_id=1551830860 instance=ExtResource("7_d7ods")]
+visible = false
+
+[node name="Coffee" parent="Items" unique_id=715525205 instance=ExtResource("12_f6flb")]
+visible = false
+
+[node name="Narration" type="CanvasLayer" parent="." unique_id=624770844]
+
+[node name="NarrativePanel" parent="Narration" unique_id=881028243 instance=ExtResource("9_caap6")]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -434.0
-offset_top = -176.0
-offset_right = 431.0
+offset_left = -661.5
+offset_top = -295.0
+offset_right = 658.5
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="PoliceTimer" parent="Crosshair" unique_id=1835233824 instance=ExtResource("13_wi4wa")]
+[node name="PoliceTimer" parent="Narration" unique_id=1835233824 instance=ExtResource("13_wi4wa")]
 visible = false
 anchors_preset = 5
 anchor_top = 0.0
