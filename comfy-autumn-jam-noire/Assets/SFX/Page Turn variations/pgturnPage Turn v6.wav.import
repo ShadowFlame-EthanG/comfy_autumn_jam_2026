@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crrqxjnfm2d8c"
+path="res://.godot/imported/pgturnPage Turn v6.wav-5a9b47abfbd2a74dcafb12eef691b423.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Page Turn variations/pgturnPage Turn v6.wav"
+dest_files=["res://.godot/imported/pgturnPage Turn v6.wav-5a9b47abfbd2a74dcafb12eef691b423.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
