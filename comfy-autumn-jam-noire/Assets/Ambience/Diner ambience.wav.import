@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cv0muh3ri1k6x"
+path="res://.godot/imported/Diner ambience.wav-561ef631b486128a72c4856485b8acf6.sample"
+
+[deps]
+
+source_file="res://Assets/Ambience/Diner ambience.wav"
+dest_files=["res://.godot/imported/Diner ambience.wav-561ef631b486128a72c4856485b8acf6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

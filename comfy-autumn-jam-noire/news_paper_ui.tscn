@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bmhol54nhe7ht"]
 
 [ext_resource type="Script" uid="uid://b7ti5n8bxcbyk" path="res://news_paper_ui.gd" id="1_bqrdo"]
+[ext_resource type="AudioStream" uid="uid://w6l55gfyefvh" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v4.wav" id="2_teyhr"]
+[ext_resource type="AudioStream" uid="uid://cn7tqw5ntiqik" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v5.wav" id="3_7pb3b"]
 
 [node name="NewsPaperUI" type="Control" unique_id=323853108]
 layout_mode = 3
@@ -33,5 +35,15 @@ offset_right = -20.0
 offset_bottom = 100.0
 grow_horizontal = 0
 text = "X"
+
+[node name="OpenNewspaper" type="AudioStreamPlayer" parent="." unique_id=47110450]
+stream = ExtResource("2_teyhr")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="CloseNewspaper" type="AudioStreamPlayer" parent="." unique_id=1239772039]
+stream = ExtResource("3_7pb3b")
+volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

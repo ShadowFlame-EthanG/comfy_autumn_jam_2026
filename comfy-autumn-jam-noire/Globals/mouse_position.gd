@@ -8,3 +8,16 @@ var prev_head
 
 signal highlighted(h_name: String)
 signal gone()
+
+signal open_newspaper
+signal open_files
+signal open_notes
+
+func newspaper_selected() -> void:
+	open_newspaper.emit()
+
+func files_selected() -> void:
+	open_files.emit()
+
+func notes_selected() -> void:
+	open_notes.emit()

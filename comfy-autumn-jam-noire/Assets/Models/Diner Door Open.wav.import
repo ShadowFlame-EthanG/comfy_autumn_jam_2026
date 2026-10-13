@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://p2fush7sogko"
+path="res://.godot/imported/Diner Door Open.wav-80d120ddd7d3045cab1cb6be74585ece.sample"
+
+[deps]
+
+source_file="res://Assets/Models/Diner Door Open.wav"
+dest_files=["res://.godot/imported/Diner Door Open.wav-80d120ddd7d3045cab1cb6be74585ece.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

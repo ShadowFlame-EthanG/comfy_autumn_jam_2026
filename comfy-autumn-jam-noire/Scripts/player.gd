@@ -43,12 +43,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if item.name == "Files":
 				show_ui($"../Items/Files UI")
+				MousePosition.files_selected()
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 			if item.name == "Newspaper":
 				show_ui($"../Items/NewsPaperUI")
+				MousePosition.newspaper_selected()
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 			if item.name == "Notepad":
 				show_ui($"../Items/NotesUI")
+				MousePosition.notes_selected()
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 			if item.name == "Coffee":
 				show_ui($"../Items/Coffee")
