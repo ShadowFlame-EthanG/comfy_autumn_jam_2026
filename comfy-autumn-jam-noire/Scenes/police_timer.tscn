@@ -8,8 +8,9 @@ script/source = "extends Control
 
 var total_time: int = 60 * 10
 
+var started = false
 func _ready() -> void:
-	$Timer.start()
+	NarrationManager.dialogue_finished.connect(it_begins)
 	
 
 
@@ -18,6 +19,12 @@ func _on_timer_timeout() -> void:
 	var m = int(total_time / 60.0)
 	var s = total_time - m * 60
 	$Label.text = '%02d:%02d' % [m,s]
+
+func it_begins() -> void:
+	if started == false:
+		visible = true
+		$Timer.start()
+		started = true
 "
 
 [node name="PoliceTimer" type="Control" unique_id=1835233824]

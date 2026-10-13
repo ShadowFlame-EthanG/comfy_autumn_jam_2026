@@ -71,7 +71,6 @@ func start_dialogue() -> void:
 func update_dialogue(_text, _tags) -> void:
 	if NarrationManager.has_choices:
 		for choice in NarrationManager.current_choices:
-			print(choice)
 			var new_choice = choice_widget.instantiate()
 			new_choice.choice = choice
 			add_child(new_choice)
