@@ -70,11 +70,15 @@ func start_dialogue() -> void:
 
 func update_dialogue(_text, _tags) -> void:
 	if NarrationManager.has_choices:
+		visible = true
+		for child in get_children():
+			child.queue_free()
 		for choice in NarrationManager.current_choices:
 			var new_choice = choice_widget.instantiate()
 			new_choice.choice = choice
 			add_child(new_choice)
 	else:
+		visible = false
 		for child in get_children():
 			child.queue_free()
 			
@@ -137,6 +141,7 @@ theme_override_constants/margin_right = 706
 theme_override_constants/margin_bottom = 295
 
 [node name="ChoiceDisplay" type="VBoxContainer" parent="PanelContainer/MarginChoices" unique_id=1633369272]
+visible = false
 layout_mode = 2
 offset_transform_enabled = true
 script = SubResource("GDScript_ow48a")

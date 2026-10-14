@@ -8,6 +8,7 @@ script/source = "extends MarginContainer
 
 @export var button : Button
 
+
 var _choice : InkChoice
 var choice : InkChoice :
 	set(val) :
@@ -20,6 +21,9 @@ var choice : InkChoice :
 func _on_button_pressed() -> void:
 	NarrationManager.choose_choice_index(choice.index)
 	NarrationManager.advance()
+	if NarrationManager.first < 1:
+		NarrationManager.advance()
+		NarrationManager.first += 1
 "
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pp1bs"]
