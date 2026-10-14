@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://d5b2vrdwdd4y"]
 
 [ext_resource type="Script" uid="uid://r0182cqoqrps" path="res://Files UI.gd" id="1_iveyx"]
+[ext_resource type="Texture2D" uid="uid://5235ykgmhxhl" path="res://Assets/2D_assets/filefolder.png" id="2_6cv16"]
 [ext_resource type="Texture2D" uid="uid://cl4mgiroel0cf" path="res://Assets/2D_assets/folderwithline.png" id="2_jjkpp"]
 [ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="3_20ofu"]
 [ext_resource type="AudioStream" uid="uid://bhu2hvelw5sx0" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v3.wav" id="4_6cv16"]
 [ext_resource type="AudioStream" uid="uid://exj2fkd6lyqr" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v2.wav" id="5_38ygb"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ucufk"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38ygb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4e6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjs7f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjqth"]
 
 [node name="InGameUI" type="Control" unique_id=429166608]
 layout_mode = 3
@@ -16,59 +23,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iveyx")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=295731097]
-visible = false
-custom_minimum_size = Vector2(1700, 1000)
-layout_mode = 0
-offset_left = 110.0
-offset_top = 40.0
-offset_right = 1810.0
-offset_bottom = 1040.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.9019608, 0.8666667, 0.5764706, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=334813690]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 880.0
-offset_top = 50.0
-offset_right = -90.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="ColorRect/ColorRect" unique_id=353077478]
-custom_minimum_size = Vector2(150, 80)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -170.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 100.0
-grow_horizontal = 0
-text = "X
-"
-icon = SubResource("PlaceholderTexture2D_ucufk")
-
-[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=1124822526]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 90.0
-offset_top = 50.0
-offset_right = -880.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1702385422]
 layout_mode = 1
@@ -101,5 +55,60 @@ stream = ExtResource("5_38ygb")
 volume_db = -5.0
 bus = &"SFX"
 
-[connection signal="pressed" from="ColorRect/ColorRect/Button" to="." method="_on_button_pressed"]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2059390124]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6cv16")
+stretch_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=3285678]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6cv16")
+stretch_mode = 3
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=743796012]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -169.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6cv16")
+stretch_mode = 3
+
+[node name="TextureButton3" type="Button" parent="." unique_id=102145694]
+layout_mode = 1
+offset_left = 402.0
+offset_top = 45.0
+offset_right = 744.0
+offset_bottom = 128.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_38ygb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y4e6l")
+
+[node name="TextureButton2" type="Button" parent="." unique_id=992883231]
+layout_mode = 1
+offset_left = 1167.0
+offset_top = 62.0
+offset_right = 1473.0
+offset_bottom = 137.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xjs7f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qjqth")
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

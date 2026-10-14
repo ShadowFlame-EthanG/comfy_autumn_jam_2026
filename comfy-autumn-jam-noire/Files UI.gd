@@ -3,8 +3,58 @@ extends Control
 @onready var open = $OpenFiles
 @onready var close = $CloseFiles
 
+@onready var page_1 = $TextureRect
+@onready var page_2 = $TextureRect2
+@onready var page_3 = $TextureRect3
+@onready var page_4 = $TextureRect4
+
+var page = 1
+
 func _ready() -> void:
 	MousePosition.open_files.connect(files_opened)
+
+func _on_texture_button_2_pressed() -> void:
+	print("forward")
+	if page < 4:
+		page += 1
+		print(page)
+
+		page_1.hide()
+		page_2.hide()
+		page_3.hide()
+		page_4.hide()
+
+		match page:
+			2:
+				page_2.show()
+			3:
+				page_3.show()
+			4:
+				page_4.show()
+				
+	open.play()
+	
+func _on_texture_button_3_pressed() -> void:
+	print("back")
+	if page > 1:
+		page -= 1
+		print(page)
+
+		page_2.hide()
+		page_3.hide()
+		page_4.hide()
+
+		match page:
+			1:
+				page_1.show()
+			2:
+				page_2.show()
+			3:
+				page_3.show()
+			4:
+				page_4.show()
+				
+		close.play()
 
 func _on_texture_button_pressed() -> void:
 	hide()
