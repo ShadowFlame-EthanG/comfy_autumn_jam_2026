@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_ukgpq"]
 [ext_resource type="AudioStream" uid="uid://w6l55gfyefvh" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v4.wav" id="4_xa3ed"]
 [ext_resource type="AudioStream" uid="uid://cn7tqw5ntiqik" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v5.wav" id="5_ukgpq"]
+[ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="7_mqpnv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa3ed"]
 
@@ -55,7 +56,7 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.3882353)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
@@ -64,6 +65,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_mqpnv")
+placeholder_text = "Sister's Necklace"
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
@@ -76,7 +78,6 @@ wrap_mode = 1
 minimap_width = 40
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1001925085]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,7 +110,7 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
-theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.3882353)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
@@ -118,6 +119,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_mqpnv")
+placeholder_text = "Family is Rich"
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
@@ -324,6 +326,9 @@ bus = &"SFX"
 stream = ExtResource("5_ukgpq")
 volume_db = -5.0
 bus = &"SFX"
+
+[node name="RustleRustling" type="AudioStreamPlayer" parent="." unique_id=1926517088]
+stream = ExtResource("7_mqpnv")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=132107492]
 layout_mode = 1

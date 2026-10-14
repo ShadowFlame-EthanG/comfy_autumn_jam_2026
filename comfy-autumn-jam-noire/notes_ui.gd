@@ -2,6 +2,7 @@ extends Control
 
 @onready var open = $OpenNotes
 @onready var close = $CloseNotes
+@onready var rustle = $RustleRustling
 
 @onready var page_2 = $TextureRect2
 @onready var page_3 = $TextureRect3
@@ -37,7 +38,7 @@ func _on_texture_button_2_pressed() -> void:
 			5:
 				page_5.show()
 				
-	open.play()
+	rustle.play()
 	
 func _on_texture_button_3_pressed() -> void:
 	if page > 1:
@@ -60,7 +61,7 @@ func _on_texture_button_3_pressed() -> void:
 			5:
 				page_5.show()
 
-		close.play()
+		rustle.play()
 
 func notes_opened() -> void:
 	open.play()

@@ -2,6 +2,7 @@ extends Control
 
 @onready var open = $OpenFiles
 @onready var close = $CloseFiles
+@onready var rustle = $RustleRustling
 
 @onready var page_1 = $TextureRect
 @onready var page_2 = $TextureRect2
@@ -32,7 +33,7 @@ func _on_texture_button_2_pressed() -> void:
 			4:
 				page_4.show()
 				
-	open.play()
+	rustle.play()
 	
 func _on_texture_button_3_pressed() -> void:
 	print("back")
@@ -54,7 +55,7 @@ func _on_texture_button_3_pressed() -> void:
 			4:
 				page_4.show()
 				
-		close.play()
+		rustle.play()
 
 func _on_texture_button_pressed() -> void:
 	hide()
