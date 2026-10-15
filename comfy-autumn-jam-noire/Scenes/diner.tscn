@@ -39,18 +39,18 @@ func _on_timer_timeout() -> void:
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dcs1"]
 shader = ExtResource("1_yengi")
-shader_parameter/day_top_color = Color(0.92642474, 0.8607745, 0.3905972, 1)
-shader_parameter/day_bottom_color = Color(0.7221106, 0.58618176, 0.36516806, 1)
-shader_parameter/sunset_top_color = Color(0.61573136, 0.8192093, 0.737822, 1)
+shader_parameter/day_top_color = Color(0.98890704, 0.75524455, 0.5105279, 1)
+shader_parameter/day_bottom_color = Color(1, 0.78124195, 0.6621295, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
 shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
-shader_parameter/night_top_color = Color(0.16696051, 0.046521507, 0.16791409, 1)
-shader_parameter/night_bottom_color = Color(0.06573416, 0.026144564, 0.0035601067, 1)
-shader_parameter/horizon_color = Color(0.6666868, 0.3658676, 0.14868343, 1)
-shader_parameter/horizon_blur = 0.05
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0.7370024, 0.5153438, 0.11468317, 1)
+shader_parameter/horizon_blur = 0.60999998636528
 shader_parameter/sun_color = Color(10, 8, 1, 1)
-shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_sunset_color = Color(9.301644, 2.5981214, 4.1131964, 1)
 shader_parameter/sun_size = 0.2
-shader_parameter/sun_blur = 10.0
+shader_parameter/sun_blur = 3.00000014180148
 shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
 shader_parameter/moon_size = 0.06
 shader_parameter/moon_blur = 0.1
@@ -76,6 +76,7 @@ sky_material = SubResource("ShaderMaterial_6dcs1")
 
 [sub_resource type="Environment" id="Environment_k4132"]
 background_mode = 2
+background_energy_multiplier = 0.6
 sky = SubResource("Sky_lwn67")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pb32r"]
@@ -266,24 +267,25 @@ environment = SubResource("Environment_k4132")
 
 [node name="DayNightCycle" type="Node3D" parent="." unique_id=253194168]
 script = ExtResource("1_6dcs1")
-day_time = 15.8588
-latitude = -4.359999999999999
-planet_axial_tilt = 20.97999999999999
-moon_orbital_inclination = -29.139999999999983
+day_time = 2.1647
 clouds_cutoff = 0.6
-sun_base_enegry = 1.0
-moon_base_enegry = 1.31
+time_scale = 0.0
+sun_base_enegry = 0.1
+moon_base_enegry = 0.1
 
 [node name="Sun" type="DirectionalLight3D" parent="DayNightCycle" unique_id=813679549]
-transform = Transform3D(0.947997, -0.064388, -0.31169847, 0.114646204, -0.8445039, 0.52313423, -0.29691413, -0.5316647, -0.7932052, 0, 0, 0)
+transform = Transform3D(0.9206749, 0, -0.39032957, -0.3293085, 0.5368653, -0.776744, 0.20955439, 0.843668, 0.49427846, 0, 0, 0)
 rotation_order = 4
-light_color = Color(0.9712382, 0.7622248, 0.23750204, 1)
+light_color = Color(0.97966796, 0.9518536, 0.9503023, 1)
+light_energy = 0.0
+shadow_enabled = true
 
 [node name="Moon" type="DirectionalLight3D" parent="DayNightCycle" unique_id=1516065154]
-transform = Transform3D(0.96838605, 0.06022019, -0.24207845, -0.1945186, 0.78983945, -0.5816495, 0.15617608, 0.61035, 0.77658343, 0, 0, 0)
+transform = Transform3D(0.99157155, 0, -0.12955917, 0.042535987, -0.94456893, 0.32554588, -0.1223776, -0.3283131, -0.9366075, 0, 0, 0)
 rotation_order = 4
-light_color = Color(0.6988109, 0.66082877, 0.46008945, 1)
-light_energy = 0.0
+light_color = Color(0.99073595, 0.9888881, 0.97662705, 1)
+light_energy = 0.1
+shadow_enabled = true
 
 [node name="DayNightCycleChoice" type="Node3D" parent="." unique_id=30151742]
 visible = false
@@ -298,7 +300,7 @@ sun_base_enegry = 1.0
 moon_base_enegry = 1.0
 
 [node name="Sun" type="DirectionalLight3D" parent="DayNightCycleChoice" unique_id=1348694021]
-transform = Transform3D(0.97151935, -0.100353375, 0.21466103, 0.05080462, -0.796615, -0.60234815, 0.2314499, 0.5960986, -0.7688284, 0, 0, 0)
+transform = Transform3D(0.9715194, -0.10035337, 0.21466103, 0.050804622, -0.79661494, -0.60234815, 0.23144992, 0.5960986, -0.7688284, 0, 0, 0)
 rotation_order = 4
 light_energy = 0.0
 
@@ -325,6 +327,9 @@ collide_with_areas = true
 
 [node name="VisonArea" parent="Player/Head" parent_id_path=PackedInt32Array(1787083053, 1930568842) index="1" unique_id=1217002574]
 priority = -1
+
+[node name="CollisionShape3D" parent="Player/Head/VisonArea" index="1" unique_id=438761273]
+transform = Transform3D(20, 0, 0, 0, -5.151387e-07, -10, 0, 11.785, -4.371139e-07, 0, 0, -9.925962)
 
 [node name="DinerObjects" type="Node3D" parent="." unique_id=1725515699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
@@ -673,6 +678,22 @@ autostart = true
 
 [node name="Sister_Rig_Posed" parent="DinerObjects" unique_id=1332264291 instance=ExtResource("8_lkiu4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.157986, 0.48458505, 4.2928057)
+
+[node name="Lights" type="Node3D" parent="." unique_id=1997916156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1987791408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304461, 0.64324325, 6.257141)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.2
+shadow_enabled = true
+shadow_caster_mask = 4293918721
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=1971300963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.6222142, 7.1429768)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.2
+shadow_enabled = true
 
 [node name="Crosshair" type="CanvasLayer" parent="." unique_id=1119697816]
 

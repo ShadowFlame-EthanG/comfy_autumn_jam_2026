@@ -127,7 +127,6 @@ layout_mode = 2
 texture = ExtResource("1_48xlc")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2031253484]
-visible = false
 layout_mode = 2
 texture = ExtResource("2_1ehe0")
 
@@ -205,8 +204,7 @@ offset_right = 1853.0
 offset_bottom = 850.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "ArrowtotheJess - SFX/
-Composing"
+text = "ArrowtotheJess - SFX"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1047544002]
 layout_mode = 2
