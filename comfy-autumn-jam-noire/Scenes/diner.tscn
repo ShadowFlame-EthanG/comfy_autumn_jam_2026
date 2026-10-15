@@ -1,6 +1,9 @@
 [gd_scene format=4 uid="uid://wpmatbhhskoa"]
 
 [ext_resource type="PackedScene" uid="uid://b4v2pv375xej5" path="res://Scenes/player.tscn" id="1_2p1rj"]
+[ext_resource type="Script" uid="uid://dwv7cub8xqlyp" path="res://Scripts/day_night_cycle.gd" id="1_6dcs1"]
+[ext_resource type="Shader" uid="uid://mwf8eshh1ia2" path="res://Materials/sky.gdshader" id="1_yengi"]
+[ext_resource type="Texture2D" uid="uid://dwp30engimy3h" path="res://Assets/2D_assets/stars.png" id="2_8hscu"]
 [ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="2_caap6"]
 [ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="3_0k504"]
 [ext_resource type="Texture2D" uid="uid://cfd31pmd5n45n" path="res://Assets/3D_Textures/CaseFile_Newspaper_Cash_Notepad_mat.png" id="4_udb6o"]
@@ -34,12 +37,42 @@ func _on_timer_timeout() -> void:
 	
 "
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2p1rj"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6dcs1"]
+shader = ExtResource("1_yengi")
+shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
+shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 2.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.6
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_texture = ExtResource("2_8hscu")
+shader_parameter/stars_speed = 1.0
+shader_parameter/stars_scale = 1.0
+shader_parameter/stars_opacity = 1.0
+shader_parameter/overwritten_time = 0.0
 
 [sub_resource type="Sky" id="Sky_lwn67"]
-sky_material = SubResource("ProceduralSkyMaterial_2p1rj")
+sky_material = SubResource("ShaderMaterial_6dcs1")
 
 [sub_resource type="Environment" id="Environment_k4132"]
 background_mode = 2
@@ -225,10 +258,31 @@ script = SubResource("GDScript_28flt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324498035]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=675597158]
 environment = SubResource("Environment_k4132")
+
+[node name="DayNightCycle" type="Node3D" parent="." unique_id=253194168]
+script = ExtResource("1_6dcs1")
+day_time = 5.8512
+latitude = -7.180000000000007
+planet_axial_tilt = -17.139999999999986
+moon_orbital_inclination = -29.139999999999986
+moon_orbital_period = 120.1
+clouds_cutoff = 0.6
+sun_base_enegry = 1.0
+moon_base_enegry = 1.0
+
+[node name="Sun" type="DirectionalLight3D" parent="DayNightCycle" unique_id=813679549]
+transform = Transform3D(0.9512641, 0.12489208, 0.28195506, -0.10849562, 0.99140567, -0.073099345, -0.28866136, 0.038945895, 0.9566388, 0, 0, 0)
+rotation_order = 4
+light_energy = 0.0
+
+[node name="Moon" type="DirectionalLight3D" parent="DayNightCycle" unique_id=1516065154]
+transform = Transform3D(0.99630386, -0.01297854, -0.08491274, 0.08313553, -0.10302493, 0.9911984, -0.021612436, -0.9945941, -0.10156515, 0, 0, 0)
+rotation_order = 4
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1584187324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.258563, 0, 0)
