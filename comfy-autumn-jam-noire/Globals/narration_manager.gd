@@ -3,6 +3,7 @@ extends InkPlayer
 signal dialogue_engaged()
 signal dialogue_finished()
 signal skipping()
+signal picture_change(name: String)
 
 var skipped: int = 0
 var interact = true
@@ -20,6 +21,7 @@ func _ready() -> void:
 
 func _on_loaded(_successfully: Variant) -> void:
 	pass
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("more_dialogue") and not has_choices:
@@ -34,7 +36,16 @@ func start_dialogue(path: String) -> void:
 	Modes.change_mode(Enums.GameplayMode.NARRATION)
 	interact = false
 	choose_path(path)
+	change_picture()
 	advance()
+
+func change_picture() -> void:
+	if NarrationManager.get_current_path() == "margaret_loop.0":
+		print("Margaret!")
+		picture_change.emit("Margaret")
+	if NarrationManager.get_current_path() == "waitress_loop.0":
+		print("Waitress!")
+		picture_change.emit("Waitress")
 
 func advance():
 	if can_continue:

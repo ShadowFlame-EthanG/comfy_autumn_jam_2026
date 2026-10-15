@@ -28,3 +28,9 @@ collision_layer = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WaitressWipe/WaitressWipe" index="0" unique_id=1182998126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75457764, 0)
 shape = SubResource("CapsuleShape3D_riyp8")
+
+[node name="Waitress_Rig_WipingCounter" type="StaticBody3D" parent="." index="2" unique_id=1300470906]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Waitress_Rig_WipingCounter" index="0" unique_id=1985897637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75457764, 0)
+shape = SubResource("CapsuleShape3D_riyp8")

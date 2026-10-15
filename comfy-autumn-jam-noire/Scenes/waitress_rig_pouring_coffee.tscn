@@ -28,3 +28,9 @@ collision_layer = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WaitressPour/WaitressPour" index="0" unique_id=966292064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69244385, 0)
 shape = SubResource("CapsuleShape3D_mnay3")
+
+[node name="Waitress_Rig_PouringCoffee" type="StaticBody3D" parent="." index="3" unique_id=194002274]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Waitress_Rig_PouringCoffee" index="0" unique_id=552853133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69244385, 0)
+shape = SubResource("CapsuleShape3D_mnay3")

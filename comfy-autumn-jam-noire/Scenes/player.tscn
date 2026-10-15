@@ -76,7 +76,7 @@ transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Head/VisonArea" unique_id=438761273]
-transform = Transform3D(20, 0, 0, 0, -5.151387e-07, -10, 0, 11.785, -4.371139e-07, 0, 0, -9.925962)
+transform = Transform3D(15, 0, 0, 0, -4.5896957e-07, -10, 0, 10.5, -4.371139e-07, 0, 0, -9.925962)
 shape = SubResource("ConvexPolygonShape3D_cvnsp")
 
 [node name="VisonTimer" type="Timer" parent="." unique_id=91996298]
