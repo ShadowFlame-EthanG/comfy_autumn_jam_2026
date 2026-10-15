@@ -39,13 +39,13 @@ func _on_timer_timeout() -> void:
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dcs1"]
 shader = ExtResource("1_yengi")
-shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
-shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
-shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/day_top_color = Color(0.92642474, 0.8607745, 0.3905972, 1)
+shader_parameter/day_bottom_color = Color(0.7221106, 0.58618176, 0.36516806, 1)
+shader_parameter/sunset_top_color = Color(0.61573136, 0.8192093, 0.737822, 1)
 shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
-shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
-shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
-shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/night_top_color = Color(0.16696051, 0.046521507, 0.16791409, 1)
+shader_parameter/night_bottom_color = Color(0.06573416, 0.026144564, 0.0035601067, 1)
+shader_parameter/horizon_color = Color(0.6666868, 0.3658676, 0.14868343, 1)
 shader_parameter/horizon_blur = 0.05
 shader_parameter/sun_color = Color(10, 8, 1, 1)
 shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
@@ -266,23 +266,46 @@ environment = SubResource("Environment_k4132")
 
 [node name="DayNightCycle" type="Node3D" parent="." unique_id=253194168]
 script = ExtResource("1_6dcs1")
-day_time = 5.8512
+day_time = 15.8588
+latitude = -4.359999999999999
+planet_axial_tilt = 20.97999999999999
+moon_orbital_inclination = -29.139999999999983
+clouds_cutoff = 0.6
+sun_base_enegry = 1.0
+moon_base_enegry = 1.31
+
+[node name="Sun" type="DirectionalLight3D" parent="DayNightCycle" unique_id=813679549]
+transform = Transform3D(0.947997, -0.064388, -0.31169847, 0.114646204, -0.8445039, 0.52313423, -0.29691413, -0.5316647, -0.7932052, 0, 0, 0)
+rotation_order = 4
+light_color = Color(0.9712382, 0.7622248, 0.23750204, 1)
+
+[node name="Moon" type="DirectionalLight3D" parent="DayNightCycle" unique_id=1516065154]
+transform = Transform3D(0.96838605, 0.06022019, -0.24207845, -0.1945186, 0.78983945, -0.5816495, 0.15617608, 0.61035, 0.77658343, 0, 0, 0)
+rotation_order = 4
+light_color = Color(0.6988109, 0.66082877, 0.46008945, 1)
+light_energy = 0.0
+
+[node name="DayNightCycleChoice" type="Node3D" parent="." unique_id=30151742]
+visible = false
+script = ExtResource("1_6dcs1")
+day_time = 20.4394
 latitude = -7.180000000000007
 planet_axial_tilt = -17.139999999999986
-moon_orbital_inclination = -29.139999999999986
+moon_orbital_inclination = -29.139999999999983
 moon_orbital_period = 120.1
 clouds_cutoff = 0.6
 sun_base_enegry = 1.0
 moon_base_enegry = 1.0
 
-[node name="Sun" type="DirectionalLight3D" parent="DayNightCycle" unique_id=813679549]
-transform = Transform3D(0.9512641, 0.12489208, 0.28195506, -0.10849562, 0.99140567, -0.073099345, -0.28866136, 0.038945895, 0.9566388, 0, 0, 0)
+[node name="Sun" type="DirectionalLight3D" parent="DayNightCycleChoice" unique_id=1348694021]
+transform = Transform3D(0.97151935, -0.100353375, 0.21466103, 0.05080462, -0.796615, -0.60234815, 0.2314499, 0.5960986, -0.7688284, 0, 0, 0)
 rotation_order = 4
 light_energy = 0.0
 
-[node name="Moon" type="DirectionalLight3D" parent="DayNightCycle" unique_id=1516065154]
-transform = Transform3D(0.99630386, -0.01297854, -0.08491274, 0.08313553, -0.10302493, 0.9911984, -0.021612436, -0.9945941, -0.10156515, 0, 0, 0)
+[node name="Moon" type="DirectionalLight3D" parent="DayNightCycleChoice" unique_id=1782260688]
+transform = Transform3D(0.65387595, -0.06444912, -0.75385183, -0.670245, -0.5116034, -0.5376185, -0.35102415, 0.85680115, -0.37772188, 0, 0, 0)
 rotation_order = 4
+light_energy = 0.0
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1584187324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.258563, 0, 0)
