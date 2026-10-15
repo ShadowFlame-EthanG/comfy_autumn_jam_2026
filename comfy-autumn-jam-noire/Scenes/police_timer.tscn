@@ -7,6 +7,7 @@
 script/source = "extends Control
 
 var total_time: int = 60 * 15
+var time_elapsed: int = 0
 
 var started = false
 func _ready() -> void:
@@ -16,6 +17,10 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	total_time -= 1
+	time_elapsed += 1
+	if time_elapsed == 60 * 15:
+		$Timer.stop()
+		NavigationManager.case_failed()
 	var m = int(total_time / 60.0)
 	var s = total_time - m * 60
 	$Label.text = '%02d:%02d' % [m,s]

@@ -24,8 +24,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Modes.current_mode == Enums.GameplayMode.DINER:
 		head.rotate_y(-event.relative.x * look_sensitivity)
 		camera.rotate_x(-event.relative.y * look_sensitivity)
-		camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-40), deg_to_rad(40))
-		head.rotation.y = clampf(head.rotation.y, deg_to_rad(-80), deg_to_rad(80))
+		camera.rotation.x = clampf(camera.rotation.x, deg_to_rad(-45), deg_to_rad(40))
+		head.rotation.y = clampf(head.rotation.y, deg_to_rad(-60), deg_to_rad(48))
 		
 		var highlight = Ray_cast.get_collider()
 		if highlight != null and NarrationManager.interact == true:
@@ -39,7 +39,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	
 	if event is InputEventMouseButton and event.pressed:
+		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		var item = Ray_cast.get_collider()
+		if item.name == "Sister":
+			NarrationManager.start_dialogue("margaret_loop")
+		
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if item.name == "Files":
 				show_ui($"../Items/Files UI")
@@ -60,14 +65,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_vison_timer_timeout() -> void:
 	var overlaps = $Head/VisonArea.get_overlapping_bodies()
 	if overlaps.size() > 0:
-		for overlap in overlaps:
-			if overlap.name == "OutsideTree":
-				Watching.i_see_you()
-				print("I see " + overlap.name)
-			else:
-				Watching.i_can_change()
-	else:
-		Watching.i_can_change()
+		Watching.i_see_you(overlaps)
 
 
 func _on_interaction_timer_timeout() -> void:

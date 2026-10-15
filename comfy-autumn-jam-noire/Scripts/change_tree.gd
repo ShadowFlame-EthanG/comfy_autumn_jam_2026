@@ -12,7 +12,7 @@ func _ready() -> void:
 	Watching.changeTime.connect(i_will_change)
 
 func _on_timer_timeout() -> void:
-	print("I changed!")
+	#print("I changed!")
 	if model.mesh != tree2:
 		model.mesh = tree2
 	else:

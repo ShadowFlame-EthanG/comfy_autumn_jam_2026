@@ -9,10 +9,19 @@ extends Control
 @onready var page_4 = $TextureRect4
 @onready var page_5 = $TextureRect5
 
+@onready var text_1 = $TextureRect/TextEdit
+
 var page = 1
 
 func _ready() -> void:
 	MousePosition.open_notes.connect(notes_opened)
+	NarrationManager.choice_made.connect(note_taken)
+
+func note_taken(choice) -> void:
+	if choice == "I'll take the case.":
+		text_1.text = "Sister's Necklace"
+	if choice == "I'll help, but I don't work for free.":
+		text_1.text = "Family is Rich"
 
 func _on_texture_button_pressed() -> void:
 	hide()

@@ -47,7 +47,7 @@ func advance():
 			skipped = 0
 
 func end_it(choice) -> void:
-	if choice == "Okay, I’ll do what I can.":
+	if choice == "Okay, I’ll do what I can." or choice == "Actually, one moment.":
 		dialogue_finished.emit()
 		Modes.change_mode(Enums.GameplayMode.DINER)
 		skipped = 0

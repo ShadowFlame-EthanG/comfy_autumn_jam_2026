@@ -91,3 +91,32 @@ They’ll have already noticed that I took the file and are looking for me. We h
     -> question_sister
 * ->
     -> done_questioning
+    
+
+=== margaret_loop
+\*
+
++ [Walk me through it again.]
+    -> question_sister_loop
+
++ [Anything else you can tell me about your sister?]
+    Um. No, I think that’s about it. She likes to go out dancing. She’s left handed. Little stuff like that, but I’m not sure how that helps the case. 
+    -> END
++ [Actually, one moment.]
+    -> END
+
+=== question_sister_loop
+\*
+
+* [When was the last place you saw her?]
+    A few days before she disappeared. At my place. She left some things there and I was going to return them to her when we went out dancing.
+    -> question_sister_loop
+ * [Had you noticed anything strange about her recently?]
+    Yeah. She’d been acting real paranoid. Always checking over her shoulder, like someone was following her. And she wouldn’t look in the mirror anymore. It was weird.
+    -> question_sister_loop
+* [Know anyone who’d want to hurt her?]
+    Everyone loved Katie. I can't imagine anyone doing anything like this to her.
+    -> question_sister_loop
++ [Nevermind.]
+    -> margaret_loop
+
