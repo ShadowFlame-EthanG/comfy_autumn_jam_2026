@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bulj06tauu54x"]
+
+[ext_resource type="Shader" uid="uid://bh2ayf37l1qc0" path="res://Materials/pixel_perfect_shader.gdshader" id="1_pn3cv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pn3cv")
+shader_parameter/outline_color = Color(0.85428965, 0.4777059, 0.59729713, 1)
+shader_parameter/outline_width = 6.0

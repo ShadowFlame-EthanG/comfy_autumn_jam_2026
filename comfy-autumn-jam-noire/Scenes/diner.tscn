@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b4v2pv375xej5" path="res://Scenes/player.tscn" id="1_2p1rj"]
 [ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="2_caap6"]
 [ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="3_0k504"]
-[ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_skfe1"]
 [ext_resource type="Texture2D" uid="uid://cfd31pmd5n45n" path="res://Assets/3D_Textures/CaseFile_Newspaper_Cash_Notepad_mat.png" id="4_udb6o"]
 [ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
+[ext_resource type="Material" uid="uid://bulj06tauu54x" path="res://Materials/New_Dialogue.tres" id="5_udb6o"]
 [ext_resource type="PackedScene" uid="uid://bmhol54nhe7ht" path="res://news_paper_ui.tscn" id="6_0m8sl"]
 [ext_resource type="Texture2D" uid="uid://b05j5rhof8fiy" path="res://Assets/3D_Textures/Coffee_Cup_mat.png" id="6_6dcs1"]
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
@@ -129,8 +129,8 @@ shadow_mesh = SubResource("ArrayMesh_tuvxq")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gqxw7"]
 points = PackedVector3Array(-0.020825827, 0.0674024, -0.05026539, -0.019969314, 0.04239041, -0.04820872, -0.04820976, 0.04239041, -0.019966422, -0.05026539, 0.0674024, -0.020822547, 0.020812925, 0.0674024, -0.05026539, -0.0366346, 0.01737842, -0.015174087, 0.019956414, 0.04239041, -0.04820872, -0.015172843, 0.01737842, -0.036636267, -0.04820976, 0.04239041, 0.019956578, -0.05026539, 0.0674024, 0.020812701, 0.050264727, 0.0674024, -0.020822547, 0.07473652, 0.047153972, -0.007262308, -0.024557775, 0, -0.010175101, -0.0366346, 0.01737842, 0.015164245, 0.01517218, 0.01737842, -0.036636267, 0.07193449, 0.02794798, -0.007252466, -0.010180596, 0, -0.024552105, -0.019969314, 0.04239041, 0.048198875, -0.020825827, 0.0674024, 0.05026539, 0.050264727, 0.0674024, 0.020812701, 0.06410353, 0.058944114, -0.007350873, 0.07473652, 0.047153972, 0.0071835816, -0.024557775, 0, 0.010165259, -0.015172843, 0.01737842, 0.036626425, 0.010167696, 0, -0.024552105, 0.053115685, 0.011348094, -0.0072131045, 0.07193449, 0.02794798, 0.00696709, 0.019956414, 0.04239041, 0.048198875, 0.020812925, 0.0674024, 0.05026539, 0.06410353, 0.058944114, 0.0073410273, -0.010180596, 0, 0.02454226, 0.01517218, 0.01737842, 0.036626425, 0.024544876, 0, -0.010175101, 0.053115685, 0.011348094, 0.006849002, 0.010167696, 0, 0.02454226, 0.024544876, 0, 0.010165259)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqxw7"]
-albedo_color = Color(0.3892863, 0.38928673, 0.38928658, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udb6o"]
+albedo_texture = ExtResource("4_udb6o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxb7f"]
 
@@ -169,8 +169,8 @@ shadow_mesh = SubResource("ArrayMesh_w3enb")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w734i"]
 points = PackedVector3Array(-0.28696933, 0, -0.22585991, -0.27347508, 0.011113279, -0.21697408, 0.25987735, 0, -0.22585991, -0.27347508, 0, 0.2080288, -0.27347508, 0.007153435, 0.21695796, -0.27347508, 0.019885814, 0.21695796, -0.27347508, 0.026805699, 0.2080288, 0.2734265, 0.011113279, -0.21697408, 0.2734265, 0, 0.2080288, 0.2734265, 0.007153435, 0.21695796, 0.2734265, 0.019885814, 0.21695796, 0.2734265, 0.026805699, 0.2080288)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w734i"]
-albedo_color = Color(0.7741469, 0.72802687, 0.2775171, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dcs1"]
+albedo_texture = ExtResource("4_udb6o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qtah"]
 
@@ -468,7 +468,7 @@ shape = SubResource("ConvexPolygonShape3D_7swlq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.975551, 0.22469735, 5.773678)
 script = ExtResource("2_caap6")
 mesh = NodePath("Cup_v2_002")
-outlineMaterial = ExtResource("4_skfe1")
+outlineMaterial = ExtResource("5_udb6o")
 
 [node name="Cup_v2_002" type="MeshInstance3D" parent="DinerObjects/TableObjects/Coffee" unique_id=478222868]
 transform = Transform3D(0.21766607, 0, -0.8592264, 0, 0.8863682, 0, 0.8592264, 0, 0.21766607, -0.22737789, -0.564, 0.5783329)
@@ -486,11 +486,11 @@ shape = SubResource("ConvexPolygonShape3D_gqxw7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.897404, -1.3098278, -0.20977592)
 script = ExtResource("2_caap6")
 mesh = NodePath("Newspaper_v1_001")
-outlineMaterial = ExtResource("4_skfe1")
+outlineMaterial = ExtResource("5_udb6o")
 
 [node name="Newspaper_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=1848939138]
 transform = Transform3D(0.6280504, 0, -0.07489173, 0, 0.6325, 0, 0.07489173, 0, 0.6280504, -8.533103, 0.9723904, 6.3476)
-material_override = SubResource("StandardMaterial3D_gqxw7")
+material_override = SubResource("StandardMaterial3D_udb6o")
 mesh = SubResource("ArrayMesh_gqxw7")
 
 [node name="Newspaper" type="Area3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=821288583]
@@ -506,11 +506,11 @@ shape = SubResource("ConvexPolygonShape3D_w734i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.424691, -0.2425642, 5.4757433)
 script = ExtResource("2_caap6")
 mesh = NodePath("Notepad_v1_001")
-outlineMaterial = ExtResource("4_skfe1")
+outlineMaterial = ExtResource("5_udb6o")
 
 [node name="Notepad_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Notepad" unique_id=398366922]
 transform = Transform3D(0.5384582, 0, -0.019743696, 0, 0.53882, 0, 0.019743696, 0, 0.5384582, 0.13637447, -0.09657353, 0.9992361)
-material_override = SubResource("StandardMaterial3D_w734i")
+material_override = SubResource("StandardMaterial3D_6dcs1")
 mesh = SubResource("ArrayMesh_w734i")
 
 [node name="Notepad" type="Area3D" parent="DinerObjects/TableObjects/Notepad" unique_id=1805613836]
@@ -525,7 +525,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.929436, 3.0292616, 8.92407
 visible = false
 script = ExtResource("2_caap6")
 mesh = NodePath("MeshInstance3D")
-outlineMaterial = ExtResource("4_skfe1")
+outlineMaterial = ExtResource("5_udb6o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DinerObjects/TableObjects/EvidenceBag" unique_id=1501672130]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.75051594, -2.2842615, 0.26597214)

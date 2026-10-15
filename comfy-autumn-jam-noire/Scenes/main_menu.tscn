@@ -3,6 +3,9 @@
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://ch8t7r6rrqv7l" path="res://Assets/2D_assets/main menu 2.png" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://cvdryalrdyqdd" path="res://Assets/2D_assets/credits.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://b3h1g43lv5k38" path="res://Assets/2D_assets/TITLE .png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://py8toyl8c74g" path="res://Assets/2D_assets/CREDITS (1).png" id="5_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://clb1bpo0u4dc5" path="res://Assets/2D_assets/SETTINGS.png" id="6_yhxw7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6flb"]
 
@@ -12,6 +15,9 @@ script/source = "extends PanelContainer
 @onready var menu = $HBoxContainer/Menu
 @onready var settings = $HBoxContainer/Panels/SettingsPanel
 @onready var credits = $TextureRect2
+@onready var title_img = $HBoxContainer/Menu/Title
+@onready var settings_img = $HBoxContainer/Menu/Settings
+@onready var credits_img = $HBoxContainer/Menu/Credits
 
 func _ready() -> void:
 	menu.visible = true
@@ -20,20 +26,30 @@ func _ready() -> void:
 
 func _on_settings_button_pressed() -> void:
 	if settings.visible == false:
+		title_img.visible = false
 		settings.visible = true
+		settings_img.visible = true
 		if credits.visible == true:
 			credits.visible = false
+			credits_img.visible = false
 	else:
 		settings.visible = false
+		settings_img.visible = false
+		title_img.visible = true
 
 
 func _on_credits_button_pressed() -> void:
 	if credits.visible == false:
+		title_img.visible = false
 		credits.visible = true
+		credits_img.visible = true
 		if settings.visible == true:
 			settings.visible = false
+			settings_img.visible = false
 	else:
 		credits.visible = false
+		credits_img.visible = false
+		title_img.visible = true
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
@@ -117,63 +133,69 @@ texture = ExtResource("2_1ehe0")
 
 [node name="Label" type="Label" parent="TextureRect2" unique_id=1662069010]
 layout_mode = 0
-offset_left = 803.0
+offset_left = 817.0
 offset_top = 540.0
-offset_right = 1043.0
-offset_bottom = 614.0
+offset_right = 1154.0
+offset_bottom = 639.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "ShadowFlameDragn"
+text = "ShadowFlameDragn -
+Programming/Game Design
+"
 
 [node name="Label2" type="Label" parent="TextureRect2" unique_id=1715069400]
 layout_mode = 0
-offset_left = 1281.0
+offset_left = 1232.0
 offset_top = 472.0
-offset_right = 1386.0
-offset_bottom = 535.0
+offset_right = 1530.0
+offset_bottom = 519.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "Refly"
+text = "Refly - Programming/UI"
 
 [node name="Label3" type="Label" parent="TextureRect2" unique_id=309657611]
 layout_mode = 0
-offset_left = 1676.0
-offset_top = 416.0
-offset_right = 1750.0
-offset_bottom = 479.0
+offset_left = 1618.0
+offset_top = 410.0
+offset_right = 2034.0
+offset_bottom = 509.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "Tim"
+text = "Tim - Project Lead/
+Composing/Writer/
+Game Design"
 
 [node name="Label4" type="Label" parent="TextureRect2" unique_id=1144921072]
 layout_mode = 0
-offset_left = 861.0
+offset_left = 817.0
 offset_top = 1010.0
-offset_right = 956.0
-offset_bottom = 1056.0
+offset_right = 1154.0
+offset_bottom = 1075.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "Alex"
+text = "Alex - Character Models/
+Textures"
 
 [node name="Label5" type="Label" parent="TextureRect2" unique_id=1409934849]
 layout_mode = 0
-offset_left = 1229.0
+offset_left = 1109.0
 offset_top = 852.0
-offset_right = 1312.0
-offset_bottom = 902.0
+offset_right = 1493.0
+offset_bottom = 917.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "Chris"
+text = "Chris - World Models/
+Textures/Game Design"
 
 [node name="Label6" type="Label" parent="TextureRect2" unique_id=1998144769]
 layout_mode = 0
-offset_left = 1446.0
+offset_left = 1405.0
 offset_top = 1013.0
-offset_right = 1581.0
+offset_right = 1755.0
 offset_bottom = 1052.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "Christina"
+text = "Christina - UI/2D Pixel Art"
 
 [node name="Label7" type="Label" parent="TextureRect2" unique_id=421621448]
 layout_mode = 0
@@ -183,7 +205,8 @@ offset_right = 1853.0
 offset_bottom = 850.0
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 30
-text = "ArrowtotheJess"
+text = "ArrowtotheJess - SFX/
+Composing"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1047544002]
 layout_mode = 2
@@ -191,7 +214,7 @@ layout_mode = 2
 [node name="Control3" type="Control" parent="HBoxContainer" unique_id=795075633]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.21
+size_flags_stretch_ratio = 0.19
 
 [node name="Menu" type="VBoxContainer" parent="HBoxContainer" unique_id=225031959]
 layout_mode = 2
@@ -204,6 +227,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 5.6
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Menu" unique_id=1419765907]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.21
@@ -211,6 +235,20 @@ theme_override_fonts/normal_font = ExtResource("1_28flt")
 theme_override_font_sizes/normal_font_size = 160
 text = "Smoke & Mirrors"
 vertical_alignment = 1
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/Menu" unique_id=524742470]
+layout_mode = 2
+texture = ExtResource("4_opfnp")
+
+[node name="Credits" type="TextureRect" parent="HBoxContainer/Menu" unique_id=1103704196]
+visible = false
+layout_mode = 2
+texture = ExtResource("5_cp0ys")
+
+[node name="Settings" type="TextureRect" parent="HBoxContainer/Menu" unique_id=1377657986]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_yhxw7")
 
 [node name="StartButton" type="Button" parent="HBoxContainer/Menu" unique_id=1862420641]
 layout_mode = 2
@@ -264,7 +302,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_j7oc2")
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Panels/SettingsPanel" unique_id=62756839]
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, -100)
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer" unique_id=1579353393]
 layout_mode = 2
