@@ -223,7 +223,7 @@ script = SubResource("GDScript_28flt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324498035]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-shadow_enabled = true
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=675597158]
 environment = SubResource("Environment_k4132")
@@ -663,6 +663,111 @@ bus = &"SFX"
 
 [node name="CJGG_2026_Environment_v2" parent="." unique_id=431917471 instance=ExtResource("16_7swlq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0, -0.657)
+
+[node name="Lights" type="Node3D" parent="CJGG_2026_Environment_v2" unique_id=1468647887]
+
+[node name="streetlamplight1" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=797713580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6847429, 1.6648314, 6.671459)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight2" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1703503399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6847429, 1.6648314, -0.32538992)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight3" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1620126059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.435571, 1.6648314, -0.32538992)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight4" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=167015433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50881, 1.6648314, -8.065548)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight5" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=72871680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47301292, 1.6648314, -8.065548)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight9" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1388733581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.710472, 1.6648314, -8.065548)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight6" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1460666302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8287754, 1.6648314, 6.9897456)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight7" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=48507513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8287754, 1.6648314, 1.4211469)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="streetlamplight8" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=2078941808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8287754, 1.6648314, -3.8996782)
+light_color = Color(0.928899, 0.49472255, 1.92523e-07, 1)
+light_size = 0.5
+shadow_enabled = true
+
+[node name="Tablelight" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=625552108]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.8358593, 0.67911315, 9.555134)
+light_color = Color(0.96022576, 0.7470782, 0.28442612, 1)
+light_energy = 0.5
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+light_specular = 1.0
+
+[node name="dinerlight" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1794013282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8438396, 0.64516705, 7.387742)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight2" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=444065602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8438396, 0.64516705, 5.22724)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight3" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1349388553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8438396, 0.64516705, 3.0362127)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight4" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=62618838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1939955, 0.64516705, 4.3409824)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight5" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=917532023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1939955, 0.64516705, 5.9155807)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight6" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=1839167221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1939955, 0.64516705, 7.504216)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight7" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=927640137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1939955, 0.64516705, 9.078842)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
+
+[node name="dinerlight8" type="OmniLight3D" parent="CJGG_2026_Environment_v2/Lights" unique_id=700197939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1939955, 0.64516705, 10.423852)
+light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
+light_energy = 0.3
 
 [node name="Characters" type="Node3D" parent="." unique_id=167680288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0, -0.657)
