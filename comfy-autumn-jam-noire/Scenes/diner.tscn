@@ -12,8 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
 [ext_resource type="PackedScene" uid="uid://d0x0xdp166vv3" path="res://Scenes/coffee.tscn" id="12_f6flb"]
 [ext_resource type="PackedScene" uid="uid://do5py0tctfsuv" path="res://Scenes/police_timer.tscn" id="13_wi4wa"]
+[ext_resource type="PackedScene" uid="uid://dw7yp0dvuhmmn" path="res://Scenes/sister_rig_sitting_holding_coffee.tscn" id="15_7swlq"]
+[ext_resource type="Script" uid="uid://p6phpjc2kp8u" path="res://Scenes/waitress_swap.gd" id="15_ohgys"]
 [ext_resource type="AudioStream" uid="uid://cv0muh3ri1k6x" path="res://Assets/Ambience/Diner ambience.wav" id="15_tr1nw"]
 [ext_resource type="PackedScene" uid="uid://ddirhnrx3hklw" path="res://Scenes/cjgg_2026_environment_v_1.tscn" id="16_7swlq"]
+[ext_resource type="PackedScene" uid="uid://b5i7aahafq07o" path="res://Scenes/waitress_rig_pouring_coffee.tscn" id="16_w734i"]
+[ext_resource type="PackedScene" uid="uid://3b0xgmv6yngo" path="res://Scenes/waitress_rig_stool_sitting.tscn" id="17_ohgys"]
+[ext_resource type="PackedScene" uid="uid://dtsmbrk7ttoac" path="res://Scenes/waitress_rig_wiping_counter.tscn" id="18_mnbyv"]
 
 [sub_resource type="GDScript" id="GDScript_28flt"]
 script/source = "extends Node3D
@@ -659,6 +664,27 @@ bus = &"SFX"
 [node name="CJGG_2026_Environment_v2" parent="." unique_id=431917471 instance=ExtResource("16_7swlq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0, -0.657)
 
+[node name="Characters" type="Node3D" parent="." unique_id=167680288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0, -0.657)
+script = ExtResource("15_ohgys")
+
+[node name="Sister_Rig_SittingHoldingCoffee2" parent="Characters" unique_id=109918414 instance=ExtResource("15_7swlq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1436367, -0.9741989, 8.972402)
+
+[node name="Waitress_Rig_PouringCoffee" parent="Characters" unique_id=1662026296 instance=ExtResource("16_w734i")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9384336, -0.9704482, 3.2931178)
+visible = false
+
+[node name="Waitress_Rig_StoolSitting" parent="Characters" unique_id=917316413 instance=ExtResource("17_ohgys")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.9384995, -0.68634236, 9.039083)
+visible = false
+
+[node name="Waitress_Rig_WipingCounter" parent="Characters" unique_id=740282228 instance=ExtResource("18_mnbyv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.05124, -0.8299024, 7.018679)
+
+[node name="WaitressTimer" type="Timer" parent="Characters" unique_id=475924311]
+wait_time = 5.0
+
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
@@ -677,5 +703,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0, -0.657)
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Characters/WaitressTimer" to="Characters" method="_on_waitress_timer_timeout"]
 
 [editable path="Player"]

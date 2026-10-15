@@ -42,7 +42,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		var item = Ray_cast.get_collider()
-		if item.name == "Sister":
+		if item and item.name == "Sister":
 			NarrationManager.start_dialogue("margaret_loop")
 		
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
@@ -65,6 +65,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_vison_timer_timeout() -> void:
 	var overlaps = $Head/VisonArea.get_overlapping_bodies()
 	if overlaps.size() > 0:
+		print(overlaps)
 		Watching.i_see_you(overlaps)
 
 

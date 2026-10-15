@@ -2,12 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cu5u2ccmp4sss" path="res://Assets/Models/CJGG_2026_Environment_v1.fbx" id="1_u2mar"]
 [ext_resource type="Script" uid="uid://x4sb1rn0jsu7" path="res://Scripts/swaps.gd" id="2_wnyc2"]
-[ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="3_7m8ij"]
-[ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_dg3hp"]
 [ext_resource type="Texture2D" uid="uid://b70g5n4q8ifvk" path="res://Assets/3D_Textures/Necklace_mat.png" id="5_8oal4"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wnyc2"]
-points = PackedVector3Array(-0.20404434, -30.734886, -54.9358, 11.966667, -28.530907, -46.63233, -0.31607628, -30.603838, -44.61431, -12.542805, -28.667912, -46.90226, -0.33135223, -28.203289, -103.26553, 18.983925, -19.994953, -50.128525, 7.5312347, 8.591255, 0.7462311, 6.1002846, 7.9300613, 0.7333832, 15.643345, -22.740993, -106.54322, -5.123253, 6.4766235, 1.0932922, -6.528742, 7.1854706, 1.1318512, -19.4684, -19.756687, -50.128525, -16.183834, -22.228718, -106.299, -0.40773773, -24.325476, -116.941826, 8.137222, -21.424562, -118.728485, 17.639545, 16.77576, -31.40075, 10.596828, 10.122128, -7.5829315, 8.33073, 10.473572, 0.6948242, 25.858597, -5.2819023, -76.17003, 0.14732742, 22.023613, 1.183258, 0.31537437, 19.378838, 1.1446991, -0.5757866, 16.656628, 1.1318512, -2.4854164, 8.585297, 1.0675812, -3.6057339, 6.875725, 1.0675812, 11.747696, -14.103777, -122.94448, 22.395798, -9.040581, -114.25542, -7.099085, 10.181694, 1.183258, -7.267132, 9.085659, 1.1704102, -9.49758, 9.222664, -7.133049, -7.7712746, 20.22469, 1.3117981, -15.740799, 17.002117, -30.976585, -26.159744, -5.019808, -76.49138, -22.615469, -8.31982, -113.934074, -12.313649, -13.662981, -122.764534, -8.881407, -21.114815, -118.599945, -0.41792297, -20.57871, -125.51521, 2.810625, -19.482677, -126.19646, 4.175375, -16.724726, -127.79031, 14.568859, 23.566399, -34.56275, 8.936722, 24.894745, -2.0944214, 9.715851, 21.958092, -2.1586914, 9.206615, 21.660255, 0.2706604, 25.364635, -0.040006638, -73.08516, -1.6451797, 24.400337, 1.2475281, -7.0481606, 22.780117, 1.3375092, -3.7279491, 19.801765, 1.2346802, 8.310364, -6.6638565, -127.096214, 15.959068, 4.84449, -121.9419, 16.004902, 6.2562256, -119.39687, 22.436539, -7.6288433, -111.69754, -7.3944397, 23.566399, -0.87332153, -8.260139, 20.665485, -1.0918274, -12.33911, 23.733189, -34.112877, -25.446815, 0.091041565, -73.136566, -22.56964, -6.8663845, -111.37619, -15.868108, 5.3448524, -121.74909, -8.703175, -6.354109, -126.96768, -3.5548096, -13.794029, -129.30704, -4.9195595, -16.551981, -127.71319, -3.6210098, -19.363544, -126.14504, -0.39246178, -17.225088, -128.88287, 2.8768272, -13.907206, -129.35846, 6.6349792, 28.415154, -36.22087, 6.578964, 27.19999, -2.3386383, 8.56498, 24.233551, 0.15496826, -4.8075275, 24.733913, 1.3117981, 6.385456, 26.252872, 0.026428223, -4.9653893, 25.812077, -1.0018616, -0.15821266, -3.4591522, -128.7672, 0.111680984, 10.783321, -125.07819, 0.16260529, 12.224842, -122.52031, -4.1251526, 28.325806, -35.912384, -15.817184, 6.804245, -119.16551, -0.32626152, -12.697996, -129.97543, 2.3013916, 30.11877, -35.218292, 2.9684887, 26.931934, -2.4157639)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dg3hp"]
 points = PackedVector3Array(-0.27693796, -2.2320974, -1.1699462, -1.695192, -1.4498888, -0.4504106, -1.5041671, -1.3428781, -1.0601248, -0.4352764, -1.6580896, -1.9373294, 1.2805521, -0.60902584, -2.1537826, 1.713542, -1.9097219, -0.22529936, -0.10713792, -1.8049498, 1.7063735, -0.59870875, -1.9276315, 0.5352485, -1.3377631, -1.5573473, 1.0861785, -2.0055015, -1.0513967, -0.17107224, -1.7448585, -0.4948511, -1.6643707, -0.6555917, 0.068858385, -2.2658825, -0.01969099, 0.6943567, -2.4527156, 0.16114593, 1.8275964, -1.7204206, 1.7666044, 0.3742199, -1.2583503, 1.7207584, -0.43037593, -1.1963763, 1.9032936, 0.24303079, 0.46507215, 1.4049306, 0.28646207, 1.3687067, 0.9184537, 0.07512689, 2.001661, 0.86157084, -1.542124, 1.1486082, -1.1696612, -1.0630381, 1.8831818, -2.1651134, 0.20900226, 1.3194921, -2.4333973, -0.04531622, -0.059883595, -1.2261196, 1.8755052, -1.4538416, 0.8564768, 2.3420541, 0.14973402, 0.8840692, 1.9547555, -0.97855616, 1.7848582, 1.0561337, -0.6841799, 1.7071748, 1.8441632, -0.026618242, 1.3837056, 1.910877, 1.2452145, 1.0806127, 1.281349, 1.9191811, -0.3176899, 0.99121094, 2.2026207, -0.19585848, 2.200567, 1.228354, -0.9743912, 1.9117725, 0.3415799, -2.2423723, 0.55018306, 0.52659035, -1.8195705, 1.0332987, -0.55111825)
@@ -90,21 +85,7 @@ circle_lamps = [NodePath("Street Lamp_Round_v1_001"), NodePath("Street Lamp_Roun
 
 [node name="LampTimer" type="Timer" parent="Timers" index="1" unique_id=1675734713]
 
-[node name="Sister" type="Node3D" parent="." index="1" unique_id=617318200 node_paths=PackedStringArray("mesh")]
-transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, -5.065462, -0.9852013, 8.943159)
-script = ExtResource("3_7m8ij")
-mesh = NodePath("../sister_geo_001")
-outlineMaterial = ExtResource("4_dg3hp")
-
-[node name="Sister" type="Area3D" parent="Sister" index="0" unique_id=1115883184]
-transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 0, 0, 0)
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sister/Sister" index="0" unique_id=1145104864]
-transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_wnyc2")
-
-[node name="TreeCollisions" type="Node3D" parent="." index="2" unique_id=415092367]
+[node name="TreeCollisions" type="Node3D" parent="." index="1" unique_id=415092367]
 
 [node name="Leaves_v2_009" type="StaticBody3D" parent="TreeCollisions" index="0" unique_id=1208840292]
 
@@ -178,7 +159,7 @@ shape = SubResource("ConvexPolygonShape3D_uuj6j")
 transform = Transform3D(1.1499999, 0, 0, 0, 1.1499999, 0, 0, 0, 1.1499999, -2.5062008, 0.9253157, 8.5861635)
 shape = SubResource("ConvexPolygonShape3D_mni5a")
 
-[node name="LampostCollisions" type="Node3D" parent="." index="3" unique_id=1163206741]
+[node name="LampostCollisions" type="Node3D" parent="." index="2" unique_id=1163206741]
 
 [node name="Street Lamp_Square_v1_001" type="StaticBody3D" parent="LampostCollisions" index="0" unique_id=1268769703]
 
@@ -234,57 +215,61 @@ shape = SubResource("ConvexPolygonShape3D_ldbri")
 transform = Transform3D(1.1499999, 0, 0, 0, 1.1499999, 0, 0, 0, 1.1499999, -6.4754486, -0.98015475, -8.084528)
 shape = SubResource("ConvexPolygonShape3D_h57kk")
 
-[node name="Case File_v1_001" parent="." index="20" unique_id=450157477]
+[node name="Case File_v1_001" parent="." index="19" unique_id=450157477]
 visible = false
 
-[node name="Cash_v1_001" parent="." index="21" unique_id=1252817622]
+[node name="Cash_v1_001" parent="." index="20" unique_id=1252817622]
 visible = false
 
-[node name="Clumped Necklace_v1_001" parent="." index="25" unique_id=1101884879]
+[node name="Clumped Necklace_v1_001" parent="." index="24" unique_id=1101884879]
 visible = false
 material_override = SubResource("StandardMaterial3D_7108p")
 
-[node name="Cup_v2_002" parent="." index="37" unique_id=1299106942]
+[node name="Cup_v2_002" parent="." index="36" unique_id=1299106942]
 visible = false
 
-[node name="Newspaper_v1_001" parent="." index="84" unique_id=1548740753]
+[node name="Newspaper_v1_001" parent="." index="83" unique_id=1548740753]
 visible = false
 
-[node name="Notepad_v1_001" parent="." index="85" unique_id=921183132]
+[node name="Notepad_v1_001" parent="." index="84" unique_id=921183132]
 visible = false
 
-[node name="Street Lamp_Round_v1_001" parent="." index="116" unique_id=547487328]
+[node name="Street Lamp_Round_v1_001" parent="." index="115" unique_id=547487328]
 visible = false
 
-[node name="Street Lamp_Round_v1_002" parent="." index="117" unique_id=1250621740]
+[node name="Street Lamp_Round_v1_002" parent="." index="116" unique_id=1250621740]
 visible = false
 
-[node name="Street Lamp_Round_v1_003" parent="." index="118" unique_id=1460191730]
+[node name="Street Lamp_Round_v1_003" parent="." index="117" unique_id=1460191730]
 visible = false
 
-[node name="Street Lamp_Round_v1_004" parent="." index="119" unique_id=1241242264]
+[node name="Street Lamp_Round_v1_004" parent="." index="118" unique_id=1241242264]
 visible = false
 
-[node name="Street Lamp_Round_v1_005" parent="." index="120" unique_id=63157633]
+[node name="Street Lamp_Round_v1_005" parent="." index="119" unique_id=63157633]
 visible = false
 
-[node name="Street Lamp_Round_v1_006" parent="." index="121" unique_id=1834570096]
+[node name="Street Lamp_Round_v1_006" parent="." index="120" unique_id=1834570096]
 visible = false
 
-[node name="Street Lamp_Round_v1_007" parent="." index="122" unique_id=13641921]
+[node name="Street Lamp_Round_v1_007" parent="." index="121" unique_id=13641921]
 visible = false
 
-[node name="Street Lamp_Round_v1_008" parent="." index="123" unique_id=51835678]
+[node name="Street Lamp_Round_v1_008" parent="." index="122" unique_id=51835678]
 visible = false
 
-[node name="Street Lamp_Round_v1_009" parent="." index="124" unique_id=201270264]
+[node name="Street Lamp_Round_v1_009" parent="." index="123" unique_id=201270264]
 visible = false
 
-[node name="Table_v2 _001" parent="." index="134" unique_id=1971498085]
+[node name="Table_v2 _001" parent="." index="133" unique_id=1971498085]
 material_override = SubResource("StandardMaterial3D_gqxw7")
 
-[node name="sister_geo_001" parent="." index="160" unique_id=444635665]
+[node name="sister_geo" parent="." index="158" unique_id=81245778]
+visible = false
+
+[node name="sister_geo_001" parent="." index="159" unique_id=444635665]
 transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, -5.065462, -0.9852013, 8.943159)
+visible = false
 
 [connection signal="timeout" from="Timers/TreeTimer" to="." method="_on_tree_timer_timeout"]
 [connection signal="timeout" from="Timers/LampTimer" to="." method="_on_lamp_timer_timeout"]
