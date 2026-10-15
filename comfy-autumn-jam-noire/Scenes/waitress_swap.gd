@@ -7,10 +7,14 @@ extends Node3D
 
 func _ready() -> void:
 	waitress_timer.start()
-	Watching.isSeen.connect(waitress_seen)
+	NarrationManager.dialogue_engaged.connect(waitress_stop)
+	NarrationManager.dialogue_finished.connect(waitress_start)
 
-func waitress_seen(names) -> void:
-	pass
+func waitress_stop() -> void:
+	waitress_timer.paused = true
+	
+func waitress_start() -> void:
+	waitress_timer.paused = false
 
 func _on_waitress_timer_timeout() -> void:
 	if waitress_wipe.visible == true:

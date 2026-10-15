@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cexa7cvy6foj1"
+path="res://.godot/imported/typewriter type 1.wav-f79e3b20f63ac3fe6931a48441c4aea5.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Typewriter/typewriter type 1.wav"
+dest_files=["res://.godot/imported/typewriter type 1.wav-f79e3b20f63ac3fe6931a48441c4aea5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -44,6 +44,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		var item = Ray_cast.get_collider()
 		if item and item.name == "Sister":
 			NarrationManager.start_dialogue("margaret_loop")
+		if item and (item.name == "WaitressSit" or item.name == "WaitressWipe"):
+			NarrationManager.start_dialogue("waitress_loop")
 		
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if item.name == "Files":
@@ -65,7 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_vison_timer_timeout() -> void:
 	var overlaps = $Head/VisonArea.get_overlapping_bodies()
 	if overlaps.size() > 0:
-		print(overlaps)
+		#print(overlaps)
 		Watching.i_see_you(overlaps)
 
 

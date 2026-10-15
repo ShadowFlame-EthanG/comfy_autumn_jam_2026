@@ -120,3 +120,14 @@ They’ll have already noticed that I took the file and are looking for me. We h
 + [Nevermind.]
     -> margaret_loop
 
+=== waitress_loop
+\*
+
++ [Could I get more coffee?]
+    Sure thing, hon.
+    -> END
+
++ [Actually, I'm good.]
+    -> END
+
+-> DONE

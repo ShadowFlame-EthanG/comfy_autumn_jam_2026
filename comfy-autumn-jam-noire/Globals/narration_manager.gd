@@ -20,7 +20,6 @@ func _ready() -> void:
 
 func _on_loaded(_successfully: Variant) -> void:
 	pass
-	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("more_dialogue") and not has_choices:
@@ -47,7 +46,7 @@ func advance():
 			skipped = 0
 
 func end_it(choice) -> void:
-	if choice == "Okay, I’ll do what I can." or choice == "Actually, one moment.":
+	if choice == "Okay, I’ll do what I can." or choice == "Actually, one moment." or choice == "Actually, I'm good.":
 		dialogue_finished.emit()
 		Modes.change_mode(Enums.GameplayMode.DINER)
 		skipped = 0
