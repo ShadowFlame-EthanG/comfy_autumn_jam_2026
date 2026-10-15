@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://ch8t7r6rrqv7l" path="res://Assets/2D_assets/main menu 2.png" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cvdryalrdyqdd" path="res://Assets/2D_assets/credits.png" id="2_1ehe0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6flb"]
 
@@ -10,7 +11,7 @@ script/source = "extends PanelContainer
 
 @onready var menu = $HBoxContainer/Menu
 @onready var settings = $HBoxContainer/Panels/SettingsPanel
-@onready var credits = $HBoxContainer/Panels/CreditsPanel
+@onready var credits = $TextureRect2
 
 func _ready() -> void:
 	menu.visible = true
@@ -109,22 +110,107 @@ script = SubResource("GDScript_28flt")
 layout_mode = 2
 texture = ExtResource("1_48xlc")
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2031253484]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_1ehe0")
+
+[node name="Label" type="Label" parent="TextureRect2" unique_id=1662069010]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 540.0
+offset_right = 1043.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "ShadowFlameDragn"
+
+[node name="Label2" type="Label" parent="TextureRect2" unique_id=1715069400]
+layout_mode = 0
+offset_left = 1281.0
+offset_top = 472.0
+offset_right = 1386.0
+offset_bottom = 535.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Refly"
+
+[node name="Label3" type="Label" parent="TextureRect2" unique_id=309657611]
+layout_mode = 0
+offset_left = 1676.0
+offset_top = 416.0
+offset_right = 1750.0
+offset_bottom = 479.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Tim"
+
+[node name="Label4" type="Label" parent="TextureRect2" unique_id=1144921072]
+layout_mode = 0
+offset_left = 861.0
+offset_top = 1010.0
+offset_right = 956.0
+offset_bottom = 1056.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Alex"
+
+[node name="Label5" type="Label" parent="TextureRect2" unique_id=1409934849]
+layout_mode = 0
+offset_left = 1229.0
+offset_top = 852.0
+offset_right = 1312.0
+offset_bottom = 902.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Chris"
+
+[node name="Label6" type="Label" parent="TextureRect2" unique_id=1998144769]
+layout_mode = 0
+offset_left = 1446.0
+offset_top = 1013.0
+offset_right = 1581.0
+offset_bottom = 1052.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "Christina"
+
+[node name="Label7" type="Label" parent="TextureRect2" unique_id=421621448]
+layout_mode = 0
+offset_left = 1624.0
+offset_top = 799.0
+offset_right = 1853.0
+offset_bottom = 850.0
+theme_override_fonts/font = ExtResource("1_28flt")
+theme_override_font_sizes/font_size = 30
+text = "ArrowtotheJess"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1047544002]
 layout_mode = 2
 
 [node name="Control3" type="Control" parent="HBoxContainer" unique_id=795075633]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.9
+size_flags_stretch_ratio = 0.21
 
 [node name="Menu" type="VBoxContainer" parent="HBoxContainer" unique_id=225031959]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.54
 
 [node name="Control" type="Control" parent="HBoxContainer/Menu" unique_id=2015681130]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Menu" unique_id=1419765907]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.21
+theme_override_fonts/normal_font = ExtResource("1_28flt")
+theme_override_font_sizes/normal_font_size = 160
+text = "Smoke & Mirrors"
+vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="HBoxContainer/Menu" unique_id=1862420641]
 layout_mode = 2
@@ -132,6 +218,7 @@ theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
 text = "Play"
+alignment = 0
 script = SubResource("GDScript_48xlc")
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer/Menu" unique_id=1072074112]
@@ -140,6 +227,7 @@ theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
 text = "Settings"
+alignment = 0
 
 [node name="CreditsButton" type="Button" parent="HBoxContainer/Menu" unique_id=85895454]
 layout_mode = 2
@@ -147,6 +235,7 @@ theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ce3w2")
 text = "Credits"
+alignment = 0
 
 [node name="QuitButton" type="Button" parent="HBoxContainer/Menu" unique_id=1684992423]
 layout_mode = 2
@@ -154,6 +243,7 @@ theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_n45e2")
 text = "Quit"
+alignment = 0
 script = SubResource("GDScript_erv1k")
 
 [node name="Control2" type="Control" parent="HBoxContainer/Menu" unique_id=186948915]
@@ -163,7 +253,7 @@ size_flags_vertical = 3
 [node name="Panels" type="PanelContainer" parent="HBoxContainer" unique_id=515465152]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 4.0
+size_flags_stretch_ratio = 1.01
 theme_override_styles/panel = SubResource("StyleBoxEmpty_pb32r")
 
 [node name="SettingsPanel" type="PanelContainer" parent="HBoxContainer/Panels" unique_id=430947669]
@@ -173,6 +263,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_j7oc2")
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Panels/SettingsPanel" unique_id=62756839]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -100)
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer" unique_id=1579353393]
 layout_mode = 2
