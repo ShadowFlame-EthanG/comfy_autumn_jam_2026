@@ -14,6 +14,7 @@
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
 [ext_resource type="PackedScene" uid="uid://dmwg0asmtcsy8" path="res://notes_ui.tscn" id="7_d7ods"]
 [ext_resource type="PackedScene" uid="uid://8oh1cwssr3f7" path="res://Assets/Sister_Rig_Posed.fbx" id="8_lkiu4"]
+[ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="8_ppigy"]
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
 [ext_resource type="PackedScene" uid="uid://d0x0xdp166vv3" path="res://Scenes/coffee.tscn" id="12_f6flb"]
 [ext_resource type="PackedScene" uid="uid://do5py0tctfsuv" path="res://Scenes/police_timer.tscn" id="13_wi4wa"]
@@ -267,21 +268,21 @@ environment = SubResource("Environment_k4132")
 
 [node name="DayNightCycle" type="Node3D" parent="." unique_id=253194168]
 script = ExtResource("1_6dcs1")
-day_time = 2.1647
+day_time = 1.6941000000000002
 clouds_cutoff = 0.6
 time_scale = 0.0
 sun_base_enegry = 0.1
 moon_base_enegry = 0.1
 
 [node name="Sun" type="DirectionalLight3D" parent="DayNightCycle" unique_id=813679549]
-transform = Transform3D(0.9206749, 0, -0.39032957, -0.3293085, 0.5368653, -0.776744, 0.20955439, 0.843668, 0.49427846, 0, 0, 0)
+transform = Transform3D(0.92066413, 0, -0.39035475, -0.35258752, 0.4291164, -0.83158934, 0.16750757, 0.9032492, 0.39507216, 0, 0, 0)
 rotation_order = 4
 light_color = Color(0.97966796, 0.9518536, 0.9503023, 1)
 light_energy = 0.0
 shadow_enabled = true
 
 [node name="Moon" type="DirectionalLight3D" parent="DayNightCycle" unique_id=1516065154]
-transform = Transform3D(0.99157155, 0, -0.12955917, 0.042535987, -0.94456893, 0.32554588, -0.1223776, -0.3283131, -0.9366075, 0, 0, 0)
+transform = Transform3D(0.99631745, 0, -0.0857384, 0.018333174, -0.9768716, 0.21303935, -0.08375542, -0.21382684, -0.973274, 0, 0, 0)
 rotation_order = 4
 light_color = Color(0.99073595, 0.9888881, 0.97662705, 1)
 light_energy = 0.1
@@ -550,7 +551,7 @@ shape = SubResource("ConvexPolygonShape3D_7swlq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.975551, 0.22469735, 5.773678)
 script = ExtResource("2_caap6")
 mesh = NodePath("Cup_v2_002")
-outlineMaterial = ExtResource("5_udb6o")
+outlineMaterial = ExtResource("8_ppigy")
 
 [node name="Cup_v2_002" type="MeshInstance3D" parent="DinerObjects/TableObjects/Coffee" unique_id=478222868]
 transform = Transform3D(0.21766607, 0, -0.8592264, 0, 0.8863682, 0, 0.8592264, 0, 0.21766607, -0.22737789, -0.564, 0.5783329)
@@ -568,7 +569,7 @@ shape = SubResource("ConvexPolygonShape3D_gqxw7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.897404, -1.3098278, -0.20977592)
 script = ExtResource("2_caap6")
 mesh = NodePath("Newspaper_v1_001")
-outlineMaterial = ExtResource("5_udb6o")
+outlineMaterial = ExtResource("8_ppigy")
 
 [node name="Newspaper_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=1848939138]
 transform = Transform3D(0.6280504, 0, -0.07489173, 0, 0.6325, 0, 0.07489173, 0, 0.6280504, -8.533103, 0.9723904, 6.3476)
@@ -588,7 +589,7 @@ shape = SubResource("ConvexPolygonShape3D_w734i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.424691, -0.2425642, 5.4757433)
 script = ExtResource("2_caap6")
 mesh = NodePath("Notepad_v1_001")
-outlineMaterial = ExtResource("5_udb6o")
+outlineMaterial = ExtResource("8_ppigy")
 
 [node name="Notepad_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Notepad" unique_id=398366922]
 transform = Transform3D(0.5384582, 0, -0.019743696, 0, 0.53882, 0, 0.019743696, 0, 0.5384582, 0.13637447, -0.09657353, 0.9992361)
@@ -682,17 +683,156 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.157986, 0.48458505, 4.2928
 [node name="Lights" type="Node3D" parent="." unique_id=1997916156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1987791408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304461, 0.64324325, 6.257141)
-light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
-light_energy = 0.2
+[node name="DinerLights" type="Node3D" parent="Lights" unique_id=1901967205]
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights/DinerLights" unique_id=982685819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304461, 0.75, 4.09105)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
 shadow_enabled = true
 shadow_caster_mask = 4293918721
+omni_attenuation = 1.966
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=1971300963]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.6222142, 7.1429768)
-light_color = Color(0.9607843, 0.7490196, 0.28627452, 1)
-light_energy = 0.2
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights/DinerLights" unique_id=293083786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304, 0.75, 6.2609997)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+shadow_caster_mask = 4293918721
+omni_attenuation = 1.966
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights/DinerLights" unique_id=616827339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304461, 0.75, 1.9179177)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+shadow_caster_mask = 4293918721
+omni_attenuation = 1.966
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights/DinerLights" unique_id=77574513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304461, 0.75, -0.26313162)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+shadow_caster_mask = 4293918721
+omni_attenuation = 1.966
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights/DinerLights" unique_id=1971300963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.75, 7.1429768)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+omni_attenuation = 1.966
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights/DinerLights" unique_id=1987633065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.75, 5.7728643)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+omni_attenuation = 1.966
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights/DinerLights" unique_id=980591528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.75, 4.1988273)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+omni_attenuation = 1.966
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights/DinerLights" unique_id=1089002116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.75, 2.6283278)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+omni_attenuation = 1.966
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights/DinerLights" unique_id=997545701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9483833, 0.75, 1.0474105)
+light_color = Color(0.9197775, 0.7593109, 0.43406978, 1)
+light_energy = 0.161
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+omni_attenuation = 1.966
+
+[node name="StreetLamps" type="Node3D" parent="Lights" unique_id=644492332]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=2109560860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.451334, 1.6484537, 3.368802)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=1760837235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.987717, 1.6439099, 3.6833158)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=2052823777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.987717, 1.6439099, -1.8815637)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=304947023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.987717, 1.6439099, -7.173623)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=1430302513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.881672, 1.6439099, -11.365018)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=1902903180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.659865, 1.6439099, -11.365018)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=1861461131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.646932, 1.6439099, -11.365018)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=1139512990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.726033, 1.6439099, -3.645039)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
+shadow_enabled = true
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Lights/StreetLamps" unique_id=196383858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.419871, 1.6439099, -3.645039)
+light_color = Color(0.92941177, 0.49411765, 0, 1)
+light_size = 0.318
 shadow_enabled = true
 
 [node name="Crosshair" type="CanvasLayer" parent="." unique_id=1119697816]
@@ -785,19 +925,19 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.0
 [node name="WaitressTimer" type="Timer" parent="Characters" unique_id=475924311]
 wait_time = 5.0
 
-[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_exited"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]

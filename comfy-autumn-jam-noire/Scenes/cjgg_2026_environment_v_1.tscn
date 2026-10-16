@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfd31pmd5n45n" path="res://Assets/3D_Textures/CaseFile_Newspaper_Cash_Notepad_mat.png" id="4_a36v6"]
 [ext_resource type="Texture2D" uid="uid://b70g5n4q8ifvk" path="res://Assets/3D_Textures/Necklace_mat.png" id="5_8oal4"]
 [ext_resource type="Texture2D" uid="uid://b05j5rhof8fiy" path="res://Assets/3D_Textures/Coffee_Cup_mat.png" id="5_7108p"]
+[ext_resource type="Texture2D" uid="uid://b1d8fd61jlqpa" path="res://Assets/3D_Textures/Jukebox_Clock_Menu_Container_mat.png" id="5_iryjg"]
 [ext_resource type="Texture2D" uid="uid://cckgocteap8mw" path="res://Assets/3D_Textures/WaterCup_Spoon_Fork_Knife_mat.png" id="7_a36v6"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dg3hp"]
@@ -81,11 +82,17 @@ albedo_texture = ExtResource("3_4v8aq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4otc"]
 albedo_texture = ExtResource("4_a36v6")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvk3r"]
+albedo_texture = ExtResource("5_iryjg")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7108p"]
 albedo_texture = ExtResource("5_8oal4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v8aq"]
 albedo_texture = ExtResource("4_8oal4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3o5a"]
+albedo_texture = ExtResource("5_iryjg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a36v6"]
 albedo_texture = ExtResource("5_7108p")
@@ -93,8 +100,14 @@ albedo_texture = ExtResource("5_7108p")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcsk4"]
 albedo_texture = ExtResource("7_a36v6")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwjnt"]
+albedo_texture = ExtResource("5_iryjg")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fmie"]
 albedo_texture = ExtResource("7_a36v6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vtww"]
+albedo_texture = ExtResource("5_iryjg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oal4"]
 albedo_texture = ExtResource("4_8oal4")
@@ -269,6 +282,12 @@ visible = false
 visible = false
 material_override = SubResource("StandardMaterial3D_a4otc")
 
+[node name="Clock_v1_001" parent="." index="22" unique_id=1665382843]
+material_override = SubResource("StandardMaterial3D_uvk3r")
+
+[node name="Clock_v1_002" parent="." index="23" unique_id=1923330511]
+material_override = SubResource("StandardMaterial3D_uvk3r")
+
 [node name="Clumped Necklace_v1_001" parent="." index="24" unique_id=1101884879]
 visible = false
 material_override = SubResource("StandardMaterial3D_7108p")
@@ -281,6 +300,18 @@ material_override = SubResource("StandardMaterial3D_4v8aq")
 
 [node name="Coffee Pot_004" parent="." index="27" unique_id=867151770]
 material_override = SubResource("StandardMaterial3D_4v8aq")
+
+[node name="Container_v1_001" parent="." index="30" unique_id=2036667213]
+material_override = SubResource("StandardMaterial3D_a3o5a")
+
+[node name="Container_v1_002" parent="." index="31" unique_id=772818301]
+material_override = SubResource("StandardMaterial3D_a3o5a")
+
+[node name="Container_v1_003" parent="." index="32" unique_id=1457075240]
+material_override = SubResource("StandardMaterial3D_a3o5a")
+
+[node name="Container_v1_004" parent="." index="33" unique_id=647377369]
+material_override = SubResource("StandardMaterial3D_a3o5a")
 
 [node name="Cup_v2_001" parent="." index="35" unique_id=1032042207]
 material_override = SubResource("StandardMaterial3D_a36v6")
@@ -316,8 +347,23 @@ material_override = SubResource("StandardMaterial3D_a36v6")
 [node name="Fork_001" parent="." index="48" unique_id=1600122116]
 material_override = SubResource("StandardMaterial3D_mcsk4")
 
+[node name="Jukebox_v1_001" parent="." index="51" unique_id=1837744872]
+material_override = SubResource("StandardMaterial3D_jwjnt")
+
 [node name="Knife_001" parent="." index="52" unique_id=1006596390]
 material_override = SubResource("StandardMaterial3D_4fmie")
+
+[node name="Menu_v1_001" parent="." index="66" unique_id=2004604557]
+material_override = SubResource("StandardMaterial3D_2vtww")
+
+[node name="Menu_v1_002" parent="." index="67" unique_id=792766442]
+material_override = SubResource("StandardMaterial3D_2vtww")
+
+[node name="Menu_v1_003" parent="." index="68" unique_id=469735806]
+material_override = SubResource("StandardMaterial3D_2vtww")
+
+[node name="Menu_v1_004" parent="." index="69" unique_id=965499580]
+material_override = SubResource("StandardMaterial3D_2vtww")
 
 [node name="Newspaper_v1_001" parent="." index="83" unique_id=1548740753]
 visible = false

@@ -20,6 +20,11 @@ func _ready() -> void:
 	Modes.mode_changed.connect(interaction)
 	add_to_group("player")
 	
+# Testing for locking camera in final scene
+#func _process(_delta: float) -> void:
+#	if Modes.current_mode == Enums.GameplayMode.NARRATION:
+#		camera.rotation.x = deg_to_rad(-15.0)
+#		head.rotation.y = deg_to_rad(-4.0)
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Modes.current_mode == Enums.GameplayMode.DINER:
 		head.rotate_y(-event.relative.x * look_sensitivity)
