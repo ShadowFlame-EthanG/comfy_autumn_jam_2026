@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://boibdg3tu01d1"]
+
+[ext_resource type="Texture2D" uid="uid://cp0opth6831wg" path="res://Assets/3D_Textures/CoffeePot_Salt_Pepper_CoffeePot_Salt_Pepper_mat_BaseColor_Utility - sRGB - Texture.1001.png" id="1_7etub"]
+
+[resource]
+albedo_texture = ExtResource("1_7etub")

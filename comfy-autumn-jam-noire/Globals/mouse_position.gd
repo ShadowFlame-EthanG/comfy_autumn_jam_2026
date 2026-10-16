@@ -12,6 +12,7 @@ signal gone()
 signal open_newspaper
 signal open_files
 signal open_notes
+signal gun_choice
 
 func newspaper_selected() -> void:
 	open_newspaper.emit()
@@ -21,3 +22,6 @@ func files_selected() -> void:
 
 func notes_selected() -> void:
 	open_notes.emit()
+	
+func make_choice() -> void:
+	gun_choice.emit()

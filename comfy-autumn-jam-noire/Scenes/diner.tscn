@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b5i7aahafq07o" path="res://Scenes/waitress_rig_pouring_coffee.tscn" id="16_w734i"]
 [ext_resource type="PackedScene" uid="uid://3b0xgmv6yngo" path="res://Scenes/waitress_rig_stool_sitting.tscn" id="17_ohgys"]
 [ext_resource type="PackedScene" uid="uid://dtsmbrk7ttoac" path="res://Scenes/waitress_rig_wiping_counter.tscn" id="18_mnbyv"]
-[ext_resource type="PackedScene" uid="uid://dna8j5ceqmpxt" path="res://Scenes/dopp_rig_sitting.tscn" id="26_vn7h4"]
+[ext_resource type="PackedScene" uid="uid://cbrhrimjnbysm" path="res://Scenes/dopp_rig_sitting_necklace_real.tscn" id="26_svxoy"]
 [ext_resource type="PackedScene" uid="uid://clj6oodkgjdlr" path="res://Scenes/katie_rig_sitting.tscn" id="27_svxoy"]
 
 [sub_resource type="GDScript" id="GDScript_28flt"]
@@ -35,8 +35,12 @@ script/source = "extends Node3D
 @onready var street_lamps = $Lights/StreetLamps
 @onready var choice_lights = $Lights/ChoiceLights
 @onready var katie = $Characters/Katie_Rig_Sitting
-@onready var dopp = $Characters/Dopp_Rig_Sitting
+@onready var dopp = $Characters/Dopp_Rig_Sitting_Necklace
 @onready var margaret = $Characters/Sister_Rig_SittingHoldingCoffee2
+@onready var files = $DinerObjects/TableObjects/Files
+@onready var coffee = $DinerObjects/TableObjects/Coffee
+@onready var newspaper = $DinerObjects/TableObjects/Newspaper
+
 
 func _ready() -> void:
 	#$Timer.start()
@@ -50,8 +54,11 @@ func change_lights() -> void:
 	if NarrationManager.final_scene:
 		diner_lights.visible = false
 		street_lamps.visible = false
-		choice_lights.visible = true
 		margaret.visible = false
+		newspaper.visible = false
+		coffee.visible = false
+		files.visible = false
+		choice_lights.visible = true
 		katie.visible = true
 		dopp.visible = true
 		NarrationManager.start_dialogue(\"the_choice\")
@@ -696,6 +703,16 @@ shadow_enabled = true
 shadow_caster_mask = 4293918721
 omni_attenuation = 1.966
 
+[node name="OmniLight3D13" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=530590037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.962927, 0.75, 5.7891016)
+light_color = Color(0.65822273, 0, 0.029885346, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 0.1
+shadow_enabled = true
+shadow_caster_mask = 4293918721
+omni_attenuation = 1.966
+
 [node name="OmniLight3D12" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=1955639044]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.947178, 0.75, 7.123616)
 light_color = Color(0.34901962, 0.79607844, 0.53333336, 1)
@@ -949,8 +966,8 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.0
 [node name="WaitressTimer" type="Timer" parent="Characters" unique_id=475924311]
 wait_time = 5.0
 
-[node name="Dopp_Rig_Sitting" parent="Characters" unique_id=1656327083 instance=ExtResource("26_vn7h4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.168705, -0.9368937, 8.957528)
+[node name="Dopp_Rig_Sitting_Necklace" parent="Characters" unique_id=1704166302 instance=ExtResource("26_svxoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, -0.937, 8.958)
 visible = false
 
 [node name="Katie_Rig_Sitting" parent="Characters" unique_id=207026941 instance=ExtResource("27_svxoy")]

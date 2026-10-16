@@ -3,12 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://cu5u2ccmp4sss" path="res://Assets/Models/CJGG_2026_Environment_v1.fbx" id="1_u2mar"]
 [ext_resource type="Script" uid="uid://x4sb1rn0jsu7" path="res://Scripts/swaps.gd" id="2_wnyc2"]
 [ext_resource type="Texture2D" uid="uid://d3jyg2a3qfmif" path="res://Assets/3D_Textures/Plate_PlatePie_Bowl_BowlSoup_mat.png" id="3_4v8aq"]
+[ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="3_371my"]
 [ext_resource type="Texture2D" uid="uid://cp0opth6831wg" path="res://Assets/3D_Textures/CoffeePot_Salt_Pepper_CoffeePot_Salt_Pepper_mat_BaseColor_Utility - sRGB - Texture.1001.png" id="4_8oal4"]
 [ext_resource type="Texture2D" uid="uid://cfd31pmd5n45n" path="res://Assets/3D_Textures/CaseFile_Newspaper_Cash_Notepad_mat.png" id="4_a36v6"]
+[ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_mcsk4"]
 [ext_resource type="Texture2D" uid="uid://b70g5n4q8ifvk" path="res://Assets/3D_Textures/Necklace_mat.png" id="5_8oal4"]
 [ext_resource type="Texture2D" uid="uid://b05j5rhof8fiy" path="res://Assets/3D_Textures/Coffee_Cup_mat.png" id="5_7108p"]
 [ext_resource type="Texture2D" uid="uid://b1d8fd61jlqpa" path="res://Assets/3D_Textures/Jukebox_Clock_Menu_Container_mat.png" id="5_iryjg"]
+[ext_resource type="Material" uid="uid://cp04mpjx3jvli" path="res://Materials/Hiding.tres" id="5_mcsk4"]
 [ext_resource type="Texture2D" uid="uid://cckgocteap8mw" path="res://Assets/3D_Textures/WaterCup_Spoon_Fork_Knife_mat.png" id="7_a36v6"]
+[ext_resource type="Material" uid="uid://boibdg3tu01d1" path="res://Materials/test_gun.tres" id="10_4fmie"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dg3hp"]
 points = PackedVector3Array(-0.27693796, -2.2320974, -1.1699462, -1.695192, -1.4498888, -0.4504106, -1.5041671, -1.3428781, -1.0601248, -0.4352764, -1.6580896, -1.9373294, 1.2805521, -0.60902584, -2.1537826, 1.713542, -1.9097219, -0.22529936, -0.10713792, -1.8049498, 1.7063735, -0.59870875, -1.9276315, 0.5352485, -1.3377631, -1.5573473, 1.0861785, -2.0055015, -1.0513967, -0.17107224, -1.7448585, -0.4948511, -1.6643707, -0.6555917, 0.068858385, -2.2658825, -0.01969099, 0.6943567, -2.4527156, 0.16114593, 1.8275964, -1.7204206, 1.7666044, 0.3742199, -1.2583503, 1.7207584, -0.43037593, -1.1963763, 1.9032936, 0.24303079, 0.46507215, 1.4049306, 0.28646207, 1.3687067, 0.9184537, 0.07512689, 2.001661, 0.86157084, -1.542124, 1.1486082, -1.1696612, -1.0630381, 1.8831818, -2.1651134, 0.20900226, 1.3194921, -2.4333973, -0.04531622, -0.059883595, -1.2261196, 1.8755052, -1.4538416, 0.8564768, 2.3420541, 0.14973402, 0.8840692, 1.9547555, -0.97855616, 1.7848582, 1.0561337, -0.6841799, 1.7071748, 1.8441632, -0.026618242, 1.3837056, 1.910877, 1.2452145, 1.0806127, 1.281349, 1.9191811, -0.3176899, 0.99121094, 2.2026207, -0.19585848, 2.200567, 1.228354, -0.9743912, 1.9117725, 0.3415799, -2.2423723, 0.55018306, 0.52659035, -1.8195705, 1.0332987, -0.55111825)
@@ -73,6 +77,9 @@ points = PackedVector3Array(-0.16968071, 2.5979388, -0.0702906, -0.07029058, 2.5
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h57kk"]
 points = PackedVector3Array(-0.16968071, 2.5979388, -0.0702906, -0.07029058, 2.5979388, 0.16964753, -0.024083465, 2.7424948, 0.009932369, -3.3184886e-05, 2.7707007, -3.321469e-05, -0.009965554, 2.7424948, -0.024083495, 0.07025744, 2.5979388, -0.16968073, -3.3184886e-05, 0.16733775, -0.14991565, -0.1060006, 0.16733775, -0.106000625, -0.1060006, 0, -0.106000625, -0.14991564, 0, -3.321469e-05, -0.14991564, 0.16733775, -3.321469e-05, 0.1696808, 2.5979388, 0.070257396, 0.009932414, 2.7424948, 0.024050295, -0.1060006, 0.16733775, 0.10596742, -0.1060006, 0, 0.10596742, -3.3184886e-05, 0, 0.14988245, -3.3184886e-05, 0.16733775, 0.14988245, 0.024050325, 2.7424948, -0.009965584, 0.1498825, 0.16733775, -3.321469e-05, 0.10596746, 0.16733775, -0.106000625, 0.10596746, 0, -0.106000625, -3.3184886e-05, 0, -0.14991565, 0.1498825, 0, -3.321469e-05, 0.10596746, 0.16733775, 0.10596742, 0.10596746, 0, 0.10596742)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g7ynl"]
+points = PackedVector3Array(-0.23631425, 0.06934844, -4.084781e-06, -0.24216458, 0.06928737, -4.084781e-06, -0.08065574, 0.067748375, 0.004179146, -0.054499656, 0.06783387, 0.0041707363, -0.054499656, 0.06783387, -0.0041747, -0.08065574, 0.067748375, -0.00418311, -0.25122407, 0.06022439, -0.0036785994, -0.25122407, 0.06022439, 0.0036746357, -0.1006207, 0.04952471, 0.021475434, -0.11320174, 0.06497574, 0.006970769, -0.11320174, 0.06501238, -0.0069831405, -0.1006207, 0.04952471, -0.021475192, -0.055039242, 0.065110095, 0.006970769, -0.028968364, 0.06266724, 0.0029262789, -0.028741166, 0.06330238, 1.2107193e-07, -0.028968364, 0.06266724, -0.0029302426, -0.055039242, 0.065110095, -0.0069831405, -0.25122407, 0.054214984, -0.0063020512, -0.25122407, 0.054214984, 0.0062980875, -0.1006207, 0.033389688, 0.021471228, -0.08065574, 0.033389688, 0.021475434, -0.062337965, 0.04952471, 0.021475434, -0.1006207, 0.033389688, -0.021475192, -0.062337965, 0.04952471, -0.021475192, -0.022862434, 0.060712963, 0.0029262789, -0.022606835, 0.061348103, 1.2107193e-07, -0.022862434, 0.060712963, -0.0029302426, -0.25122407, 0.04821778, -0.0036785994, -0.010309786, -0.052733, -0.008954934, -0.25122407, 0.04821778, 0.0036746357, -0.010309786, -0.052733, 0.008946765, -0.062337965, 0.033389688, 0.021475434, 0.035072863, -0.052733, 0.008946765, 0.027461767, -0.027864786, 0.008946765, 0.015335113, -0.0011277907, 0.008946765, -0.0027270764, 0.023276284, 0.008946765, -0.009060204, 0.03601575, 0.006970769, -0.062337965, 0.033389688, -0.021475192, -0.009060204, 0.03601575, -0.0069831405, -0.0027270764, 0.023276284, -0.008954934, 0.015335113, -0.0011277907, -0.008954934, 0.027461767, -0.027864786, -0.008954934, 0.035072863, -0.052733, -0.008954934, -0.007384628, 0.038971595, 0.004343111, -0.007384628, 0.038971595, -0.004347075, -0.01334855, -0.055383492, -0.00420413, 0.038906813, -0.05543235, -0.0042125396, -0.01334855, -0.055383492, 0.004200166, 0.038906813, -0.05543235, 0.004208576, 0.030614108, -0.027608287, 0.0043052733, 0.018402249, -0.0006025769, 0.0043178853, 0.018402249, -0.0006025769, -0.004321849, 0.030614108, -0.027608287, -0.004309237)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6rrs"]
 albedo_texture = ExtResource("3_4v8aq")
 
@@ -87,9 +94,6 @@ albedo_texture = ExtResource("5_iryjg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7108p"]
 albedo_texture = ExtResource("5_8oal4")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v8aq"]
-albedo_texture = ExtResource("4_8oal4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3o5a"]
 albedo_texture = ExtResource("5_iryjg")
@@ -269,211 +273,230 @@ shape = SubResource("ConvexPolygonShape3D_ldbri")
 transform = Transform3D(1.1499999, 0, 0, 0, 1.1499999, 0, 0, 0, 1.1499999, -6.4754486, -0.98015475, -8.084528)
 shape = SubResource("ConvexPolygonShape3D_h57kk")
 
-[node name="Bowl_Empty_001" parent="." index="14" unique_id=1819757824]
+[node name="Gun" type="Node3D" parent="." index="3" unique_id=1192295422 node_paths=PackedStringArray("mesh", "area")]
+script = ExtResource("3_371my")
+mesh = NodePath("../Gun_v1_001")
+outlineMaterial = ExtResource("4_mcsk4")
+area = NodePath("Gun")
+hideMaterial = ExtResource("5_mcsk4")
+gunMaterial = ExtResource("10_4fmie")
+
+[node name="Gun" type="Area3D" parent="Gun" index="0" unique_id=1552746094]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gun/Gun" index="0" unique_id=733761352]
+transform = Transform3D(-0.46813247, -1.0504055, 4.5914682e-08, -2.4352194e-22, -5.0268092e-08, -1.1499999, 1.0504055, -0.46813247, 2.046272e-08, -4.9250455, -0.33499998, 9.781274)
+shape = SubResource("ConvexPolygonShape3D_g7ynl")
+
+[node name="Bowl_Empty_001" parent="." index="15" unique_id=1819757824]
 material_override = SubResource("StandardMaterial3D_w6rrs")
 
-[node name="Bowl_With Soup_001" parent="." index="15" unique_id=151029802]
+[node name="Bowl_With Soup_001" parent="." index="16" unique_id=151029802]
 material_override = SubResource("StandardMaterial3D_371my")
 
-[node name="Case File_v1_001" parent="." index="19" unique_id=450157477]
+[node name="Case File_v1_001" parent="." index="20" unique_id=450157477]
 visible = false
 
-[node name="Cash_v1_001" parent="." index="20" unique_id=1252817622]
+[node name="Cash_v1_001" parent="." index="21" unique_id=1252817622]
 visible = false
 material_override = SubResource("StandardMaterial3D_a4otc")
 
-[node name="Clock_v1_001" parent="." index="22" unique_id=1665382843]
+[node name="Clock_v1_001" parent="." index="23" unique_id=1665382843]
 material_override = SubResource("StandardMaterial3D_uvk3r")
 
-[node name="Clock_v1_002" parent="." index="23" unique_id=1923330511]
+[node name="Clock_v1_002" parent="." index="24" unique_id=1923330511]
 material_override = SubResource("StandardMaterial3D_uvk3r")
 
-[node name="Clumped Necklace_v1_001" parent="." index="24" unique_id=1101884879]
+[node name="Clumped Necklace_v1_001" parent="." index="25" unique_id=1101884879]
 visible = false
 material_override = SubResource("StandardMaterial3D_7108p")
 
-[node name="Coffee Pot_001" parent="." index="25" unique_id=1935354051]
-material_override = SubResource("StandardMaterial3D_4v8aq")
+[node name="Coffee Pot_001" parent="." index="26" unique_id=1935354051]
+material_override = ExtResource("10_4fmie")
 
-[node name="Coffee Pot_003" parent="." index="26" unique_id=1076132093]
-material_override = SubResource("StandardMaterial3D_4v8aq")
+[node name="Coffee Pot_003" parent="." index="27" unique_id=1076132093]
+material_override = ExtResource("10_4fmie")
 
-[node name="Coffee Pot_004" parent="." index="27" unique_id=867151770]
-material_override = SubResource("StandardMaterial3D_4v8aq")
+[node name="Coffee Pot_004" parent="." index="28" unique_id=867151770]
+material_override = ExtResource("10_4fmie")
 
-[node name="Container_v1_001" parent="." index="30" unique_id=2036667213]
+[node name="Container_v1_001" parent="." index="31" unique_id=2036667213]
 material_override = SubResource("StandardMaterial3D_a3o5a")
 
-[node name="Container_v1_002" parent="." index="31" unique_id=772818301]
+[node name="Container_v1_002" parent="." index="32" unique_id=772818301]
 material_override = SubResource("StandardMaterial3D_a3o5a")
 
-[node name="Container_v1_003" parent="." index="32" unique_id=1457075240]
+[node name="Container_v1_003" parent="." index="33" unique_id=1457075240]
 material_override = SubResource("StandardMaterial3D_a3o5a")
 
-[node name="Container_v1_004" parent="." index="33" unique_id=647377369]
+[node name="Container_v1_004" parent="." index="34" unique_id=647377369]
 material_override = SubResource("StandardMaterial3D_a3o5a")
 
-[node name="Cup_v2_001" parent="." index="35" unique_id=1032042207]
+[node name="Cup_v2_001" parent="." index="36" unique_id=1032042207]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_002" parent="." index="36" unique_id=1299106942]
+[node name="Cup_v2_002" parent="." index="37" unique_id=1299106942]
 visible = false
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_004" parent="." index="37" unique_id=612532874]
+[node name="Cup_v2_004" parent="." index="38" unique_id=612532874]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_005" parent="." index="38" unique_id=299850785]
+[node name="Cup_v2_005" parent="." index="39" unique_id=299850785]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_006" parent="." index="39" unique_id=1591907456]
+[node name="Cup_v2_006" parent="." index="40" unique_id=1591907456]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_007" parent="." index="40" unique_id=623931234]
+[node name="Cup_v2_007" parent="." index="41" unique_id=623931234]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_008" parent="." index="41" unique_id=1583527475]
+[node name="Cup_v2_008" parent="." index="42" unique_id=1583527475]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_009" parent="." index="42" unique_id=1422175536]
+[node name="Cup_v2_009" parent="." index="43" unique_id=1422175536]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_010" parent="." index="43" unique_id=1677126774]
+[node name="Cup_v2_010" parent="." index="44" unique_id=1677126774]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Cup_v2_011" parent="." index="44" unique_id=215650410]
+[node name="Cup_v2_011" parent="." index="45" unique_id=215650410]
 material_override = SubResource("StandardMaterial3D_a36v6")
 
-[node name="Fork_001" parent="." index="48" unique_id=1600122116]
+[node name="Fork_001" parent="." index="49" unique_id=1600122116]
 material_override = SubResource("StandardMaterial3D_mcsk4")
 
-[node name="Jukebox_v1_001" parent="." index="51" unique_id=1837744872]
+[node name="Gun_v1_001" parent="." index="50" unique_id=1307390933]
+transform = Transform3D(-0.46813247, -1.0504055, 4.5914682e-08, -2.4352194e-22, -5.0268092e-08, -1.1499999, 1.0504055, -0.46813247, 2.046272e-08, -4.925, -0.335, 9.781)
+visible = false
+material_override = ExtResource("10_4fmie")
+
+[node name="Jukebox_v1_001" parent="." index="52" unique_id=1837744872]
 material_override = SubResource("StandardMaterial3D_jwjnt")
 
-[node name="Knife_001" parent="." index="52" unique_id=1006596390]
+[node name="Knife_001" parent="." index="53" unique_id=1006596390]
 material_override = SubResource("StandardMaterial3D_4fmie")
 
-[node name="Menu_v1_001" parent="." index="66" unique_id=2004604557]
+[node name="Menu_v1_001" parent="." index="67" unique_id=2004604557]
 material_override = SubResource("StandardMaterial3D_2vtww")
 
-[node name="Menu_v1_002" parent="." index="67" unique_id=792766442]
+[node name="Menu_v1_002" parent="." index="68" unique_id=792766442]
 material_override = SubResource("StandardMaterial3D_2vtww")
 
-[node name="Menu_v1_003" parent="." index="68" unique_id=469735806]
+[node name="Menu_v1_003" parent="." index="69" unique_id=469735806]
 material_override = SubResource("StandardMaterial3D_2vtww")
 
-[node name="Menu_v1_004" parent="." index="69" unique_id=965499580]
+[node name="Menu_v1_004" parent="." index="70" unique_id=965499580]
 material_override = SubResource("StandardMaterial3D_2vtww")
 
-[node name="Newspaper_v1_001" parent="." index="83" unique_id=1548740753]
+[node name="Newspaper_v1_001" parent="." index="84" unique_id=1548740753]
 visible = false
 
-[node name="Notepad_v1_001" parent="." index="84" unique_id=921183132]
+[node name="Notepad_v1_001" parent="." index="85" unique_id=921183132]
 visible = false
 
-[node name="Pepper_001" parent="." index="94" unique_id=800277326]
+[node name="Pepper_001" parent="." index="95" unique_id=800277326]
 material_override = SubResource("StandardMaterial3D_8oal4")
 
-[node name="Pepper_002" parent="." index="95" unique_id=1165616434]
+[node name="Pepper_002" parent="." index="96" unique_id=1165616434]
 material_override = SubResource("StandardMaterial3D_8oal4")
 
-[node name="Pepper_003" parent="." index="96" unique_id=2018897742]
+[node name="Pepper_003" parent="." index="97" unique_id=2018897742]
 material_override = SubResource("StandardMaterial3D_8oal4")
 
-[node name="Pepper_004" parent="." index="97" unique_id=1875762123]
+[node name="Pepper_004" parent="." index="98" unique_id=1875762123]
 material_override = SubResource("StandardMaterial3D_8oal4")
 
-[node name="Pepper_005" parent="." index="98" unique_id=1709276123]
+[node name="Pepper_005" parent="." index="99" unique_id=1709276123]
 material_override = SubResource("StandardMaterial3D_8oal4")
 
-[node name="Plate_with pie_001" parent="." index="99" unique_id=331930221]
+[node name="Plate_with pie_001" parent="." index="100" unique_id=331930221]
 material_override = SubResource("StandardMaterial3D_uuj6j")
 
-[node name="Salt_001" parent="." index="101" unique_id=321272392]
+[node name="Salt_001" parent="." index="102" unique_id=321272392]
 material_override = SubResource("StandardMaterial3D_iryjg")
 
-[node name="Salt_002" parent="." index="102" unique_id=743445254]
+[node name="Salt_002" parent="." index="103" unique_id=743445254]
 material_override = SubResource("StandardMaterial3D_iryjg")
 
-[node name="Salt_003" parent="." index="103" unique_id=586873539]
+[node name="Salt_003" parent="." index="104" unique_id=586873539]
 material_override = SubResource("StandardMaterial3D_iryjg")
 
-[node name="Salt_004" parent="." index="104" unique_id=715985945]
+[node name="Salt_004" parent="." index="105" unique_id=715985945]
 material_override = SubResource("StandardMaterial3D_iryjg")
 
-[node name="Salt_005" parent="." index="105" unique_id=1515854324]
+[node name="Salt_005" parent="." index="106" unique_id=1515854324]
 material_override = SubResource("StandardMaterial3D_iryjg")
 
-[node name="Spoon_001" parent="." index="106" unique_id=1516348028]
+[node name="Spoon_001" parent="." index="107" unique_id=1516348028]
 material_override = SubResource("StandardMaterial3D_mni5a")
 
-[node name="Street Lamp_Round_v1_001" parent="." index="115" unique_id=547487328]
+[node name="Street Lamp_Round_v1_001" parent="." index="116" unique_id=547487328]
 visible = false
 
-[node name="Street Lamp_Round_v1_002" parent="." index="116" unique_id=1250621740]
+[node name="Street Lamp_Round_v1_002" parent="." index="117" unique_id=1250621740]
 visible = false
 
-[node name="Street Lamp_Round_v1_003" parent="." index="117" unique_id=1460191730]
+[node name="Street Lamp_Round_v1_003" parent="." index="118" unique_id=1460191730]
 visible = false
 
-[node name="Street Lamp_Round_v1_004" parent="." index="118" unique_id=1241242264]
+[node name="Street Lamp_Round_v1_004" parent="." index="119" unique_id=1241242264]
 visible = false
 
-[node name="Street Lamp_Round_v1_005" parent="." index="119" unique_id=63157633]
+[node name="Street Lamp_Round_v1_005" parent="." index="120" unique_id=63157633]
 visible = false
 
-[node name="Street Lamp_Round_v1_006" parent="." index="120" unique_id=1834570096]
+[node name="Street Lamp_Round_v1_006" parent="." index="121" unique_id=1834570096]
 visible = false
 
-[node name="Street Lamp_Round_v1_007" parent="." index="121" unique_id=13641921]
+[node name="Street Lamp_Round_v1_007" parent="." index="122" unique_id=13641921]
 visible = false
 
-[node name="Street Lamp_Round_v1_008" parent="." index="122" unique_id=51835678]
+[node name="Street Lamp_Round_v1_008" parent="." index="123" unique_id=51835678]
 visible = false
 
-[node name="Street Lamp_Round_v1_009" parent="." index="123" unique_id=201270264]
+[node name="Street Lamp_Round_v1_009" parent="." index="124" unique_id=201270264]
 visible = false
 
-[node name="Table_v2 _001" parent="." index="133" unique_id=1971498085]
+[node name="Table_v2 _001" parent="." index="134" unique_id=1971498085]
 material_override = SubResource("StandardMaterial3D_gqxw7")
 
-[node name="Water Cup_001" parent="." index="147" unique_id=1478822677]
+[node name="Water Cup_001" parent="." index="148" unique_id=1478822677]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_002" parent="." index="148" unique_id=425756683]
+[node name="Water Cup_002" parent="." index="149" unique_id=425756683]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_003" parent="." index="149" unique_id=69414464]
+[node name="Water Cup_003" parent="." index="150" unique_id=69414464]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_004" parent="." index="150" unique_id=1702703159]
+[node name="Water Cup_004" parent="." index="151" unique_id=1702703159]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_005" parent="." index="151" unique_id=2123994915]
+[node name="Water Cup_005" parent="." index="152" unique_id=2123994915]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_006" parent="." index="152" unique_id=799412570]
+[node name="Water Cup_006" parent="." index="153" unique_id=799412570]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_007" parent="." index="153" unique_id=1946789926]
+[node name="Water Cup_007" parent="." index="154" unique_id=1946789926]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_008" parent="." index="154" unique_id=1849676532]
+[node name="Water Cup_008" parent="." index="155" unique_id=1849676532]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_009" parent="." index="155" unique_id=171374418]
+[node name="Water Cup_009" parent="." index="156" unique_id=171374418]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_010" parent="." index="156" unique_id=1475004406]
+[node name="Water Cup_010" parent="." index="157" unique_id=1475004406]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="Water Cup_011" parent="." index="157" unique_id=2135293798]
+[node name="Water Cup_011" parent="." index="158" unique_id=2135293798]
 material_override = SubResource("StandardMaterial3D_uag7k")
 
-[node name="sister_geo" parent="." index="158" unique_id=81245778]
+[node name="sister_geo" parent="." index="159" unique_id=81245778]
 visible = false
 
-[node name="sister_geo_001" parent="." index="159" unique_id=444635665]
+[node name="sister_geo_001" parent="." index="160" unique_id=444635665]
 transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, -5.065462, -0.9852013, 8.943159)
 visible = false
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cn2hq2jk00o36"]
+
+[ext_resource type="PackedScene" uid="uid://c6wn0c4syds6w" path="res://Assets/Models/Dopp_Rig_Sitting.fbx" id="1_sox2h"]
+[ext_resource type="Texture2D" uid="uid://cksww3kaj6twp" path="res://Assets/3D_Textures/Dopp_Basecolour.png" id="2_132t0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydh6a"]
+albedo_texture = ExtResource("2_132t0")
+
+[node name="Dopp_Rig_Sitting" unique_id=1656327083 instance=ExtResource("1_sox2h")]
+
+[node name="Dopp_geo" parent="Dopp_rig/Joints/Skeleton3D" parent_id_path=PackedInt32Array(560323010) index="0" unique_id=321590778]
+material_override = SubResource("StandardMaterial3D_ydh6a")

@@ -8,6 +8,7 @@ class_name Player
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var gun = $Head/Gun_v1_001
 
 var prev_high = ""
 
@@ -25,6 +26,14 @@ func _ready() -> void:
 #	if Modes.current_mode == Enums.GameplayMode.NARRATION:
 #		camera.rotation.x = deg_to_rad(-15.0)
 #		head.rotation.y = deg_to_rad(-4.0)
+func show_gun() -> void:
+	if gun.visible == false:
+		gun.visible = true
+		MousePosition.make_choice()
+	else:
+		gun.visible = false
+		MousePosition.make_choice()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and Modes.current_mode == Enums.GameplayMode.DINER:
 		head.rotate_y(-event.relative.x * look_sensitivity)
@@ -51,25 +60,31 @@ func _unhandled_input(event: InputEvent) -> void:
 			NarrationManager.start_dialogue("margaret_loop")
 		if item and (item.name == "WaitressSit" or item.name == "WaitressWipe"):
 			NarrationManager.start_dialogue("waitress_loop")
-		if item and (item.name == "Katie" or item.name == "Dopp") and NarrationManager.final_scene == true and NarrationManager.interact == true:
-			NarrationManager.start_dialogue("katievsdopp")
+		if item and item.name == "Katie" and NarrationManager.final_scene == true and NarrationManager.interact == true:
+			NarrationManager.start_dialogue("katietalk")
+		if item and item.name == "Dopp" and NarrationManager.final_scene == true and NarrationManager.interact == true:
+			NarrationManager.start_dialogue("dopptalk")
+		if item and item.name == "Gun"and NarrationManager.final_scene == true and NarrationManager.interact == true:
+			show_gun()
 		
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
-			if item.name == "Files":
-				show_ui($"../Items/Files UI")
-				MousePosition.files_selected()
-				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-			if item.name == "Newspaper":
-				show_ui($"../Items/NewsPaperUI")
-				MousePosition.newspaper_selected()
-				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			if NarrationManager.final_scene != true:
+				if item.name == "Files":
+					show_ui($"../Items/Files UI")
+					MousePosition.files_selected()
+					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+				if item.name == "Newspaper":
+					show_ui($"../Items/NewsPaperUI")
+					MousePosition.newspaper_selected()
+					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+				if item.name == "Coffee":
+					show_ui($"../Items/Coffee")
+					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 			if item.name == "Notepad":
 				show_ui($"../Items/NotesUI")
 				MousePosition.notes_selected()
 				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-			if item.name == "Coffee":
-				show_ui($"../Items/Coffee")
-				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+			
 
 func _on_vison_timer_timeout() -> void:
 	var overlaps = $Head/VisonArea.get_overlapping_bodies()

@@ -3,13 +3,16 @@ extends Node3D
 @export var mesh: MeshInstance3D
 @export var outlineMaterial: Material
 @export var area: Area3D
+@export var hideMaterial: Material
+@export var gunMaterial: Material
 
 
 func _ready() -> void:
 	MousePosition.highlighted.connect(highlight)
 	MousePosition.gone.connect(not_highlighted)
 	TransitionScreen.on_transition_finished.connect(see_katie_dopp)
-
+	MousePosition.gun_choice.connect(show_hide_gun)
+	
 func highlight(h_name: String) -> void:
 	if h_name == name:
 		mesh.material_overlay = outlineMaterial
@@ -25,3 +28,15 @@ func see_katie_dopp() -> void:
 		if area.name == "Sister" and NarrationManager.final_scene == true:
 			print("Sister change!")
 			area.collision_layer = 1
+		if area.name == "Newspaper" or area.name == "Files" or area.name == "Coffee":
+			area.collision_layer = 1
+		if area.name == "Gun":
+			mesh.visible = true
+			area.collision_layer = 2
+
+func show_hide_gun() -> void:
+	if mesh.name == "Gun_v1_001":
+		if mesh.material_override == gunMaterial:
+			mesh.material_override = hideMaterial
+		else:
+			mesh.material_override = gunMaterial

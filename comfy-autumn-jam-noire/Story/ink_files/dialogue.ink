@@ -1,6 +1,7 @@
 VAR newspaper = false
 VAR asked = 0
-VAR final = 0
+VAR finalkatie = 0
+VAR finaldopp = 0
 VAR katie = false
 VAR talkgirls = false
 
@@ -177,70 +178,104 @@ So. You think you’ve got it all figured out. Well then, detective. Which one o
 
 -> DONE
 
-=== katievsdopp
+=== katietalk
 ~talkgirls = true
-{final == 0: -> final1}
-{final == 1: -> final2}
-{final == 2: -> final3}
-{final == 3: -> final4}
-{final == 4: -> final5}
-{final == 5: -> final6}
+{finalkatie == 0: -> final1}
+{finalkatie  == 1: -> final2}
+{finalkatie  == 2: -> final3}
+{finalkatie  == 3: -> final4}
+{finalkatie  == 4: -> final5}
+{finalkatie  == 5: -> final6}
+-> DONE
+
+=== dopptalk
+~talkgirls = true
+{finaldopp == 0: -> dinal1}
+{finaldopp == 1: -> dinal2}
+{finaldopp == 2: -> dinal3}
+{finaldopp == 3: -> dinal4}
+{finaldopp == 4: -> dinal5}
+{finaldopp == 5: -> dinal6}
 -> DONE
 
 === final1
-Shoot her, detective! Oh God, please shoot her! She’s trying to keep me here in this place forever!
 ~ katie = true
 Please, detective, you’ve got to know that it’s me. I’m the real Katie. Shoot her!
-~ final += 1
-~ katie = false
+~ finalkatie += 1
 \*
 -> DONE
 
 === final2
-This place only exists while she’s alive. She’s keeping us both here! We’ll be stuck here forever unless you shoot her! 
 ~ katie = true
 Don’t listen to a thing she has to say. You talked to my sister Margaret, right? She must have told you about me.
-~ final += 1
-~ katie = false
+~ finalkatie += 1
 \*
 -> DONE
 
 === final3
-All I wanted to do was go out dancing... I don’t even know how I got mixed up in this anyway. 
 ~ katie = true
 I’m so scared, I just want to go home and see my family. You have to shoot her and put an end to this!
-~ katie = false
-~ final += 1
+~ finalkatie += 1
 \*
 -> DONE
 
 === final4
-I kept seeing her move in the mirrors... Oh God, the mirrors. It looked like me, but it wasn’t. It moved on its own. I couldn’t stand it. 
 ~ katie = true
 She’s been watching me, learning everything about me, for... I don’t even know how long. She even copied my face...
-~ final += 1
-~ katie = false
+~ finalkatie += 1
 \*
 -> DONE
 
 === final5
-You’ve got to believe me, detective, I’m the real Katie! 
 ~ katie = true
 She came in through the mirror... I tried to get rid of them all, but I forgot one. Stupid, stupid me. I don’t even remember opening it... just muscle memory, I suppose.
-~ final += 1
-~ katie = false
+~ finalkatie += 1
 \*
 -> DONE
 
 === final6
-My family’s got money. Please, get me out of this and you can have anything you want. I’m begging you.
 ~ katie = true
 No, no, no, this isn’t happening. This isn’t real. Please, shoot her and make it all go away!
-~ final = 0
-~ katie = false
+~ finalkatie = 0
 \*
 -> DONE
 
+=== dinal1
+~ katie = false
+Shoot her, detective! Oh God, please shoot her! She’s trying to keep me here in this place forever!
+~ finaldopp += 1
+-> DONE
+
+=== dinal2
+~ katie = false
+This place only exists while she’s alive. She’s keeping us both here! We’ll be stuck here forever unless you shoot her! 
+~ finaldopp += 1
+-> DONE
+
+=== dinal3
+~ katie = false
+All I wanted to do was go out dancing... I don’t even know how I got mixed up in this anyway. 
+ Please, get me out of this and you can have anything you want. I’m begging you.
+ ~ finaldopp += 1
+-> DONE
+
+=== dinal4
+~ katie = false
+I kept seeing her move in the mirrors... Oh God, the mirrors. It looked like me, but it wasn’t. It moved on its own. I couldn’t stand it. 
+~ finaldopp += 1
+-> DONE
+
+=== dinal5
+~ katie = false
+You’ve got to believe me, detective, I’m the real Katie! 
+~ finaldopp += 1
+-> DONE
+
+=== dinal6
+~ katie = false
+My family’s got money. Please, get me out of this and you can have anything you want. I’m begging you.
+~ finaldopp = 0
+-> DONE
 === dopp_lives
 ~ talkgirls = false
 Oh.. This feeling...
