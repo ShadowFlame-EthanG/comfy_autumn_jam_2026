@@ -9,8 +9,10 @@ class_name Player
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var gun = $Head/Gun_v1_001
+@onready var gunshot = $GunShot
 
 var prev_high = ""
+var gun_active = false
 
 func show_ui(location) -> void:
 	var ui = location
@@ -61,11 +63,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		if item and (item.name == "WaitressSit" or item.name == "WaitressWipe"):
 			NarrationManager.start_dialogue("waitress_loop")
 		if item and item.name == "Katie" and NarrationManager.final_scene == true and NarrationManager.interact == true:
-			NarrationManager.start_dialogue("katietalk")
+			if !gun_active:
+				NarrationManager.start_dialogue("katietalk")
+			else:
+				gunshot.play()
+				NarrationManager.katie_dies = true
+				NavigationManager.go_to_choice()
 		if item and item.name == "Dopp" and NarrationManager.final_scene == true and NarrationManager.interact == true:
-			NarrationManager.start_dialogue("dopptalk")
+			if !gun_active:
+				NarrationManager.start_dialogue("dopptalk")
+			else:
+				gunshot.play()
+				NavigationManager.go_to_choice()
 		if item and item.name == "Gun"and NarrationManager.final_scene == true and NarrationManager.interact == true:
 			show_gun()
+			if gun_active:
+				gun_active = false
+			else:
+				gun_active = true
 		
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if NarrationManager.final_scene != true:

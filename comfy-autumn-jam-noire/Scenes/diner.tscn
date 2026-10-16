@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b5i7aahafq07o" path="res://Scenes/waitress_rig_pouring_coffee.tscn" id="16_w734i"]
 [ext_resource type="PackedScene" uid="uid://3b0xgmv6yngo" path="res://Scenes/waitress_rig_stool_sitting.tscn" id="17_ohgys"]
 [ext_resource type="PackedScene" uid="uid://dtsmbrk7ttoac" path="res://Scenes/waitress_rig_wiping_counter.tscn" id="18_mnbyv"]
+[ext_resource type="AudioStream" uid="uid://bpdxvi0vqmogq" path="res://Assets/Ambience/Music/Cracking the Case - Smoke & Mirrors.mp3" id="20_svxoy"]
 [ext_resource type="PackedScene" uid="uid://cbrhrimjnbysm" path="res://Scenes/dopp_rig_sitting_necklace_real.tscn" id="26_svxoy"]
 [ext_resource type="PackedScene" uid="uid://clj6oodkgjdlr" path="res://Scenes/katie_rig_sitting.tscn" id="27_svxoy"]
 
@@ -43,7 +44,7 @@ script/source = "extends Node3D
 
 
 func _ready() -> void:
-	#$Timer.start()
+	$Timer.start()
 	TransitionScreen.on_transition_finished.connect(change_lights)
 
 func _on_timer_timeout() -> void:
@@ -64,6 +65,7 @@ func change_lights() -> void:
 		NarrationManager.start_dialogue(\"the_choice\")
 		$Characters/WaitressTimer.stop()
 		$DinerAmbience.stop()
+		$MusicController/Music.stop()
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dcs1"]
@@ -700,6 +702,7 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.1
 shadow_enabled = true
+shadow_bias = 0.27
 shadow_caster_mask = 4293918721
 omni_attenuation = 1.966
 
@@ -933,7 +936,7 @@ offset_bottom = 23.0
 grow_vertical = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=1358224969]
-wait_time = 2.0
+wait_time = 2.5
 one_shot = true
 
 [node name="DinerAmbience" type="AudioStreamPlayer" parent="." unique_id=732517285]
@@ -941,6 +944,13 @@ stream = ExtResource("15_tr1nw")
 volume_db = -15.0
 autoplay = true
 bus = &"SFX"
+
+[node name="MusicController" type="Node" parent="." unique_id=1202312329]
+
+[node name="Music" type="AudioStreamPlayer" parent="MusicController" unique_id=2097913044]
+stream = ExtResource("20_svxoy")
+autoplay = true
+bus = &"Music"
 
 [node name="CJGG_2026_Environment_v2" parent="." unique_id=431917471 instance=ExtResource("16_7swlq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4, 0, -0.657)
@@ -972,6 +982,7 @@ visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Characters/Dopp_Rig_Sitting_Necklace" unique_id=1673206538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00344944, 0.8469328, 0.022972107)
+visible = false
 light_color = Color(0.08261245, 0.61613053, 0.7658033, 1)
 light_energy = 0.05
 omni_range = 0.02

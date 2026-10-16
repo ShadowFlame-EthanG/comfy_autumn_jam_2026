@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c3hevhkuyykts"]
+
+[ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="1_djas6"]
+[ext_resource type="Script" uid="uid://dofgt3r4c7lur" path="res://Scripts/your_choice.gd" id="1_dwdt5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb32r"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="YourChoice" type="Control" unique_id=699278186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwdt5")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=984486997]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pb32r")
+
+[node name="NarrativePanel" parent="." unique_id=881028243 instance=ExtResource("1_djas6")]
+visible = false
+layout_mode = 1
+
+[node name="Margaret" parent="NarrativePanel/PortraitDisplay" parent_id_path=PackedInt32Array(881028243, 597315735) index="1" unique_id=110869402]
+visible = false
+
+[node name="MarginDialogue" parent="NarrativePanel/PanelContainer" parent_id_path=PackedInt32Array(881028243, 665400512) index="0" unique_id=801522792]
+theme_override_constants/margin_left = 512
+theme_override_constants/margin_right = 523
+theme_override_constants/margin_bottom = 150
+
+[node name="NarrativeLines" parent="NarrativePanel/PanelContainer/MarginDialogue/NarrationManager" parent_id_path=PackedInt32Array(881028243, 596296806) index="0" unique_id=99237442]
+size_flags_vertical = 10
+
+[node name="Timer" type="Timer" parent="." unique_id=609662040]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="NarrativePanel"]

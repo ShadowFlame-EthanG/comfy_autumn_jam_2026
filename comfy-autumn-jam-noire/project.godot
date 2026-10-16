@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="comfy_autumn_jam_noire"
-run/main_scene="uid://wpmatbhhskoa"
+run/main_scene="uid://c3dd3oyndslmh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

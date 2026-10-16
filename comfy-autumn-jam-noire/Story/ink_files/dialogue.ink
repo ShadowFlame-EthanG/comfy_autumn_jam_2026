@@ -297,8 +297,6 @@ You did it... Oh thank God, you did it. How did you know? How did you know it wa
 
 Well, in any case, i owe you my life. And more, I’m sure Margaret has promised you some sort of reward. What was that thing?
 
-Well, in any case, i owe you my life. And more, I’m sure Margaret has promised you some sort of reward. What was that thing? It... it came out of my mirror.
-
 I’m so relieved. I never thought I’d make it back. I need to find...
 
 Margaret!

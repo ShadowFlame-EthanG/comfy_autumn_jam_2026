@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dja8ny86r3jof" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://dps4cl80aqv6k" path="res://Scenes/cone.tscn" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://byao3v0ehrgbh" path="res://Assets/SFX/Revolver.wav" id="3_6t5aa"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pb32r"]
 
@@ -126,6 +127,9 @@ autostart = true
 
 [node name="InteractionTimer" type="Timer" parent="." unique_id=920433522]
 wait_time = 0.1
+
+[node name="GunShot" type="AudioStreamPlayer" parent="." unique_id=839603666]
+stream = ExtResource("3_6t5aa")
 
 [connection signal="timeout" from="VisonTimer" to="." method="_on_vison_timer_timeout"]
 [connection signal="timeout" from="InteractionTimer" to="." method="_on_interaction_timer_timeout"]

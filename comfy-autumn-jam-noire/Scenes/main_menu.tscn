@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://ch8t7r6rrqv7l" path="res://Assets/2D_assets/main menu 2.png" id="1_48xlc"]
+[ext_resource type="AudioStream" uid="uid://cod1yvd7abohc" path="res://Assets/Ambience/Music/Smoke & Mirrors - Main Menu.mp3" id="1_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://cvdryalrdyqdd" path="res://Assets/2D_assets/credits.png" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://b3h1g43lv5k38" path="res://Assets/2D_assets/TITLE .png" id="4_opfnp"]
 [ext_resource type="Texture2D" uid="uid://py8toyl8c74g" path="res://Assets/2D_assets/CREDITS (1).png" id="5_cp0ys"]
@@ -121,6 +122,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_f6flb")
 script = SubResource("GDScript_28flt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1417581852]
+stream = ExtResource("1_cp0ys")
+autoplay = true
+bus = &"Music"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2014790652]
 layout_mode = 2
