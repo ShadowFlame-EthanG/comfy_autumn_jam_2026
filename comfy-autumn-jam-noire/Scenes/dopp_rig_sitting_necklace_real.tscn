@@ -22,6 +22,7 @@ height = 129.41492
 material_override = SubResource("StandardMaterial3D_kalfh")
 
 [node name="Necklace_OnNeck_OnDop" parent="." index="1" unique_id=950375528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.054, 0.009)
 material_override = SubResource("StandardMaterial3D_uimpd")
 
 [node name="Dopp" type="Node3D" parent="." index="2" unique_id=2075922459 node_paths=PackedStringArray("mesh", "area")]

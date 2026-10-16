@@ -970,6 +970,12 @@ wait_time = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.169, -0.937, 8.958)
 visible = false
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Characters/Dopp_Rig_Sitting_Necklace" unique_id=1673206538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00344944, 0.8469328, 0.022972107)
+light_color = Color(0.08261245, 0.61613053, 0.7658033, 1)
+light_energy = 0.05
+omni_range = 0.02
+
 [node name="Katie_Rig_Sitting" parent="Characters" unique_id=207026941 instance=ExtResource("27_svxoy")]
 transform = Transform3D(0.9276271, 0, -0.3735075, 0, 1, 0, 0.3735075, 0, 0.9276271, -4.6243544, -0.937, 8.978211)
 visible = false
