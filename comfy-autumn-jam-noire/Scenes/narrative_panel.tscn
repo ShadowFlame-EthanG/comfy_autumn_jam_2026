@@ -18,6 +18,7 @@ func _ready() -> void:
 	NarrationManager.dialogue_engaged.connect(talking)
 	NarrationManager.dialogue_finished.connect(done_talking)
 	NarrationManager.picture_change.connect(which_picture)
+	TransitionScreen.on_transition_finished.connect(no_picture)
 	
 func which_picture(name) -> void:
 	if name == \"Margaret\":
@@ -26,6 +27,11 @@ func which_picture(name) -> void:
 	if name == \"Waitress\":
 		margaret.visible = false
 		waitress.visible = true
+
+func no_picture() -> void:
+	if NarrationManager.final_scene == true:
+		margaret.visible = false
+		waitress.visible = false
 
 func talking():
 	show()

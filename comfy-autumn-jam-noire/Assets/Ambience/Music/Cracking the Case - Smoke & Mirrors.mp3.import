@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpdxvi0vqmogq"
+path="res://.godot/imported/Cracking the Case - Smoke & Mirrors.mp3-74c93c331ac544cd4143dc2d5589d071.mp3str"
+
+[deps]
+
+source_file="res://Assets/Ambience/Music/Cracking the Case - Smoke & Mirrors.mp3"
+dest_files=["res://.godot/imported/Cracking the Case - Smoke & Mirrors.mp3-74c93c331ac544cd4143dc2d5589d071.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

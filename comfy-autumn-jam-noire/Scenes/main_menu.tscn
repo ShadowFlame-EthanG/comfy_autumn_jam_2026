@@ -127,6 +127,7 @@ layout_mode = 2
 texture = ExtResource("1_48xlc")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2031253484]
+visible = false
 layout_mode = 2
 texture = ExtResource("2_1ehe0")
 

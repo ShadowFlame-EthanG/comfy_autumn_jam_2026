@@ -47,10 +47,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		var item = Ray_cast.get_collider()
-		if item and item.name == "Sister":
+		if item and item.name == "Sister" and NarrationManager.final_scene == false:
 			NarrationManager.start_dialogue("margaret_loop")
 		if item and (item.name == "WaitressSit" or item.name == "WaitressWipe"):
 			NarrationManager.start_dialogue("waitress_loop")
+		if item and (item.name == "Katie" or item.name == "Dopp") and NarrationManager.final_scene == true and NarrationManager.interact == true:
+			NarrationManager.start_dialogue("katievsdopp")
 		
 		if item and (item.name == "Files" or item.name == "Newspaper" or item.name == "Notepad" or item.name == "Coffee") and NarrationManager.interact == true and Modes.current_mode == Enums.GameplayMode.DINER:
 			if item.name == "Files":

@@ -16,11 +16,12 @@ points = PackedVector3Array(-0.20404434, -30.734886, -54.9358, 11.966667, -28.53
 [node name="sister_geo" parent="Sister_rig/Joints/Skeleton3D" parent_id_path=PackedInt32Array(1875219080) index="0" unique_id=348962467]
 material_override = SubResource("StandardMaterial3D_qcn7u")
 
-[node name="Sister" type="Node3D" parent="." index="1" unique_id=608423406 node_paths=PackedStringArray("mesh")]
+[node name="Sister" type="Node3D" parent="." index="1" unique_id=608423406 node_paths=PackedStringArray("mesh", "area")]
 transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, -2.6576922, -2.6957254, 3.8344402)
 script = ExtResource("3_osog0")
 mesh = NodePath("../Sister_rig/Joints/Skeleton3D/sister_geo")
 outlineMaterial = ExtResource("4_j3ayo")
+area = NodePath("Sister")
 
 [node name="Sister" type="Area3D" parent="Sister" index="0" unique_id=976277546]
 transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 267.4078, -387.10217, -267.9578)

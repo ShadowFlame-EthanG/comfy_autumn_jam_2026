@@ -8,6 +8,7 @@ signal picture_change(name: String)
 var skipped: int = 0
 var interact = true
 var first = 0
+var final_scene = false
 
 var should_return_to_game: bool :
 	get :
@@ -61,3 +62,10 @@ func end_it(choice) -> void:
 		dialogue_finished.emit()
 		Modes.change_mode(Enums.GameplayMode.DINER)
 		skipped = 0
+	if choice == "Yes, I know what happened to your sister.":
+		dialogue_finished.emit()
+		Modes.change_mode(Enums.GameplayMode.DINER)
+		skipped = 0
+		final_scene = true
+		TransitionScreen.transition()
+		

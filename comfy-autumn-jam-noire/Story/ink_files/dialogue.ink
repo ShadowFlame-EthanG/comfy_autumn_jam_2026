@@ -1,5 +1,8 @@
 VAR newspaper = false
 VAR asked = 0
+VAR final = 0
+VAR katie = false
+VAR talkgirls = false
 
 === intro
 This is a dialogue test.
@@ -101,9 +104,34 @@ They’ll have already noticed that I took the file and are looking for me. We h
 
 + [Anything else you can tell me about your sister?]
     Um. No, I think that’s about it. She likes to go out dancing. She’s left handed. Little stuff like that, but I’m not sure how that helps the case. 
-    -> END
+    -> margaret_loop
+* [How do I know you're really innocent?]
+    \*
+    You really think I’d do that to my own sister and then run straight to a private detective? I guess you’ll just have to take my word for it. But there are things in that case file that just don’t add up.
+    
+    \*
+    
+    * * [Like what?]
+        Well, it’s true that I have the only other key. But I’m telling you, I wasn’t there. So how’d the door get locked? I had my keys the whole time.
+        -> margaret_loop
+
+
++ [I've solved the case!]
+    -> case_solved
 + [Actually, one moment.]
     -> END
+
+
+
+=== case_solved
+Really? Are you sure?
+
+\*
+
++ [Yes, I know what happened to your sister.]
+    -> END
++ [Wait, no. I need more time to think.]
+    -> margaret_loop
 
 === question_sister_loop
 \*
@@ -126,8 +154,121 @@ They’ll have already noticed that I took the file and are looking for me. We h
 + [Could I get more coffee?]
     Sure thing, hon.
     -> END
+* [What are you going as for Halloween?]
+    \*
+    Hmmm. Why don’t I go as a private detective like you? No... A cop? Nah. A photographer, or maybe a professor! No no... Oh! I’ve got it. I’ll be a witch! 
+    -> waitress_loop
+
+* [I read something in the paper about changeling doubles. Know anything about that?]
+    Oh yeah, tons. When I was a little girl, my gramma told me that they steal people through the mirror and take their place! Creepy, right?
+    You can tell the difference, though. Doubles are always reverse copies of the original. ‘Cause they came from the mirror world. I knew a fella, Ed was his name, who had a mole on one side of his face. Shows up one day and it’s clear over on the other side! 
+    He said it had always been that way, but I knew better. One o’ them doubles got him! No one ever believed me, though.
+    -> waitress_loop
 
 + [Actually, I'm good.]
     -> END
 
+-> DONE
+
+=== the_choice
+So. You think you’ve got it all figured out. Well then, detective. Which one of us is the real Katie? 
+
+\*
+
+-> DONE
+
+=== katievsdopp
+~talkgirls = true
+{final == 0: -> final1}
+{final == 1: -> final2}
+{final == 2: -> final3}
+{final == 3: -> final4}
+{final == 4: -> final5}
+{final == 5: -> final6}
+-> DONE
+
+=== final1
+Shoot her, detective! Oh God, please shoot her! She’s trying to keep me here in this place forever!
+~ katie = true
+Please, detective, you’ve got to know that it’s me. I’m the real Katie. Shoot her!
+~ final += 1
+~ katie = false
+\*
+-> DONE
+
+=== final2
+This place only exists while she’s alive. She’s keeping us both here! We’ll be stuck here forever unless you shoot her! 
+~ katie = true
+Don’t listen to a thing she has to say. You talked to my sister Margaret, right? She must have told you about me.
+~ final += 1
+~ katie = false
+\*
+-> DONE
+
+=== final3
+All I wanted to do was go out dancing... I don’t even know how I got mixed up in this anyway. 
+~ katie = true
+I’m so scared, I just want to go home and see my family. You have to shoot her and put an end to this!
+~ katie = false
+~ final += 1
+\*
+-> DONE
+
+=== final4
+I kept seeing her move in the mirrors... Oh God, the mirrors. It looked like me, but it wasn’t. It moved on its own. I couldn’t stand it. 
+~ katie = true
+She’s been watching me, learning everything about me, for... I don’t even know how long. She even copied my face...
+~ final += 1
+~ katie = false
+\*
+-> DONE
+
+=== final5
+You’ve got to believe me, detective, I’m the real Katie! 
+~ katie = true
+She came in through the mirror... I tried to get rid of them all, but I forgot one. Stupid, stupid me. I don’t even remember opening it... just muscle memory, I suppose.
+~ final += 1
+~ katie = false
+\*
+-> DONE
+
+=== final6
+My family’s got money. Please, get me out of this and you can have anything you want. I’m begging you.
+~ katie = true
+No, no, no, this isn’t happening. This isn’t real. Please, shoot her and make it all go away!
+~ final = 0
+~ katie = false
+\*
+-> DONE
+
+=== dopp_lives
+~ talkgirls = false
+Oh.. This feeling...
+
+You really shot her, didn’t you? 
+
+I’m alive... I’m... I’m... Real. Ha. Ha ha. And dear detective, why it’s all thanks to you! I have only you to thank for this wonderful gift! 
+
+And now that I’ve been given this taste of life, why, it’s only right to share it. I have friends, you see, who would l o v e to know what this feels like. And now that I’m here...
+
+I can help them pick a body, too.
+
+\*
+-> DONE
+
+=== katie_lives
+~talkgirls = false
+You did it... Oh thank God, you did it. How did you know? How did you know it was me? 
+
+Well, in any case, i owe you my life. And more, I’m sure Margaret has promised you some sort of reward. What was that thing?
+
+Well, in any case, i owe you my life. And more, I’m sure Margaret has promised you some sort of reward. What was that thing? It... it came out of my mirror.
+
+I’m so relieved. I never thought I’d make it back. I need to find...
+
+Margaret!
+
+... Katie!
+
+\*
 -> DONE

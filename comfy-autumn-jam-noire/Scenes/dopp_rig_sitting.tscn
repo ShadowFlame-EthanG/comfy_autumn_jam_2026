@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dna8j5ceqmpxt"]
+
+[ext_resource type="PackedScene" uid="uid://c6wn0c4syds6w" path="res://Assets/Models/Dopp_Rig_Sitting.fbx" id="1_jou17"]
+[ext_resource type="Texture2D" uid="uid://cksww3kaj6twp" path="res://Assets/3D_Textures/Dopp_Basecolour.png" id="2_inoed"]
+[ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="3_okhdx"]
+[ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_6kp38"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmf6b"]
+albedo_texture = ExtResource("2_inoed")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pb32r"]
+radius = 22.089844
+height = 129.41492
+
+[node name="Dopp_Rig_Sitting" unique_id=1656327083 instance=ExtResource("1_jou17")]
+
+[node name="Dopp_geo" parent="Dopp_rig/Joints/Skeleton3D" parent_id_path=PackedInt32Array(560323010) index="0" unique_id=321590778]
+material_override = SubResource("StandardMaterial3D_jmf6b")
+
+[node name="Dopp" type="Node3D" parent="." index="1" unique_id=812035207 node_paths=PackedStringArray("mesh", "area")]
+transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, -2.6576922, -2.6957254, 3.8344402)
+script = ExtResource("3_okhdx")
+mesh = NodePath("../Dopp_rig/Joints/Skeleton3D/Dopp_geo")
+outlineMaterial = ExtResource("4_6kp38")
+area = NodePath("Dopp")
+
+[node name="Dopp" type="Area3D" parent="Dopp" index="0" unique_id=983459070]
+transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 266.92358, -387.10217, -267.95773)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dopp/Dopp" index="0" unique_id=419029095]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.1767209, 0.47508717, -50.01764)
+shape = SubResource("CapsuleShape3D_pb32r")

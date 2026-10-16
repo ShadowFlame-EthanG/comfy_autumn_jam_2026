@@ -13,6 +13,11 @@ var line: String :
 	set(val):
 		_line = val
 		%Label.text = _line
+		if NarrationManager.get_variable(\"talkgirls\"):
+			if NarrationManager.get_variable(\"katie\"):
+				%Label.add_theme_color_override(\"default_color\", Color.BROWN)
+			else:
+				%Label.add_theme_color_override(\"default_color\", Color.DARK_ORCHID)
 	get:
 		return _line
 	
