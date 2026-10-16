@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwxdtir6urirm"]
 
-[ext_resource type="Texture2D" uid="uid://mcv4qeu32rjo" path="res://Assets/2D_assets/caseclosed 1.png" id="1_0gua7"]
+[ext_resource type="Texture2D" uid="uid://d1iws3h86m3vs" path="res://Assets/2D_assets/bad ending.png" id="1_jb6in"]
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="2_jb6in"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wydum"]
@@ -15,7 +15,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_wydum")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1512206977]
 layout_mode = 2
-texture = ExtResource("1_0gua7")
+texture = ExtResource("1_jb6in")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1875154654]
 layout_mode = 2
@@ -23,11 +23,12 @@ layout_mode = 2
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=1059666898]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.43
+size_flags_stretch_ratio = 0.22
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=419374319]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.8392157, 0.6392157, 1)
 theme_override_fonts/normal_font = ExtResource("2_jb6in")
 theme_override_font_sizes/normal_font_size = 150
-text = "CASE CLOSED"
+text = "THE CASE GOES COLD"
