@@ -2,6 +2,7 @@ extends TextureRect
 
 @onready var full = $"../Page4_full"
 @onready var button = $"../Button"
+@onready var rustle = $"../RustleRustling"
 
 var seen = false
 
@@ -12,6 +13,7 @@ func _on_texture_rect_pressed() -> void:
 	hide()
 	button.hide()
 	full.show()
+	rustle.play()
 	NarrationManager.set_variable("changelings", true)
 	if seen == false:
 		seen = true
@@ -28,6 +30,7 @@ func _on_texture_rect_2_pressed() -> void:
 	hide()
 	button.hide()
 	full.show()
+	rustle.play()
 	NarrationManager.set_variable("changelings", true)
 	if seen == false:
 		seen = true

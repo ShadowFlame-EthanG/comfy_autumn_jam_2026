@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8oxwofitn4t5"
-path="res://.godot/imported/title border.png-e544164e1e40d0ed40052c44fc594ba0.ctex"
+uid="uid://ssbnc6joup6o"
+path="res://.godot/imported/notpad.png-13319a4b3398bd30c8e78e4ca9f0bd55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://title border.png"
-dest_files=["res://.godot/imported/title border.png-e544164e1e40d0ed40052c44fc594ba0.ctex"]
+source_file="res://Assets/2D_assets/notpad.png"
+dest_files=["res://.godot/imported/notpad.png-13319a4b3398bd30c8e78e4ca9f0bd55.ctex"]
 
 [params]
 

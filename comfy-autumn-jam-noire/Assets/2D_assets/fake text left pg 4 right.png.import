@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://becy5vow6f07k"
-path="res://.godot/imported/newspaper_reference-removebg-preview.png-e7b7d4c1c7d87dad233065150610f252.ctex"
+uid="uid://cuaad6i7xnppv"
+path="res://.godot/imported/fake text left pg 4 right.png-37a5005a8a80c13cf16946118e647a28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://newspaper_reference-removebg-preview.png"
-dest_files=["res://.godot/imported/newspaper_reference-removebg-preview.png-e7b7d4c1c7d87dad233065150610f252.ctex"]
+source_file="res://Assets/2D_assets/fake text left pg 4 right.png"
+dest_files=["res://.godot/imported/fake text left pg 4 right.png-37a5005a8a80c13cf16946118e647a28.ctex"]
 
 [params]
 
