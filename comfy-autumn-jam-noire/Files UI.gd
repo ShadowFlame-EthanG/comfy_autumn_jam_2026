@@ -10,6 +10,7 @@ extends Control
 @onready var page_4 = $TextureRect4
 
 var page = 1
+var seen = true
 
 func _ready() -> void:
 	MousePosition.open_files.connect(files_opened)
@@ -33,7 +34,9 @@ func _on_texture_button_2_pressed() -> void:
 			4:
 				page_4.show()
 				NarrationManager.set_variable("whole_case", true)
-				NarrationManager.talk_to_them()
+				if seen == true:
+					NarrationManager.talk_to_them()
+					seen = false
 				
 	rustle.play()
 	

@@ -12,6 +12,7 @@ extends Control
 @onready var page_6 = $page6
 
 var page = 1
+var seen = true
 
 func _ready() -> void:
 	MousePosition.open_newspaper.connect(opened)
@@ -78,3 +79,6 @@ func _on_texture_button_2_pressed() -> void:
 func opened() -> void:
 	open.play()
 	NarrationManager.set_variable("halloween", true)
+	if seen == true:
+		NarrationManager.talk_to_them()
+		seen = false

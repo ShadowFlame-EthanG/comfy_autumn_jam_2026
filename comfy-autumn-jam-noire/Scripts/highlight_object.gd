@@ -33,7 +33,6 @@ func not_highlighted(h_name: String) -> void:
 func can_interact() -> void:
 	if area:
 		if area.name == "Sister" and NarrationManager.final_scene == false:
-			print("Here!")
 			area.collision_layer = 2
 
 func see_katie_dopp() -> void:
@@ -51,7 +50,7 @@ func see_katie_dopp() -> void:
 
 
 func show_hide_gun() -> void:
-	if mesh.name == "Gun_v1_001":
+	if mesh.name == "New_Gun_v1_001":
 		if mesh.material_override == gunMaterial:
 			mesh.material_override = hideMaterial
 		else:
