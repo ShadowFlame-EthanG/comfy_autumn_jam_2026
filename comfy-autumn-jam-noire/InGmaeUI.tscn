@@ -121,9 +121,9 @@ stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2" unique_id=1326185793]
 layout_mode = 0
-offset_left = 456.0
+offset_left = 466.0
 offset_top = 194.0
-offset_right = 862.0
+offset_right = 872.0
 offset_bottom = 802.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_qjqth")
@@ -150,9 +150,9 @@ stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect3" unique_id=1433631851]
 layout_mode = 0
-offset_left = 456.0
+offset_left = 466.0
 offset_top = 194.0
-offset_right = 862.0
+offset_right = 872.0
 offset_bottom = 802.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_qjqth")
@@ -178,9 +178,9 @@ stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect4" unique_id=19476672]
 layout_mode = 0
-offset_left = 456.0
+offset_left = 466.0
 offset_top = 194.0
-offset_right = 862.0
+offset_right = 872.0
 offset_bottom = 802.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_qjqth")
