@@ -53,7 +53,10 @@ func _ready() -> void:
 	TransitionScreen.on_transition_finished.connect(change_lights)
 	NarrationManager.new_dialogue.connect(new_dialogue)
 	main_music.play()
-	start_music()
+	musicON.start(167)
+	main_music.volume_db = -80.0
+	var tween = create_tween()
+	tween.tween_property(main_music, \"volume_db\", 0.0, 3)
 	
 func _on_timer_timeout() -> void:
 	NarrationManager.start_dialogue(\"sister_intro\")
@@ -743,7 +746,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.157986, 0.48458505, 4.2928
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
 
 [node name="ChoiceLights" type="Node3D" parent="Lights" unique_id=58897572]
-visible = false
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=1638395904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304, 0.75, 6.2609997)
@@ -1070,19 +1072,19 @@ one_shot = true
 [node name="Music_off" type="Timer" parent="." unique_id=560178575]
 one_shot = true
 
-[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_exited"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]

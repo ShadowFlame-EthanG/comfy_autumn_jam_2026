@@ -19,7 +19,7 @@ func show_ui(location) -> void:
 	ui.show()
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 	Modes.mode_changed.connect(interaction)
 	add_to_group("player")
 	
