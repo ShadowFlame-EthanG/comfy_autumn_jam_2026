@@ -89,7 +89,7 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=971298366]
 stream = ExtResource("2_dnkca")
-volume_db = -32.0
+volume_db = -28.0
 max_polyphony = 1000
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

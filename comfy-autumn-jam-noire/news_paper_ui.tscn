@@ -1,0 +1,785 @@
+[gd_scene format=3 uid="uid://bmhol54nhe7ht"]
+
+[ext_resource type="Script" path="res://news_paper_ui.gd" id="1_bqrdo"]
+[ext_resource type="AudioStream" uid="uid://w6l55gfyefvh" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v4.wav" id="2_teyhr"]
+[ext_resource type="AudioStream" uid="uid://cn7tqw5ntiqik" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v5.wav" id="3_7pb3b"]
+[ext_resource type="Texture2D" uid="uid://ca5t0xnplpest" path="res://Assets/2D_assets/x button.png" id="4_ua4g2"]
+[ext_resource type="Texture2D" uid="uid://cywdgxyil8ihe" path="res://Assets/2D_assets/news paper base.png" id="5_dmo4f"]
+[ext_resource type="Texture2D" uid="uid://d44v22xix8lx" path="res://Assets/2D_assets/lines.png" id="6_ser0n"]
+[ext_resource type="Texture2D" uid="uid://blx5oni6em1hj" path="res://Assets/2D_assets/jack o lantern.png" id="7_kn0ti"]
+[ext_resource type="Script" path="res://page_2.gd" id="8_5f6b7"]
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="8_gv0t5"]
+[ext_resource type="Texture2D" uid="uid://cp4tuomicy7jg" path="res://Assets/2D_assets/fake text left blue.png" id="9_81m7q"]
+[ext_resource type="Texture2D" uid="uid://duw5v7h1ko544" path="res://Assets/2D_assets/fake text left.png" id="9_ser0n"]
+[ext_resource type="Texture2D" uid="uid://d16u7v5e27qq1" path="res://Assets/2D_assets/fake text right Blue.png" id="10_15sla"]
+[ext_resource type="Texture2D" uid="uid://cnrrmged38s3l" path="res://Assets/2D_assets/fake text right.png" id="10_kn0ti"]
+[ext_resource type="Texture2D" uid="uid://dgoncb2ap64fw" path="res://Assets/2D_assets/fake text right 2.png" id="12_l1ip4"]
+[ext_resource type="Texture2D" uid="uid://j5vs6mohxjkf" path="res://Assets/2D_assets/newspaperpg2.png" id="13_b65b2"]
+[ext_resource type="Script" path="res://page_4.gd" id="13_rw2dn"]
+[ext_resource type="Texture2D" uid="uid://blme5g16ohyqb" path="res://Assets/2D_assets/pg.5 newspaper.png" id="14_ddsnx"]
+[ext_resource type="Texture2D" uid="uid://baev2sgbtqsih" path="res://Assets/2D_assets/fake text right pg.4 .png" id="14_ocw3k"]
+[ext_resource type="Texture2D" uid="uid://b4u1mlj8thyvy" path="res://Assets/2D_assets/pg.2_full_view.png" id="15_54ifv"]
+[ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="15_b65b2"]
+[ext_resource type="Texture2D" uid="uid://dftdl302wwxtm" path="res://Assets/2D_assets/newspaper_pg6.png" id="15_l1ip4"]
+[ext_resource type="Texture2D" uid="uid://rb15ms6va033" path="res://Assets/2D_assets/fake text right pg.4 blue.png" id="15_q5td4"]
+[ext_resource type="Script" path="res://page_5.gd" id="15_s1evh"]
+[ext_resource type="Texture2D" uid="uid://cryu3uy2tgfwc" path="res://Assets/2D_assets/PG4_full_view.png" id="16_54ifv"]
+[ext_resource type="Texture2D" uid="uid://yjfw1qk3drnj" path="res://Assets/2D_assets/fake text left pg4 blue.png" id="16_lbl1y"]
+[ext_resource type="Texture2D" uid="uid://cfkwtslqcd11b" path="res://Assets/2D_assets/full veiw pg.5.png" id="17_g65xg"]
+[ext_resource type="Texture2D" uid="uid://tpg106ie1850" path="res://Assets/2D_assets/fake text left pg.5 blue.png" id="19_qerq3"]
+[ext_resource type="Texture2D" uid="uid://k8w45gi3m3hu" path="res://Assets/2D_assets/fake text right pg.5 .png" id="20_cqfeb"]
+[ext_resource type="Texture2D" uid="uid://bdikqiqv0q6dy" path="res://Assets/2D_assets/fake text right pg.5 blue.png" id="21_4ptn1"]
+
+[node name="NewsPaperUI" type="Control" unique_id=323853108]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqrdo")
+
+[node name="Page1" type="TextureRect" parent="." unique_id=1259943896]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -583.5
+offset_top = -427.0
+offset_right = 583.5
+offset_bottom = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dmo4f")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Page1" unique_id=1616449225]
+texture_filter = 1
+layout_mode = 1
+offset_left = 193.5
+offset_top = 63.0
+offset_right = 667.5
+offset_bottom = 99.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = 1
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 26
+text = "Sunday, October 24th, 1948"
+
+[node name="Lines" type="TextureRect" parent="Page1" unique_id=365641621]
+texture_filter = 1
+layout_mode = 0
+offset_left = 150.5
+offset_top = 120.0
+offset_right = 824.5
+offset_bottom = 298.0
+texture = ExtResource("6_ser0n")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Page1/Lines" unique_id=354279108]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_fonts/bold_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 75
+text = "City Prepares for Halloween Festival"
+
+[node name="JackOLantern" type="TextureRect" parent="Page1" unique_id=908696000]
+texture_filter = 1
+layout_mode = 0
+offset_left = 152.5
+offset_top = 340.0
+offset_right = 482.5
+offset_bottom = 697.0
+texture = ExtResource("7_kn0ti")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page1" unique_id=883954983]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -78.0
+offset_right = 438.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = 1
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 26
+text = "While the cold winds bring in Autumn and the trees don their crowns of gold, something is brewing 'neath the streets of boston.
+
+Goblins, ghosts, Ghouls, and more will take over downtown during the city's anual Halloween parade & festival.
+
+The Festival will feature folklore from many different cultural traditions. there's truly something for everybody!"
+
+[node name="Page2" type="TextureRect" parent="." unique_id=693380285]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -583.5
+offset_top = -427.0
+offset_right = 583.5
+offset_bottom = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dmo4f")
+script = ExtResource("8_5f6b7")
+
+[node name="FakeTextLeft" type="TextureButton" parent="Page2" unique_id=850550747]
+texture_filter = 1
+layout_mode = 0
+offset_left = 187.5
+offset_top = 376.0
+offset_right = 622.5
+offset_bottom = 756.0
+texture_normal = ExtResource("9_ser0n")
+texture_hover = ExtResource("9_81m7q")
+
+[node name="FakeTextRight" type="TextureButton" parent="Page2" unique_id=1377913717]
+layout_mode = 0
+offset_left = 655.5
+offset_top = 75.0
+offset_right = 1082.5
+offset_bottom = 406.0
+texture_normal = ExtResource("10_kn0ti")
+texture_hover = ExtResource("10_15sla")
+
+[node name="Lines" type="TextureRect" parent="Page2" unique_id=259935617]
+texture_filter = 1
+layout_mode = 0
+offset_left = 186.5
+offset_top = 78.0
+offset_right = 860.5
+offset_bottom = 386.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ser0n")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Page2" unique_id=446935904]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 185.5
+offset_top = 82.0
+offset_right = -553.5
+offset_bottom = -626.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_fonts/bold_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 70
+text = "The Great switcheroo!"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Page2" unique_id=83851034]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 661.5
+offset_top = 434.0
+offset_right = -77.5
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_fonts/bold_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 45
+text = "Local man claims to have recieved a paint job for car"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Page2" unique_id=201486407]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 188.5
+offset_top = 251.0
+offset_right = -547.5
+offset_bottom = -529.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_fonts/bold_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 36
+text = "Local Art Musem reports not a theft but a swap?"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page2" unique_id=1394587683]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = 178.0
+offset_right = 474.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = 1
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 24
+text = "\"I don't know who did it, or if this is some kind of guerrilla marketing. I'm just happy those scratches from last week were covered up before my wife found out!\""
+
+[node name="Page3" type="TextureRect" parent="." unique_id=451905643]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -583.5
+offset_top = -427.0
+offset_right = 583.5
+offset_bottom = 427.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dmo4f")
+
+[node name="FakeTextLeft" type="TextureRect" parent="Page3" unique_id=1535888714]
+texture_filter = 1
+layout_mode = 0
+offset_left = 181.5
+offset_top = 299.0
+offset_right = 616.5
+offset_bottom = 706.0
+texture = ExtResource("9_ser0n")
+
+[node name="FakeTextRight" type="TextureRect" parent="Page3" unique_id=1419569435]
+layout_mode = 0
+offset_left = 662.5
+offset_top = 666.0
+offset_right = 1089.5
+offset_bottom = 744.0
+texture = ExtResource("12_l1ip4")
+
+[node name="Lines" type="TextureRect" parent="Page3" unique_id=445356029]
+texture_filter = 1
+layout_mode = 0
+offset_left = 186.5
+offset_top = 78.0
+offset_right = 860.5
+offset_bottom = 256.0
+scale = Vector2(0.65, 1)
+texture = ExtResource("6_ser0n")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Page3" unique_id=981527289]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 185.5
+offset_top = 82.0
+offset_right = -553.5
+offset_bottom = -626.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_fonts/bold_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 70
+text = "Weekly
+Horoscopes"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Page3" unique_id=1045237438]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.5
+offset_top = 488.0
+offset_right = -74.5
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 39
+text = "Nina simonton from down the road shares famous pumkin pie recipie"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Page3" unique_id=30103898]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.5
+offset_top = 92.0
+offset_right = -74.5
+offset_bottom = -606.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_fonts/bold_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 45
+text = "Mother of two SUPRISED to become mother of three"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Page3" unique_id=122928457]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = -133.0
+offset_right = 484.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = 1
+theme_override_fonts/normal_font = ExtResource("8_gv0t5")
+theme_override_font_sizes/normal_font_size = 24
+text = "\"When i sent my twins to school there were only two of them . when they came home, there was third. i guess i forgoti had triplets?\""
+
+[node name="page4" type="TextureRect" parent="." unique_id=661202194]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -951.0
+offset_top = -494.0
+offset_right = 969.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_b65b2")
+script = ExtResource("13_rw2dn")
+
+[node name="ColorRect7" type="ColorRect" parent="page4" unique_id=1467960769]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 825.0
+offset_right = 546.0
+offset_bottom = 855.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="page4" unique_id=1993154762]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 825.0
+offset_right = 514.0
+offset_bottom = 838.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="page4" unique_id=706507597]
+layout_mode = 0
+offset_left = 499.0
+offset_top = 838.0
+offset_right = 506.0
+offset_bottom = 843.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="page4" unique_id=1650176158]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 839.0
+offset_right = 499.0
+offset_bottom = 844.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="page4" unique_id=1444791655]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 838.0
+offset_right = 494.0
+offset_bottom = 850.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="page4" unique_id=1409096669]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 827.0
+offset_right = 488.0
+offset_bottom = 839.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="page4" unique_id=1802940321]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 834.0
+offset_right = 502.0
+offset_bottom = 838.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect" type="ColorRect" parent="page4" unique_id=1469867211]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 164.0
+offset_right = 1423.0
+offset_bottom = 517.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="page4" unique_id=1887680239]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 783.0
+offset_right = 1429.0
+offset_bottom = 829.0
+rotation = 0.020703044
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="page4" unique_id=2034627256]
+layout_mode = 0
+offset_left = 1004.00006
+offset_top = 691.99994
+offset_right = 1438.0
+offset_bottom = 783.99994
+rotation = 0.017613877
+color = Color(0.9882353, 0.9372549, 0.8666667, 1)
+
+[node name="TextureRect2" type="TextureButton" parent="page4" unique_id=1062406162]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1005.0
+offset_top = 180.0
+offset_right = -517.0
+offset_bottom = -253.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("14_ocw3k")
+texture_hover = ExtResource("15_q5td4")
+
+[node name="TextureRect" type="TextureButton" parent="page4" unique_id=2062663192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 540.0
+offset_top = 459.0
+offset_right = -957.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_hover = ExtResource("16_lbl1y")
+
+[node name="page5" type="TextureRect" parent="." unique_id=1094396003]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -951.0
+offset_top = -494.0
+offset_right = 969.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_ddsnx")
+script = ExtResource("15_s1evh")
+
+[node name="ColorRect" type="ColorRect" parent="page5" unique_id=1989689648]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 834.0
+offset_right = 530.0
+offset_bottom = 855.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="page5" unique_id=192863788]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 849.0
+offset_right = 502.0
+offset_bottom = 855.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="page5" unique_id=1807436461]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 849.0
+offset_right = 497.0
+offset_bottom = 855.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="page5" unique_id=579219024]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 856.0
+offset_right = 494.0
+offset_bottom = 862.0
+color = Color(0.9019608, 0.8156863, 0.7176471, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="page5" unique_id=463688052]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 839.0
+offset_right = 494.0
+offset_bottom = 856.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="page5" unique_id=2060570395]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 831.0
+offset_right = 485.0
+offset_bottom = 848.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="page5" unique_id=284537531]
+layout_mode = 0
+offset_left = 1004.00006
+offset_top = 691.99994
+offset_right = 1453.2483
+offset_bottom = 783.99994
+rotation = 0.017613877
+color = Color(0.9882353, 0.9372549, 0.8666667, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="page5" unique_id=2040468600]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 170.0
+offset_right = 1425.2483
+offset_bottom = 430.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="page5" unique_id=1605976294]
+layout_mode = 0
+offset_left = 1391.0
+offset_top = 267.0
+offset_right = 1459.2483
+offset_bottom = 427.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="page5" unique_id=1039370568]
+layout_mode = 0
+offset_left = 1411.0
+offset_top = 187.0
+offset_right = 1433.0
+offset_bottom = 233.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="page5" unique_id=1822867777]
+layout_mode = 0
+offset_left = 1433.0
+offset_top = 186.0
+offset_right = 1448.0
+offset_bottom = 228.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="page5" unique_id=1852793541]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 783.0
+offset_right = 1449.5376
+offset_bottom = 829.0
+rotation = 0.020703044
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="TextureRect" type="TextureButton" parent="page5" unique_id=1974275380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 517.0
+offset_top = 461.0
+offset_right = -978.0
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_hover = ExtResource("19_qerq3")
+
+[node name="TextureRect2" type="TextureButton" parent="page5" unique_id=1291759684]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1008.0
+offset_top = 186.0
+offset_right = -476.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("20_cqfeb")
+texture_hover = ExtResource("21_4ptn1")
+
+[node name="page6" type="TextureRect" parent="." unique_id=1080172579]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 46.0
+offset_right = 9.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_l1ip4")
+
+[node name="ColorRect" type="ColorRect" parent="page6" unique_id=1837893515]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 838.0
+offset_right = 497.0
+offset_bottom = 858.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="page6" unique_id=1060084765]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 833.0
+offset_right = 480.0
+offset_bottom = 853.0
+color = Color(0.8666667, 0.77254903, 0.67058825, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="page6" unique_id=2091951606]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 832.0
+offset_right = 525.0
+offset_bottom = 852.0
+color = Color(0.95686275, 0.9137255, 0.8627451, 1)
+
+[node name="Page2_full" type="TextureRect" parent="." unique_id=1119045763]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("15_54ifv")
+
+[node name="Button" type="TextureButton" parent="Page2_full" unique_id=1351388588]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -433.0
+offset_top = 26.0
+offset_right = -325.0
+offset_bottom = 124.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_ua4g2")
+
+[node name="Page4_full" type="TextureRect" parent="." unique_id=874139214]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_54ifv")
+
+[node name="Button" type="TextureButton" parent="Page4_full" unique_id=1317386821]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -433.0
+offset_top = 26.0
+offset_right = -325.0
+offset_bottom = 124.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_ua4g2")
+
+[node name="Page5_full2" type="TextureRect" parent="." unique_id=1252067930]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_g65xg")
+
+[node name="Button" type="TextureButton" parent="Page5_full2" unique_id=901064342]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -433.0
+offset_top = 26.0
+offset_right = -325.0
+offset_bottom = 124.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_ua4g2")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1067324304]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 115.0
+offset_right = 550.0
+offset_bottom = 212.0
+
+[node name="TextureButton3" type="TextureButton" parent="." unique_id=1844135167]
+layout_mode = 0
+offset_left = 1397.0
+offset_top = 110.0
+offset_right = 1485.0
+offset_bottom = 207.0
+
+[node name="Button" type="TextureButton" parent="." unique_id=574457226]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -433.0
+offset_top = 26.0
+offset_right = -325.0
+offset_bottom = 124.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_ua4g2")
+
+[node name="RustleRustling" type="AudioStreamPlayer" parent="." unique_id=407352314]
+stream = ExtResource("15_b65b2")
+
+[node name="OpenNewspaper" type="AudioStreamPlayer" parent="." unique_id=47110450]
+stream = ExtResource("2_teyhr")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="CloseNewspaper" type="AudioStreamPlayer" parent="." unique_id=1239772039]
+stream = ExtResource("3_7pb3b")
+volume_db = -5.0
+bus = &"SFX"
+
+[connection signal="pressed" from="Page2/FakeTextLeft" to="Page2" method="_on_fake_text_left_pressed"]
+[connection signal="pressed" from="Page2/FakeTextRight" to="Page2" method="_on_fake_text_right_pressed"]
+[connection signal="pressed" from="page4/TextureRect2" to="page4" method="_on_texture_rect_2_pressed"]
+[connection signal="pressed" from="page4/TextureRect" to="page4" method="_on_texture_rect_pressed"]
+[connection signal="pressed" from="page5/TextureRect" to="page5" method="_on_texture_rect_pressed"]
+[connection signal="pressed" from="page5/TextureRect2" to="page5" method="_on_texture_rect_2_pressed"]
+[connection signal="pressed" from="Page2_full/Button" to="Page2" method="_on_button_pressed"]
+[connection signal="pressed" from="Page4_full/Button" to="page4" method="_on_button_pressed"]
+[connection signal="pressed" from="Page5_full2/Button" to="page5" method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
