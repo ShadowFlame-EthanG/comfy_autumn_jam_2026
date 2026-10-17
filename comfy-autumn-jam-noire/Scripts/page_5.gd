@@ -20,7 +20,8 @@ func _on_texture_rect_pressed() -> void:
 		NarrationManager.newspaper_count += 1
 		if NarrationManager.newspaper_count == 3:
 			NarrationManager.set_variable("whole_news", true)
-			if dial_seen == true:
+			NarrationManager.set_variable("margaret_2", true)
+			if dial_seen == true and NarrationManager.get_variable("whole_news") and NarrationManager.get_variable("whole_case"):
 				NarrationManager.talk_to_them()
 				dial_seen = false
 	
@@ -39,6 +40,7 @@ func _on_texture_rect_2_pressed() -> void:
 		NarrationManager.newspaper_count += 1
 		if NarrationManager.newspaper_count == 3:
 			NarrationManager.set_variable("whole_news", true)
-			if dial_seen == true:
+			NarrationManager.set_variable("margaret_2", true)
+			if dial_seen == true and NarrationManager.get_variable("whole_news") and NarrationManager.get_variable("whole_case"):
 				NarrationManager.talk_to_them()
 				dial_seen = false

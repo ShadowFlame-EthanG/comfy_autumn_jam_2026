@@ -79,6 +79,7 @@ func _on_texture_button_2_pressed() -> void:
 func opened() -> void:
 	open.play()
 	NarrationManager.set_variable("halloween", true)
+	NarrationManager.set_variable("waitress_1", true)
 	if seen == true:
 		NarrationManager.talk_to_them()
 		seen = false
