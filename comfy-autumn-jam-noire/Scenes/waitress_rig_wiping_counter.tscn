@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0g43i8j0bj12" path="res://Assets/3D_Textures/Waitress_Basecolour.png" id="2_u308k"]
 [ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="3_pe6dd"]
 [ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_31k7l"]
+[ext_resource type="Material" uid="uid://bulj06tauu54x" path="res://Materials/New_Dialogue.tres" id="5_31k7l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvl1l"]
 albedo_texture = ExtResource("2_u308k")
@@ -21,6 +22,7 @@ material_override = SubResource("StandardMaterial3D_kvl1l")
 script = ExtResource("3_pe6dd")
 mesh = NodePath("../Waitress_rig/Joints/Skeleton3D/Waitress_geo")
 outlineMaterial = ExtResource("4_31k7l")
+newDialogueMaterial = ExtResource("5_31k7l")
 
 [node name="WaitressWipe" type="Area3D" parent="WaitressWipe" index="0" unique_id=1410020780]
 collision_layer = 2

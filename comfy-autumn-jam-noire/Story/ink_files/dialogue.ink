@@ -4,6 +4,14 @@ VAR finalkatie = 0
 VAR finaldopp = 0
 VAR katie = false
 VAR talkgirls = false
+VAR whole_case = false
+VAR whole_news = false
+VAR halloween = false
+VAR changelings = false
+VAR margaret_1 = true
+VAR margaret_2 = true
+VAR waitress_1 = true
+VAR waitress_2 = true
 
 === intro
 This is a dialogue test.
@@ -106,8 +114,7 @@ They’ll have already noticed that I took the file and are looking for me. We h
 + [Anything else you can tell me about your sister?]
     Um. No, I think that’s about it. She likes to go out dancing. She’s left handed. Little stuff like that, but I’m not sure how that helps the case. 
     -> margaret_loop
-* [How do I know you're really innocent?]
-    \*
+* {whole_case}[How do I know you're really innocent?]
     You really think I’d do that to my own sister and then run straight to a private detective? I guess you’ll just have to take my word for it. But there are things in that case file that just don’t add up.
     
     \*
@@ -117,7 +124,7 @@ They’ll have already noticed that I took the file and are looking for me. We h
         -> margaret_loop
 
 
-+ [I've solved the case!]
++ {whole_case and whole_news} [I've solved the case!]
     -> case_solved
 + [Actually, one moment.]
     -> END
@@ -155,12 +162,11 @@ Really? Are you sure?
 + [Could I get more coffee?]
     Sure thing, hon.
     -> END
-* [What are you going as for Halloween?]
-    \*
+* {halloween}[What are you going as for Halloween?]
     Hmmm. Why don’t I go as a private detective like you? No... A cop? Nah. A photographer, or maybe a professor! No no... Oh! I’ve got it. I’ll be a witch! 
     -> waitress_loop
 
-* [I read something in the paper about changeling doubles. Know anything about that?]
+* {changelings}[I read something in the paper about changeling doubles. Know anything about that?]
     Oh yeah, tons. When I was a little girl, my gramma told me that they steal people through the mirror and take their place! Creepy, right?
     You can tell the difference, though. Doubles are always reverse copies of the original. ‘Cause they came from the mirror world. I knew a fella, Ed was his name, who had a mole on one side of his face. Shows up one day and it’s clear over on the other side! 
     He said it had always been that way, but I knew better. One o’ them doubles got him! No one ever believed me, though.

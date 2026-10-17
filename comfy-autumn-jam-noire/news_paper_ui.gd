@@ -77,3 +77,4 @@ func _on_texture_button_2_pressed() -> void:
 
 func opened() -> void:
 	open.play()
+	NarrationManager.set_variable("halloween", true)

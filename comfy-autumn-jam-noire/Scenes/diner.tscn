@@ -25,7 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://b5i7aahafq07o" path="res://Scenes/waitress_rig_pouring_coffee.tscn" id="16_w734i"]
 [ext_resource type="PackedScene" uid="uid://3b0xgmv6yngo" path="res://Scenes/waitress_rig_stool_sitting.tscn" id="17_ohgys"]
 [ext_resource type="PackedScene" uid="uid://dtsmbrk7ttoac" path="res://Scenes/waitress_rig_wiping_counter.tscn" id="18_mnbyv"]
+[ext_resource type="AudioStream" uid="uid://sp8uyvfsuahq" path="res://Assets/SFX/Typewriter/typewriter reset.wav" id="19_212qh"]
 [ext_resource type="AudioStream" uid="uid://bpdxvi0vqmogq" path="res://Assets/Ambience/Music/Cracking the Case - Smoke & Mirrors.mp3" id="20_svxoy"]
+[ext_resource type="AudioStream" uid="uid://d1dl1t4a55f6r" path="res://Assets/Ambience/Music/The Choice - Smoke & Mirrors.mp3" id="21_r54fj"]
 [ext_resource type="PackedScene" uid="uid://cbrhrimjnbysm" path="res://Scenes/dopp_rig_sitting_necklace_real.tscn" id="26_svxoy"]
 [ext_resource type="PackedScene" uid="uid://clj6oodkgjdlr" path="res://Scenes/katie_rig_sitting.tscn" id="27_svxoy"]
 
@@ -42,17 +44,23 @@ script/source = "extends Node3D
 @onready var coffee = $DinerObjects/TableObjects/Coffee
 @onready var newspaper = $DinerObjects/TableObjects/Newspaper
 
-
 func _ready() -> void:
 	$Timer.start()
 	TransitionScreen.on_transition_finished.connect(change_lights)
+	NarrationManager.new_dialogue.connect(new_dialogue)
 	
 func _on_timer_timeout() -> void:
 	NarrationManager.start_dialogue(\"sister_intro\")
 	
+func new_dialogue() -> void:
+	if NarrationManager.new_talking == true:
+		$New_Dialogue.play()
+		NarrationManager.new_talking = false
 
 func change_lights() -> void:
+	$Narration/HideScreen.visible = true
 	if NarrationManager.final_scene:
+		$Narration/HideScreen.visible = false
 		diner_lights.visible = false
 		street_lamps.visible = false
 		margaret.visible = false
@@ -62,10 +70,10 @@ func change_lights() -> void:
 		choice_lights.visible = true
 		katie.visible = true
 		dopp.visible = true
-		NarrationManager.start_dialogue(\"the_choice\")
 		$Characters/WaitressTimer.stop()
 		$DinerAmbience.stop()
 		$MusicController/Music.stop()
+		$MusicController/ChoiceMusic.play()
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dcs1"]
@@ -284,6 +292,9 @@ points = PackedVector3Array(-0.39013672, -0.6059494, 0, -0.38830367, -0.6059494,
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_caap6"]
 points = PackedVector3Array(-1.5947266, -4.023926, 0, -1.5872337, -4.023926, -0.15641308, -1.5872337, -4.023926, 0.15610099, -1.5947266, 4.023926, 0, -1.5641308, -4.023926, -0.3112651, -1.5872337, 4.023926, -0.15641308, -1.5641308, -4.023926, 0.31095302, -1.5872337, 4.023926, 0.15610099, -1.5263543, -4.023926, -0.46299517, -1.5641308, 4.023926, -0.3112651, -1.5263543, -4.023926, 0.46268296, -1.5641308, 4.023926, 0.31095302, -1.4735923, -4.023926, -0.6103544, -1.5263543, 4.023926, -0.46299517, -1.4735923, -4.023926, 0.61004233, -1.5263543, 4.023926, 0.46268296, -1.4064689, -4.023926, -0.7517818, -1.4735923, 4.023926, -0.6103544, -1.4064689, -4.023926, 0.7514696, -1.4735923, 4.023926, 0.61004233, -1.326233, -4.023926, -0.8860285, -1.4064689, 4.023926, -0.7517818, -1.326233, -4.023926, 0.88571644, -1.4064689, 4.023926, 0.7514696, -1.2328846, -4.023926, -1.0118458, -1.326233, 4.023926, -0.8860285, -1.2328846, -4.023926, 1.0115337, -1.326233, 4.023926, 0.88571644, -1.1276727, -4.023926, -1.1276727, -1.2328846, 4.023926, -1.0118458, -1.1276727, -4.023926, 1.1273606, -1.2328846, 4.023926, 1.0115337, -1.0118458, -4.023926, -1.2328846, -1.1276727, 4.023926, -1.1276727, -1.0118458, -4.023926, 1.2325726, -1.1276727, 4.023926, 1.1273606, -0.8860285, -4.023926, -1.326233, -1.0118458, 4.023926, -1.2328846, -0.8860285, -4.023926, 1.325921, -1.0118458, 4.023926, 1.2325726, -0.7517818, -4.023926, -1.4064689, -0.8860285, 4.023926, -1.326233, -0.7517818, -4.023926, 1.4061568, -0.8860285, 4.023926, 1.325921, -0.6103544, -4.023926, -1.4735923, -0.7517818, 4.023926, -1.4064689, -0.6103544, -4.023926, 1.4732802, -0.7517818, 4.023926, 1.4061568, -0.46299517, -4.023926, -1.5263543, -0.6103544, 4.023926, -1.4735923, -0.46299517, -4.023926, 1.5260422, -0.6103544, 4.023926, 1.4732802, -0.3112651, -4.023926, -1.5641308, -0.46299517, 4.023926, -1.5263543, -0.3112651, -4.023926, 1.5638187, -0.46299517, 4.023926, 1.5260422, -0.15641308, -4.023926, -1.5872337, -0.3112651, 4.023926, -1.5641308, -0.15641308, -4.023926, 1.5869217, -0.3112651, 4.023926, 1.5638187, 0, -4.023926, -1.5947266, -0.15641308, 4.023926, -1.5872337, 0, -4.023926, 1.5947266, -0.15641308, 4.023926, 1.5869217, 0.15610099, -4.023926, -1.5872337, 0, 4.023926, -1.5947266, 0.15610099, -4.023926, 1.5869217, 0, 4.023926, 1.5947266, 0.31095302, -4.023926, -1.5641308, 0.15610099, 4.023926, -1.5872337, 0.31095302, -4.023926, 1.5638187, 0.15610099, 4.023926, 1.5869217, 0.46268296, -4.023926, -1.5263543, 0.31095302, 4.023926, -1.5641308, 0.46268296, -4.023926, 1.5260422, 0.31095302, 4.023926, 1.5638187, 0.61004233, -4.023926, -1.4735923, 0.46268296, 4.023926, -1.5263543, 0.61004233, -4.023926, 1.4732802, 0.46268296, 4.023926, 1.5260422, 0.7514696, -4.023926, -1.4064689, 0.61004233, 4.023926, -1.4735923, 0.7514696, -4.023926, 1.4061568, 0.61004233, 4.023926, 1.4732802, 0.88571644, -4.023926, -1.326233, 0.7514696, 4.023926, -1.4064689, 0.88571644, -4.023926, 1.325921, 0.7514696, 4.023926, 1.4061568, 1.0115337, -4.023926, -1.2328846, 0.88571644, 4.023926, -1.326233, 1.0115337, -4.023926, 1.2325726, 0.88571644, 4.023926, 1.325921, 1.1273606, -4.023926, -1.1276727, 1.0115337, 4.023926, -1.2328846, 1.1273606, -4.023926, 1.1273606, 1.0115337, 4.023926, 1.2325726, 1.2325726, -4.023926, -1.0118458, 1.1273606, 4.023926, -1.1276727, 1.2325726, -4.023926, 1.0115337, 1.1273606, 4.023926, 1.1273606, 1.325921, -4.023926, -0.8860285, 1.2325726, 4.023926, -1.0118458, 1.325921, -4.023926, 0.88571644, 1.2325726, 4.023926, 1.0115337, 1.4061568, -4.023926, -0.7517818, 1.325921, 4.023926, -0.8860285, 1.4061568, -4.023926, 0.7514696, 1.325921, 4.023926, 0.88571644, 1.4732802, -4.023926, -0.6103544, 1.4061568, 4.023926, -0.7517818, 1.4732802, -4.023926, 0.61004233, 1.4061568, 4.023926, 0.7514696, 1.5260422, -4.023926, -0.46299517, 1.4732802, 4.023926, -0.6103544, 1.5260422, -4.023926, 0.46268296, 1.4732802, 4.023926, 0.61004233, 1.5638187, -4.023926, -0.3112651, 1.5260422, 4.023926, -0.46299517, 1.5638187, -4.023926, 0.31095302, 1.5260422, 4.023926, 0.46268296, 1.5869217, -4.023926, -0.15641308, 1.5638187, 4.023926, -0.3112651, 1.5869217, -4.023926, 0.15610099, 1.5638187, 4.023926, 0.31095302, 1.5947266, -4.023926, 0, 1.5869217, 4.023926, -0.15641308, 1.5869217, 4.023926, 0.15610099, 1.5947266, 4.023926, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb32r"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Diner" type="Node3D" unique_id=1599357620]
 script = SubResource("GDScript_28flt")
@@ -912,6 +923,26 @@ visible = false
 
 [node name="Narration" type="CanvasLayer" parent="." unique_id=624770844]
 
+[node name="PoliceTimer" parent="Narration" unique_id=1835233824 instance=ExtResource("13_wi4wa")]
+visible = false
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -36.0
+offset_top = 23.0
+offset_right = -36.0
+offset_bottom = 23.0
+grow_vertical = 1
+
+[node name="HideScreen" type="PanelContainer" parent="Narration" unique_id=554950137]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pb32r")
+
 [node name="NarrativePanel" parent="Narration" unique_id=881028243 instance=ExtResource("9_caap6")]
 visible = false
 anchors_preset = 7
@@ -925,20 +956,13 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="PoliceTimer" parent="Narration" unique_id=1835233824 instance=ExtResource("13_wi4wa")]
-visible = false
-anchors_preset = 5
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -36.0
-offset_top = 23.0
-offset_right = -36.0
-offset_bottom = 23.0
-grow_vertical = 1
-
 [node name="Timer" type="Timer" parent="." unique_id=1358224969]
 wait_time = 2.5
 one_shot = true
+
+[node name="New_Dialogue" type="AudioStreamPlayer" parent="." unique_id=467643173]
+stream = ExtResource("19_212qh")
+bus = &"SFX"
 
 [node name="DinerAmbience" type="AudioStreamPlayer" parent="." unique_id=732517285]
 stream = ExtResource("15_tr1nw")
@@ -951,6 +975,10 @@ bus = &"SFX"
 [node name="Music" type="AudioStreamPlayer" parent="MusicController" unique_id=2097913044]
 stream = ExtResource("20_svxoy")
 autoplay = true
+bus = &"Music"
+
+[node name="ChoiceMusic" type="AudioStreamPlayer" parent="MusicController" unique_id=1781352456]
+stream = ExtResource("21_r54fj")
 bus = &"Music"
 
 [node name="CJGG_2026_Environment_v2" parent="." unique_id=431917471 instance=ExtResource("16_7swlq")]

@@ -32,6 +32,8 @@ func _on_texture_button_2_pressed() -> void:
 				page_3.show()
 			4:
 				page_4.show()
+				NarrationManager.set_variable("whole_case", true)
+				NarrationManager.talk_to_them()
 				
 	rustle.play()
 	

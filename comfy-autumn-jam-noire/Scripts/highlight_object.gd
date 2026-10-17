@@ -5,6 +5,7 @@ extends Node3D
 @export var area: Area3D
 @export var hideMaterial: Material
 @export var gunMaterial: Material
+@export var newDialogueMaterial: Material
 
 
 func _ready() -> void:
@@ -16,7 +17,14 @@ func _ready() -> void:
 	
 func highlight(h_name: String) -> void:
 	if h_name == name:
-		mesh.material_overlay = outlineMaterial
+		if h_name == "Sister":
+			print("Hello sister!")
+		if h_name == "WaitressWipe" or h_name == "WaitressSit":
+			print("Hello waitress!")
+		if NarrationManager.new_talking == true:
+			mesh.material_overlay = newDialogueMaterial
+		else:
+			mesh.material_overlay = outlineMaterial
 
 func not_highlighted(h_name: String) -> void:
 	if h_name == name:
@@ -40,6 +48,7 @@ func see_katie_dopp() -> void:
 		if area.name == "Gun":
 			mesh.visible = true
 			area.collision_layer = 2
+
 
 func show_hide_gun() -> void:
 	if mesh.name == "Gun_v1_001":

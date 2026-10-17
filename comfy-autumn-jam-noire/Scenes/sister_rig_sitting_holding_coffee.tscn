@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxnli6r8rfy46" path="res://Assets/3D_Textures/Margaret_Basecolour.png" id="2_wbsf1"]
 [ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="3_osog0"]
 [ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="4_j3ayo"]
+[ext_resource type="Material" uid="uid://bulj06tauu54x" path="res://Materials/New_Dialogue.tres" id="5_j3ayo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcn7u"]
 albedo_texture = ExtResource("2_wbsf1")
@@ -22,6 +23,7 @@ script = ExtResource("3_osog0")
 mesh = NodePath("../Sister_rig/Joints/Skeleton3D/sister_geo")
 outlineMaterial = ExtResource("4_j3ayo")
 area = NodePath("Sister")
+newDialogueMaterial = ExtResource("5_j3ayo")
 
 [node name="Sister" type="Area3D" parent="Sister" index="0" unique_id=976277546]
 transform = Transform3D(1, 0, 0, 0, 1, -3.5527137e-15, 0, 3.5527137e-15, 1, 267.4078, -387.10217, -267.9578)

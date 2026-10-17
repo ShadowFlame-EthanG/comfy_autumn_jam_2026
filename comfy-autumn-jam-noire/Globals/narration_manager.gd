@@ -5,12 +5,16 @@ signal dialogue_finished()
 signal skipping()
 signal picture_change(name: String)
 signal intro()
+signal new_dialogue()
 
 var skipped: int = 0
 var interact = true
 var first = 0
 var final_scene = false
 var katie_dies = false
+var newspaper_count = 0
+var dopp_talk = false
+var new_talking = false
 
 var should_return_to_game: bool :
 	get :
@@ -21,12 +25,28 @@ func _ready() -> void:
 	connect("loaded", _on_loaded)
 	create_story()
 	connect("choice_made", end_it)
+	TransitionScreen.on_transition_finished.connect(talking_dopp)
+	connect("dialogue_finished", time_to_choose)
 
 func _on_loaded(_successfully: Variant) -> void:
 	pass
 	
 func diner_start() -> void:
 	intro.emit()
+
+func talk_to_them() -> void:
+	new_talking = true
+	new_dialogue.emit()
+
+func talking_dopp() -> void:
+	if dopp_talk == true:
+		start_dialogue("the_choice")
+	
+func time_to_choose() -> void:
+	if dopp_talk == true:
+		dopp_talk = false
+		final_scene = true
+		TransitionScreen.transition()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("more_dialogue") and not has_choices:
@@ -71,6 +91,6 @@ func end_it(choice) -> void:
 		dialogue_finished.emit()
 		Modes.change_mode(Enums.GameplayMode.DINER)
 		skipped = 0
-		final_scene = true
+		dopp_talk = true
 		TransitionScreen.transition()
 		
