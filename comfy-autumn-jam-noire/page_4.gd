@@ -4,6 +4,8 @@ extends TextureRect
 @onready var button = $"../Button"
 
 var seen = false
+var dial_seen = true
+var change_seen = true
 
 func _ready() -> void:
 	pass
@@ -13,11 +15,17 @@ func _on_texture_rect_pressed() -> void:
 	button.hide()
 	full.show()
 	NarrationManager.set_variable("changelings", true)
+	if change_seen == true:
+			NarrationManager.talk_to_them()
+			change_seen = false
 	if seen == false:
 		seen = true
 		NarrationManager.newspaper_count += 1
 		if NarrationManager.newspaper_count == 3:
 			NarrationManager.set_variable("whole_news", true)
+			if dial_seen == true:
+				NarrationManager.talk_to_them()
+				dial_seen = false
 	
 func _on_button_pressed() -> void:
 	full.hide()
@@ -29,8 +37,14 @@ func _on_texture_rect_2_pressed() -> void:
 	button.hide()
 	full.show()
 	NarrationManager.set_variable("changelings", true)
+	if change_seen == true:
+		NarrationManager.talk_to_them()
+		change_seen = false
 	if seen == false:
 		seen = true
 		NarrationManager.newspaper_count += 1
 		if NarrationManager.newspaper_count == 3:
 			NarrationManager.set_variable("whole_news", true)
+			if dial_seen == true:
+				NarrationManager.talk_to_them()
+				dial_seen = false
