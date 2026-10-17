@@ -8,10 +8,10 @@ VAR whole_case = false
 VAR whole_news = false
 VAR halloween = false
 VAR changelings = false
-VAR margaret_1 = true
-VAR margaret_2 = true
-VAR waitress_1 = true
-VAR waitress_2 = true
+VAR margaret_1 = false
+VAR margaret_2 = false
+VAR waitress_1 = false
+VAR waitress_2 = false
 
 === intro
 This is a dialogue test.

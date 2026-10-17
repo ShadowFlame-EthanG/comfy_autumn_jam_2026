@@ -17,8 +17,11 @@ func _ready() -> void:
 	
 func highlight(h_name: String) -> void:
 	if h_name == name:
-		if h_name == "Sister":
-			print("Hello sister!")
+		if h_name == "Sister" and (NarrationManager.get_variable("margaret_1") or NarrationManager.get_variable("margaret_2")):
+			if newDialogueMaterial:
+				print("Hello sister!")
+				mesh.material_overlay = null
+				mesh.material_overlay = newDialogueMaterial
 		if h_name == "WaitressWipe" or h_name == "WaitressSit":
 			print("Hello waitress!")
 		if NarrationManager.new_talking == true:
