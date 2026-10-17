@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5235ykgmhxhl" path="res://Assets/2D_assets/filefolder.png" id="2_6cv16"]
 [ext_resource type="Texture2D" uid="uid://cl4mgiroel0cf" path="res://Assets/2D_assets/folderwithline.png" id="2_jjkpp"]
 [ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="3_20ofu"]
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_qjqth"]
 [ext_resource type="AudioStream" uid="uid://bhu2hvelw5sx0" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v3.wav" id="4_6cv16"]
 [ext_resource type="AudioStream" uid="uid://exj2fkd6lyqr" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v2.wav" id="5_38ygb"]
 [ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="6_xjs7f"]
@@ -27,6 +28,61 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_jjkpp")
 stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=1568215956]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 193.0
+offset_right = 843.0
+offset_bottom = 395.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 21
+text = "Subject: Kathryn Woodman
+
+DOB: 2/24/26
+Height: 5’3”
+Weight: 125lbs
+Eyes: Blu
+Hair: Blnd
+
+Status: Missing"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect" unique_id=79708615]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 436.0
+offset_right = 843.0
+offset_bottom = 517.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 21
+text = "Subject was last known to be in her apartment on October 21st, 1948.
+"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="TextureRect" unique_id=1034635074]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 533.0
+offset_right = 837.0
+offset_bottom = 614.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 21
+text = "Prime Suspect: Margaret Woodman
+
+Relation to Subject: Sister"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="TextureRect" unique_id=835596485]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 631.0
+offset_right = 837.0
+offset_bottom = 779.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 21
+text = "Cause: Suspect was only other individual with keys to Subject’s apartment. Apartment was found locked, with Subject’s key still inside."
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=698570787]
 layout_mode = 0
@@ -63,6 +119,23 @@ grow_vertical = 2
 texture = ExtResource("2_6cv16")
 stretch_mode = 3
 
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2" unique_id=1326185793]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 194.0
+offset_right = 862.0
+offset_bottom = 802.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 24
+text = "The state of the subject’s apartment was as follows.
+
+The subject’s keys and handbag were left in the usual spot on the stand by the door, ready to leave. The door, however, was locked, meaning that when the subject left, she did not take her keys.
+
+The mirror in the  bathroom and the mirror in the lobby both seem to have been smashed. 
+
+Forensics team also recovered a hammer with fingerprints matching the victim. Our conclusion: A violent struggle in which the attacker overpowered the victim. "
+
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=3285678]
 visible = false
 layout_mode = 1
@@ -75,6 +148,22 @@ grow_vertical = 2
 texture = ExtResource("2_6cv16")
 stretch_mode = 3
 
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect3" unique_id=1433631851]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 194.0
+offset_right = 862.0
+offset_bottom = 802.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 23
+text = "In the bathroom, among shards of broken glass, was a tube of uncapped lipstick. It had a dent on the bottom, as if it had fallen and hit the ground. Our conclusion: The attacker interrupted the victim whilst she was preparing to leave.
+
+
+There was also a small, folding hand mirror on the bathroom floor near the tube of lipstick. This one was completely intact, unlike the other mirrors. We assume she was surprised, and dropped it along with the lipstick.
+
+A thorough search of the apartment revealed the suspect was definitely not inside. There only door is the front, which was locked, and all the windows were also locked from the inside."
+
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=743796012]
 visible = false
 layout_mode = 1
@@ -86,6 +175,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_6cv16")
 stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect4" unique_id=19476672]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 194.0
+offset_right = 862.0
+offset_bottom = 802.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_font_sizes/normal_font_size = 24
+text = "Finally, all pictures of the Subject were missing. Family portraits, self-photos, photos with friends. The Subject had been torn and ripped out of them all. Attached is the only surviving photo of the Subject, surrendered to the police by her sister.
+
+Conclusion:
+
+Because the door was locked, we conclude that the prime suspect is anyone who possesses a copy of the keys. Our investigation uncovered that there is only one copy, and it belongs to one Margaret Woodman, the sister of the Subject. "
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=2052589883]
 layout_mode = 1

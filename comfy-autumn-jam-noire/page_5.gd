@@ -1,6 +1,6 @@
 extends TextureRect
 
-@onready var full = $"../Page4_full"
+@onready var full = $"../Page5_full2"
 @onready var button = $"../Button"
 
 func _ready() -> void:
