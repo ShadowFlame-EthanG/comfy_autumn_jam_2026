@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1oawvjukayhu"
-path="res://.godot/imported/title border (copy 1).png-b828de36132215790224cf68d46e1a59.ctex"
+uid="uid://yjfw1qk3drnj"
+path="res://.godot/imported/fake text left pg4 blue.png-ab5b35834d5a644dbb4abf94fe7810ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://title border (copy 1).png"
-dest_files=["res://.godot/imported/title border (copy 1).png-b828de36132215790224cf68d46e1a59.ctex"]
+source_file="res://Assets/2D_assets/fake text left pg4 blue.png"
+dest_files=["res://.godot/imported/fake text left pg4 blue.png-ab5b35834d5a644dbb4abf94fe7810ab.ctex"]
 
 [params]
 

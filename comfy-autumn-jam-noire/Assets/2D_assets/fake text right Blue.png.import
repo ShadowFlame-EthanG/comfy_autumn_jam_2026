@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gk1wxodbam2h"
-path="res://.godot/imported/fake text right  3.png-7f8468b6f007a2f5037d49ee87432025.ctex"
+uid="uid://d16u7v5e27qq1"
+path="res://.godot/imported/fake text right Blue.png-237a10421629ab4dfaf13e4f23484e4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fake text right  3.png"
-dest_files=["res://.godot/imported/fake text right  3.png-7f8468b6f007a2f5037d49ee87432025.ctex"]
+source_file="res://Assets/2D_assets/fake text right Blue.png"
+dest_files=["res://.godot/imported/fake text right Blue.png-237a10421629ab4dfaf13e4f23484e4e.ctex"]
 
 [params]
 
