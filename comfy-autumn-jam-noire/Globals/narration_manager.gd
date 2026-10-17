@@ -6,6 +6,7 @@ signal skipping()
 signal picture_change(name: String)
 signal intro()
 signal new_dialogue()
+signal hide_picture()
 
 var skipped: int = 0
 var interact = true
@@ -40,6 +41,7 @@ func talk_to_them() -> void:
 
 func talking_dopp() -> void:
 	if dopp_talk == true:
+		hide_picture.emit()
 		start_dialogue("the_choice")
 	
 func time_to_choose() -> void:

@@ -6,8 +6,8 @@ extends Node3D
 
 @onready var tree_timer = $Timers/TreeTimer
 @onready var lamp_timer = $Timers/LampTimer
-@onready var cash = $Cash_v1_001
-@onready var necklace = $"Clumped Necklace_v1_001"
+@onready var cash = $New_Cash_v1_001
+@onready var necklace = $"New_Clumped Necklace_v1_001"
 
 var tree_change: int
 var tree_areas

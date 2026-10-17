@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ddirhnrx3hklw"]
 
 [ext_resource type="PackedScene" uid="uid://cu5u2ccmp4sss" path="res://Assets/Models/CJGG_2026_Environment_v1.fbx" id="1_u2mar"]
-[ext_resource type="Script" uid="uid://x4sb1rn0jsu7" path="res://Scripts/swaps.gd" id="2_wnyc2"]
 [ext_resource type="Texture2D" uid="uid://d3jyg2a3qfmif" path="res://Assets/3D_Textures/Plate_PlatePie_Bowl_BowlSoup_mat.png" id="3_4v8aq"]
 [ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="3_371my"]
 [ext_resource type="Texture2D" uid="uid://cp0opth6831wg" path="res://Assets/3D_Textures/CoffeePot_Salt_Pepper_CoffeePot_Salt_Pepper_mat_BaseColor_Utility - sRGB - Texture.1001.png" id="4_8oal4"]
@@ -131,11 +130,7 @@ albedo_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uag7k"]
 albedo_texture = ExtResource("7_a36v6")
 
-[node name="CJGG_2026_Environment_v1" unique_id=431917471 node_paths=PackedStringArray("trees", "square_lamps", "circle_lamps") instance=ExtResource("1_u2mar")]
-script = ExtResource("2_wnyc2")
-trees = [NodePath("Leaves_Window_v1_1_001"), NodePath("Leaves_Window_v1_2_001"), NodePath("Leaves_Window_v1_3_001"), NodePath("Leaves_v2_001"), NodePath("Leaves_v2_002"), NodePath("Leaves_v2_003"), NodePath("Leaves_v2_004"), NodePath("Leaves_v2_005"), NodePath("Leaves_v2_006"), NodePath("Leaves_v2_007"), NodePath("Leaves_v2_008"), NodePath("Leaves_v2_009")]
-square_lamps = [NodePath("Street Lamp_Square_v1_001"), NodePath("Street Lamp_Square_v1_002"), NodePath("Street Lamp_Square_v1_003"), NodePath("Street Lamp_Square_v1_004"), NodePath("Street Lamp_Round_v1_005"), NodePath("Street Lamp_Square_v1_006"), NodePath("Street Lamp_Square_v1_007"), NodePath("Street Lamp_Square_v1_008"), NodePath("Street Lamp_Square_v1_009")]
-circle_lamps = [NodePath("Street Lamp_Round_v1_001"), NodePath("Street Lamp_Round_v1_002"), NodePath("Street Lamp_Round_v1_003"), NodePath("Street Lamp_Round_v1_004"), NodePath("Street Lamp_Round_v1_005"), NodePath("Street Lamp_Round_v1_006"), NodePath("Street Lamp_Round_v1_007"), NodePath("Street Lamp_Round_v1_008"), NodePath("Street Lamp_Round_v1_009")]
+[node name="CJGG_2026_Environment_v1" unique_id=431917471 instance=ExtResource("1_u2mar")]
 
 [node name="Timers" type="Node3D" parent="." index="0" unique_id=1755991657]
 
@@ -366,7 +361,7 @@ material_override = SubResource("StandardMaterial3D_a36v6")
 material_override = SubResource("StandardMaterial3D_mcsk4")
 
 [node name="Gun_v1_001" parent="." index="50" unique_id=1307390933]
-transform = Transform3D(-0.46813247, -1.0504055, 4.5914682e-08, -2.4352194e-22, -5.0268092e-08, -1.1499999, 1.0504055, -0.46813247, 2.046272e-08, -4.925, -0.335, 9.781)
+transform = Transform3D(-0.46813247, -1.0504055, 4.5914682e-08, 0, -5.0268092e-08, -1.1499999, 1.0504055, -0.46813247, 2.0462721e-08, -4.925, -0.335, 9.781)
 visible = false
 material_override = ExtResource("10_4fmie")
 
