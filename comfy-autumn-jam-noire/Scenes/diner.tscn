@@ -10,10 +10,12 @@
 [ext_resource type="Material" uid="uid://bulj06tauu54x" path="res://Materials/New_Dialogue.tres" id="5_udb6o"]
 [ext_resource type="PackedScene" uid="uid://12s2xohqsn50" path="res://news_paper_ui.tscn" id="6_0m8sl"]
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
-[ext_resource type="PackedScene" uid="uid://dmwg0asmtcsy8" path="res://notes_ui.tscn" id="7_d7ods"]
+[ext_resource type="Texture2D" uid="uid://bq6nlp7nw1x8j" path="res://Assets/3D_Textures/3D-Textures/CaseFile_Newspaper_Cash_Notepad_mat.png" id="7_4aein"]
+[ext_resource type="PackedScene" uid="uid://dhyvtwt5v33ho" path="res://notes_ui.tscn" id="7_d7ods"]
 [ext_resource type="PackedScene" uid="uid://8oh1cwssr3f7" path="res://Assets/Sister_Rig_Posed.fbx" id="8_lkiu4"]
 [ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="8_ppigy"]
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
+[ext_resource type="Texture2D" uid="uid://dgcuevnm7mbl3" path="res://Assets/3D_Textures/3D-Textures/Coffee_Cup_mat.png" id="9_sbue7"]
 [ext_resource type="PackedScene" uid="uid://d0x0xdp166vv3" path="res://Scenes/coffee.tscn" id="12_f6flb"]
 [ext_resource type="PackedScene" uid="uid://do5py0tctfsuv" path="res://Scenes/police_timer.tscn" id="13_wi4wa"]
 [ext_resource type="PackedScene" uid="uid://dw7yp0dvuhmmn" path="res://Scenes/sister_rig_sitting_holding_coffee.tscn" id="15_7swlq"]
@@ -123,6 +125,9 @@ size = Vector2(16, 25)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4132"]
 albedo_color = Color(0.5987617, 0.39108008, 0.28649783, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxuf0"]
+albedo_texture = ExtResource("7_4aein")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef0pw"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yythx"]
@@ -159,6 +164,9 @@ shadow_mesh = SubResource("ArrayMesh_yythx")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7swlq"]
 points = PackedVector3Array(0.19161727, 0.020691639, 0.20931518, 0.18509196, 0.020691639, 0.226235, 0.18624349, 0, 0.2177751, 0.18624349, 0, -0.21781361, 0.18048586, 0.020691639, -0.22612932, 0.16854842, 0.020691639, 0.23358935, 0.17933436, 0, 0.23450261, 0.17933436, 0, -0.23454115, 0.17311613, 0.020691639, -0.24266458, -0.02486901, 0.020691639, 0.23854029, 0.16256051, 0, 0.24142435, 0.16256051, 0, -0.24146289, 0.15618874, 0.020691639, -0.2491537, -0.15656482, 0.020691639, 0.24190503, -0.1626295, 0, 0.24142435, 0.0010018647, 0, -0.24146289, -0.005293131, 0.020691639, -0.24506795, -0.17345382, 0.020691639, 0.23536783, -0.17687, 0.010344806, 0.24142435, -0.17936496, 0, 0.23450261, -0.1626295, 0, -0.21776555, -0.17687, 0.010344806, -0.21776555, -0.16827196, 0.020691639, -0.21718875, -0.19360547, 0.010344806, 0.23450261, -0.18082356, 0.020691639, 0.21883258, -0.1862741, 0, 0.2177751, -0.17936496, 0, -0.21084382, -0.19360547, 0.010344806, -0.21084382, -0.18481551, 0.020691639, -0.2098344, -0.2005146, 0.010344806, 0.2177751, -0.1913408, 0.020691639, -0.19291459, -0.1862741, 0, -0.1941163, -0.2005146, 0.010344806, -0.1941163)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avos2"]
+albedo_texture = ExtResource("9_sbue7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4bkd"]
 
@@ -197,6 +205,9 @@ shadow_mesh = SubResource("ArrayMesh_j6ggl")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gqxw7"]
 points = PackedVector3Array(-0.020825827, 0.0674024, -0.05026539, -0.019969314, 0.04239041, -0.04820872, -0.04820976, 0.04239041, -0.019966422, -0.05026539, 0.0674024, -0.020822547, 0.020812925, 0.0674024, -0.05026539, -0.0366346, 0.01737842, -0.015174087, 0.019956414, 0.04239041, -0.04820872, -0.015172843, 0.01737842, -0.036636267, -0.04820976, 0.04239041, 0.019956578, -0.05026539, 0.0674024, 0.020812701, 0.050264727, 0.0674024, -0.020822547, 0.07473652, 0.047153972, -0.007262308, -0.024557775, 0, -0.010175101, -0.0366346, 0.01737842, 0.015164245, 0.01517218, 0.01737842, -0.036636267, 0.07193449, 0.02794798, -0.007252466, -0.010180596, 0, -0.024552105, -0.019969314, 0.04239041, 0.048198875, -0.020825827, 0.0674024, 0.05026539, 0.050264727, 0.0674024, 0.020812701, 0.06410353, 0.058944114, -0.007350873, 0.07473652, 0.047153972, 0.0071835816, -0.024557775, 0, 0.010165259, -0.015172843, 0.01737842, 0.036626425, 0.010167696, 0, -0.024552105, 0.053115685, 0.011348094, -0.0072131045, 0.07193449, 0.02794798, 0.00696709, 0.019956414, 0.04239041, 0.048198875, 0.020812925, 0.0674024, 0.05026539, 0.06410353, 0.058944114, 0.0073410273, -0.010180596, 0, 0.02454226, 0.01517218, 0.01737842, 0.036626425, 0.024544876, 0, -0.010175101, 0.053115685, 0.011348094, 0.006849002, 0.010167696, 0, 0.02454226, 0.024544876, 0, 0.010165259)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byxog"]
+albedo_texture = ExtResource("7_4aein")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_po87h"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5srb3"]
@@ -231,8 +242,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5srb3")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w734i"]
-points = PackedVector3Array(-0.28696933, 0, -0.22585991, -0.27347508, 0.011113279, -0.21697408, 0.25987735, 0, -0.22585991, -0.27347508, 0, 0.2080288, -0.27347508, 0.007153435, 0.21695796, -0.27347508, 0.019885814, 0.21695796, -0.27347508, 0.026805699, 0.2080288, 0.2734265, 0.011113279, -0.21697408, 0.2734265, 0, 0.2080288, 0.2734265, 0.007153435, 0.21695796, 0.2734265, 0.019885814, 0.21695796, 0.2734265, 0.026805699, 0.2080288)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_31puh"]
+points = PackedVector3Array(-0.16332363, 0, -0.16334304, -0.1729457, 0, -0.05393547, -0.18865068, 0.008551163, 0.11871347, -0.1873235, 0.016956264, 0.11017588, -0.17460467, 0.012984422, 0.0033928305, -0.15550801, 0.0070291483, -0.15676594, -0.10610735, 0, -0.1565446, -0.1873235, 0, 0.11017588, -0.18813455, 0.0028382158, 0.117132455, -0.13143441, 0.008551163, 0.12554353, -0.18813455, 0.014264109, 0.117132455, -0.13091828, 0.014264109, 0.12396252, -0.07285407, 0.016956264, 0.12383604, 0.098868504, 0.016956264, 0.14429462, -0.041001707, 0.0070291483, -0.1431058, 0.06955992, 0.0035137443, -0.13276584, 0.00839895, 0, -0.14288446, -0.07285407, 0, 0.12383604, -0.13091828, 0.0028382158, 0.12396252, 0.04028818, 0.008551163, 0.14603376, 0.040804297, 0.014264109, 0.14445272, 0.041652218, 0.016956264, 0.13749617, 0.15612166, 0.016956264, 0.15112469, 0.18797402, 0.0070291483, -0.11578553, 0.18402933, 0.0035137443, -0.119105704, 0.18012153, 0, -0.12239425, -0.01560092, 0, 0.1306661, 0.040804297, 0.0028382158, 0.14445272, 0.15479447, 0.008551163, 0.1596939, 0.098057434, 0.014264109, 0.15128279, 0.15531059, 0.014264109, 0.15808123, 0.1624995, 0.014969514, 0.097748965, 0.15531059, 0.0028382158, 0.15808123, 0.15612166, 0, 0.15112469, 0.17053632, 0, -0.012986675, 0.098057434, 0.0028382158, 0.15128279)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xcsa"]
+albedo_texture = ExtResource("7_4aein")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sc0gl"]
 
@@ -546,6 +560,7 @@ outlineMaterial = ExtResource("3_0k504")
 
 [node name="New_Case File_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Files" unique_id=2106353845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.777, -0.024, 0.334)
+material_override = SubResource("StandardMaterial3D_vxuf0")
 mesh = SubResource("ArrayMesh_4aein")
 
 [node name="Files" type="Area3D" parent="DinerObjects/TableObjects/Files" unique_id=585412037]
@@ -563,6 +578,7 @@ outlineMaterial = ExtResource("8_ppigy")
 
 [node name="New_Cup_v2_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Coffee" unique_id=73881297]
 transform = Transform3D(0.9999526, 0, -0.009720266, 0, 1, 0, 0.009720266, 0, 0.9999526, -0.227, -0.564, 0.578)
+material_override = SubResource("StandardMaterial3D_avos2")
 mesh = SubResource("ArrayMesh_svxoy")
 
 [node name="Coffee" type="Area3D" parent="DinerObjects/TableObjects/Coffee" unique_id=1390146386]
@@ -579,7 +595,8 @@ mesh = NodePath("New_Newspaper_v1_001")
 outlineMaterial = ExtResource("8_ppigy")
 
 [node name="New_Newspaper_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=946953099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.533023, 0.9694438, 6.346409)
+transform = Transform3D(-0.99939084, 0, -0.034899388, 0, 1, 0, 0.034899388, 0, -0.99939084, -8.533023, 0.9694438, 6.346409)
+material_override = SubResource("StandardMaterial3D_byxog")
 mesh = SubResource("ArrayMesh_212qh")
 
 [node name="Newspaper" type="Area3D" parent="DinerObjects/TableObjects/Newspaper" unique_id=821288583]
@@ -587,9 +604,9 @@ transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.961
 collision_layer = 2
 priority = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Newspaper" unique_id=1800956988]
-transform = Transform3D(0.58307785, 0, -0.2451047, 0, 0.6325, 0, 0.2451047, 0, 0.58307785, 0.09955311, -0.11530888, 0.39812946)
-shape = SubResource("ConvexPolygonShape3D_w734i")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinerObjects/TableObjects/Newspaper/Newspaper" unique_id=1423269151]
+transform = Transform3D(-0.9702957, 0, 0.241922, 0, 1, 0, -0.241922, 0, -0.9702957, 0.09995937, -0.118255496, 0.397007)
+shape = SubResource("ConvexPolygonShape3D_31puh")
 
 [node name="Notepad" type="Node3D" parent="DinerObjects/TableObjects" unique_id=638322035 node_paths=PackedStringArray("mesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.424691, -0.2425642, 5.4757433)
@@ -599,6 +616,7 @@ outlineMaterial = ExtResource("8_ppigy")
 
 [node name="New_Notepad_v1_001" type="MeshInstance3D" parent="DinerObjects/TableObjects/Notepad" unique_id=237146260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136, -0.097, 0.999)
+material_override = SubResource("StandardMaterial3D_3xcsa")
 mesh = SubResource("ArrayMesh_r54fj")
 
 [node name="Notepad" type="Area3D" parent="DinerObjects/TableObjects/Notepad" unique_id=1805613836]

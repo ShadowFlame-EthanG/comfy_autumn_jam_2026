@@ -8,7 +8,7 @@ class_name Player
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var gun = $Head/Gun_v1_001
+@onready var gun = $Head/New_Gun_v1_001
 @onready var gunshot = $GunShot
 
 var prev_high = ""
