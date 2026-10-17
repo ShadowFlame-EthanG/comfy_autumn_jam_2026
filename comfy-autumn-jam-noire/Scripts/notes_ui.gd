@@ -21,7 +21,7 @@ func note_taken(choice) -> void:
 	if choice == "I'll take the case.":
 		text_1.text = "Sister's Necklace"
 	if choice == "I'll help, but I don't work for free.":
-		text_1.text = "Family is Rich"
+		text_1.text = "Sister doesn't boast wealth"
 
 func _on_texture_button_pressed() -> void:
 	hide()
