@@ -55,7 +55,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	
 	if event is InputEventMouseButton and event.pressed:
-		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE and Modes.current_mode == Enums.GameplayMode.DINER:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		var item = Ray_cast.get_collider()
 		if item and item.name == "Sister" and NarrationManager.final_scene == false:
@@ -87,18 +87,18 @@ func _unhandled_input(event: InputEvent) -> void:
 				if item.name == "Files":
 					show_ui($"../Items/Files UI")
 					MousePosition.files_selected()
-					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+					Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				if item.name == "Newspaper":
 					show_ui($"../Items/NewsPaperUI")
 					MousePosition.newspaper_selected()
-					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+					Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 				if item.name == "Coffee":
 					show_ui($"../Items/Coffee")
-					Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+					Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			if item.name == "Notepad":
 				show_ui($"../Items/NotesUI")
 				MousePosition.notes_selected()
-				Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			
 
 func _on_vison_timer_timeout() -> void:

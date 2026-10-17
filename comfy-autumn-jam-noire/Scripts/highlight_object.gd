@@ -12,6 +12,7 @@ func _ready() -> void:
 	MousePosition.gone.connect(not_highlighted)
 	TransitionScreen.on_transition_finished.connect(see_katie_dopp)
 	MousePosition.gun_choice.connect(show_hide_gun)
+	NarrationManager.intro.connect(can_interact)
 	
 func highlight(h_name: String) -> void:
 	if h_name == name:
@@ -20,6 +21,12 @@ func highlight(h_name: String) -> void:
 func not_highlighted(h_name: String) -> void:
 	if h_name == name:
 		mesh.material_overlay = null
+
+func can_interact() -> void:
+	if area:
+		if area.name == "Sister" and NarrationManager.final_scene == false:
+			print("Here!")
+			area.collision_layer = 2
 
 func see_katie_dopp() -> void:
 	if area:

@@ -46,7 +46,7 @@ script/source = "extends Node3D
 func _ready() -> void:
 	$Timer.start()
 	TransitionScreen.on_transition_finished.connect(change_lights)
-
+	
 func _on_timer_timeout() -> void:
 	NarrationManager.start_dialogue(\"sister_intro\")
 	
@@ -697,7 +697,7 @@ visible = false
 [node name="OmniLight3D11" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=1638395904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304, 0.75, 6.2609997)
 light_color = Color(0.34901962, 0.79607844, 0.53333336, 1)
-light_energy = 0.364
+light_energy = 0.122
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.1
@@ -709,6 +709,7 @@ omni_attenuation = 1.966
 [node name="OmniLight3D13" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=530590037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.962927, 0.75, 5.7891016)
 light_color = Color(0.65822273, 0, 0.029885346, 1)
+light_energy = 0.575
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.1
@@ -719,7 +720,7 @@ omni_attenuation = 1.966
 [node name="OmniLight3D12" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=1955639044]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.947178, 0.75, 7.123616)
 light_color = Color(0.34901962, 0.79607844, 0.53333336, 1)
-light_energy = 0.364
+light_energy = 0.142
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_size = 0.1

@@ -4,6 +4,7 @@ signal dialogue_engaged()
 signal dialogue_finished()
 signal skipping()
 signal picture_change(name: String)
+signal intro()
 
 var skipped: int = 0
 var interact = true
@@ -24,6 +25,8 @@ func _ready() -> void:
 func _on_loaded(_successfully: Variant) -> void:
 	pass
 	
+func diner_start() -> void:
+	intro.emit()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("more_dialogue") and not has_choices:
@@ -61,6 +64,7 @@ func advance():
 func end_it(choice) -> void:
 	if choice == "Okay, I’ll do what I can." or choice == "Actually, one moment." or choice == "Actually, I'm good.":
 		dialogue_finished.emit()
+		diner_start()
 		Modes.change_mode(Enums.GameplayMode.DINER)
 		skipped = 0
 	if choice == "Yes, I know what happened to your sister.":

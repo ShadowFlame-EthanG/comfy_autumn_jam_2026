@@ -35,7 +35,7 @@ func no_picture() -> void:
 
 func talking():
 	show()
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func done_talking():
 	hide()

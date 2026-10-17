@@ -18,6 +18,7 @@ func _ready() -> void:
 	lamp_timer.start()
 	Watching.isSeen.connect(get_tree_names)
 	NarrationManager.choice_made.connect(cash_or_neck)
+	TransitionScreen.on_transition_finished.connect(hide_cash_neck)
 
 func _on_tree_timer_timeout() -> void:
 	var mesh_hide = trees.pick_random()
@@ -64,3 +65,8 @@ func cash_or_neck(choice) -> void:
 		necklace.visible = true
 	if choice == "I'll help, but I don't work for free.":
 		cash.visible = true
+		
+func hide_cash_neck() -> void:
+	if NarrationManager.final_scene:
+		necklace.visible = false
+		cash.visible = false

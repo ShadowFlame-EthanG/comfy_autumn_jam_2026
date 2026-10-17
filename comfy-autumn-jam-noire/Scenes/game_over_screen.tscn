@@ -2,8 +2,34 @@
 
 [ext_resource type="Texture2D" uid="uid://d1iws3h86m3vs" path="res://Assets/2D_assets/bad ending.png" id="1_jb6in"]
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="2_jb6in"]
+[ext_resource type="Texture2D" uid="uid://dptt55smbsf7o" path="res://Assets/2D_assets/notepad options ui.png" id="3_y8man"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wydum"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kk8k2"]
+texture = ExtResource("3_y8man")
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5yba"]
+texture = ExtResource("3_y8man")
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ladg1"]
+texture = ExtResource("3_y8man")
+
+[sub_resource type="GDScript" id="GDScript_un84n"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	NavigationManager.go_to_menu()
+"
 
 [node name="game_over_screen" type="PanelContainer" unique_id=497822073]
 anchors_preset = 15
@@ -20,15 +46,35 @@ texture = ExtResource("1_jb6in")
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1875154654]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="HBoxContainer" unique_id=1059666898]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1804848945]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.22
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=419374319]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=419374319]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 0.8392157, 0.6392157, 1)
 theme_override_fonts/normal_font = ExtResource("2_jb6in")
 theme_override_font_sizes/normal_font_size = 150
 text = "THE CASE GOES COLD"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=5318174]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+size_flags_stretch_ratio = 5.13
+offset_transform_position = Vector2(0, -150)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jb6in")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_kk8k2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_e5yba")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ladg1")
+text = "Back to Menu"
+script = SubResource("GDScript_un84n")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="HBoxContainer/VBoxContainer/Button" method="_on_pressed"]

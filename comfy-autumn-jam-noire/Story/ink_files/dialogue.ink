@@ -137,13 +137,13 @@ Really? Are you sure?
 === question_sister_loop
 \*
 
-* [When was the last place you saw her?]
++ [When was the last place you saw her?]
     A few days before she disappeared. At my place. She left some things there and I was going to return them to her when we went out dancing.
     -> question_sister_loop
- * [Had you noticed anything strange about her recently?]
+ + [Had you noticed anything strange about her recently?]
     Yeah. She’d been acting real paranoid. Always checking over her shoulder, like someone was following her. And she wouldn’t look in the mirror anymore. It was weird.
     -> question_sister_loop
-* [Know anyone who’d want to hurt her?]
++ [Know anyone who’d want to hurt her?]
     Everyone loved Katie. I can't imagine anyone doing anything like this to her.
     -> question_sister_loop
 + [Nevermind.]
