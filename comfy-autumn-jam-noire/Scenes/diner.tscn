@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dwp30engimy3h" path="res://Assets/2D_assets/stars.png" id="2_8hscu"]
 [ext_resource type="Script" uid="uid://cmk4ccy1y1k8c" path="res://Scripts/highlight_object.gd" id="2_caap6"]
 [ext_resource type="Material" uid="uid://b2ut5iouwuujc" path="res://Materials/selection.tres" id="3_0k504"]
-[ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://InGmaeUI.tscn" id="5_nh6gm"]
+[ext_resource type="PackedScene" uid="uid://d5b2vrdwdd4y" path="res://Scenes/InGmaeUI.tscn" id="5_nh6gm"]
 [ext_resource type="Material" uid="uid://bulj06tauu54x" path="res://Materials/New_Dialogue.tres" id="5_udb6o"]
-[ext_resource type="PackedScene" uid="uid://12s2xohqsn50" path="res://news_paper_ui.tscn" id="6_0m8sl"]
+[ext_resource type="PackedScene" uid="uid://12s2xohqsn50" path="res://Scenes/news_paper_ui.tscn" id="6_0m8sl"]
 [ext_resource type="CylinderMesh" uid="uid://c3un2k61bywsm" path="res://Materials/Tree1_test.tres" id="6_y2hby"]
 [ext_resource type="Texture2D" uid="uid://bq6nlp7nw1x8j" path="res://Assets/3D_Textures/3D-Textures/CaseFile_Newspaper_Cash_Notepad_mat.png" id="7_4aein"]
-[ext_resource type="PackedScene" uid="uid://dhyvtwt5v33ho" path="res://notes_ui.tscn" id="7_d7ods"]
+[ext_resource type="PackedScene" uid="uid://dhyvtwt5v33ho" path="res://Scenes/notes_ui.tscn" id="7_d7ods"]
 [ext_resource type="PackedScene" uid="uid://8oh1cwssr3f7" path="res://Assets/Sister_Rig_Posed.fbx" id="8_lkiu4"]
 [ext_resource type="Material" uid="uid://dr18eef5xx7c" path="res://Materials/Outline.tres" id="8_ppigy"]
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
@@ -44,11 +44,16 @@ script/source = "extends Node3D
 @onready var files = $DinerObjects/TableObjects/Files
 @onready var coffee = $DinerObjects/TableObjects/Coffee
 @onready var newspaper = $DinerObjects/TableObjects/Newspaper
+@onready var main_music: AudioStreamPlayer = $MusicController/Music
+@onready var musicON = $Music_on
+@onready var musicOFF = $Music_off
 
 func _ready() -> void:
 	$Timer.start()
 	TransitionScreen.on_transition_finished.connect(change_lights)
 	NarrationManager.new_dialogue.connect(new_dialogue)
+	main_music.play()
+	start_music()
 	
 func _on_timer_timeout() -> void:
 	NarrationManager.start_dialogue(\"sister_intro\")
@@ -75,6 +80,28 @@ func change_lights() -> void:
 		$DinerAmbience.stop()
 		$MusicController/Music.stop()
 		$MusicController/ChoiceMusic.play()
+
+func start_music():
+	print(\"music starting\")
+	main_music.stop()
+	main_music.play()
+	musicON.start(167)
+	main_music.volume_db = -80.0
+	var tween = create_tween()
+	tween.tween_property(main_music, \"volume_db\", 0.0, 10)
+
+func stop_music():
+	print(\"music stopping\")
+	musicOFF.start(30)
+	var tween = create_tween()
+	tween.tween_property(main_music, \"volume_db\", -80.0, 10)
+
+func _on_music_on_timeout() -> void:
+	stop_music()
+
+
+func _on_music_off_timeout() -> void:
+	start_music()
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6dcs1"]
@@ -978,7 +1005,6 @@ bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="MusicController" unique_id=2097913044]
 stream = ExtResource("20_svxoy")
-autoplay = true
 bus = &"Music"
 
 [node name="ChoiceMusic" type="AudioStreamPlayer" parent="MusicController" unique_id=1781352456]
@@ -1028,24 +1054,30 @@ visible = false
 [node name="CJGG_2026_Environment_v2 (submission version fbx)" parent="." unique_id=109195645 instance=ExtResource("31_4aein")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.407, -1.023, 0.335)
 
-[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
+[node name="Music_on" type="Timer" parent="." unique_id=530411673]
+
+[node name="Music_off" type="Timer" parent="." unique_id=560178575]
+
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_exited"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Characters/WaitressTimer" to="Characters" method="_on_waitress_timer_timeout"]
+[connection signal="timeout" from="Music_on" to="." method="_on_music_on_timeout"]
+[connection signal="timeout" from="Music_off" to="." method="_on_music_off_timeout"]
 
 [editable path="Player"]

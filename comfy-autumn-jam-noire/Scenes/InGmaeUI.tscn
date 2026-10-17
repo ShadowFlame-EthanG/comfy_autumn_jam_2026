@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d5b2vrdwdd4y"]
 
-[ext_resource type="Script" uid="uid://r0182cqoqrps" path="res://Files UI.gd" id="1_iveyx"]
-[ext_resource type="Texture2D" uid="uid://5235ykgmhxhl" path="res://Assets/2D_assets/filefolder.png" id="2_6cv16"]
-[ext_resource type="Texture2D" uid="uid://cl4mgiroel0cf" path="res://Assets/2D_assets/folderwithline.png" id="2_jjkpp"]
-[ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="3_20ofu"]
-[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_qjqth"]
-[ext_resource type="AudioStream" uid="uid://bhu2hvelw5sx0" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v3.wav" id="4_6cv16"]
-[ext_resource type="AudioStream" uid="uid://exj2fkd6lyqr" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v2.wav" id="5_38ygb"]
-[ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="6_xjs7f"]
+[ext_resource type="Script" uid="uid://r0182cqoqrps" path="res://Scripts/Files UI.gd" id="1_isnur"]
+[ext_resource type="Texture2D" uid="uid://cl4mgiroel0cf" path="res://Assets/2D_assets/folderwithline.png" id="2_we2xp"]
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_miv8r"]
+[ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="4_2ux5b"]
+[ext_resource type="Texture2D" uid="uid://5235ykgmhxhl" path="res://Assets/2D_assets/filefolder.png" id="5_bfwwa"]
+[ext_resource type="AudioStream" uid="uid://bhu2hvelw5sx0" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v3.wav" id="6_3pt3b"]
+[ext_resource type="AudioStream" uid="uid://exj2fkd6lyqr" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v2.wav" id="7_yvu64"]
+[ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="8_i4ebl"]
 
 [node name="InGameUI" type="Control" unique_id=429166608]
 layout_mode = 3
@@ -16,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iveyx")
+script = ExtResource("1_isnur")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1702385422]
 layout_mode = 1
@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jjkpp")
+texture = ExtResource("2_we2xp")
 stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect" unique_id=1568215956]
@@ -36,7 +36,7 @@ offset_top = 193.0
 offset_right = 843.0
 offset_bottom = 395.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 21
 text = "Subject: Kathryn Woodman
 
@@ -55,7 +55,7 @@ offset_top = 436.0
 offset_right = 843.0
 offset_bottom = 517.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 21
 text = "Subject was last known to be in her apartment on October 21st, 1948.
 "
@@ -67,7 +67,7 @@ offset_top = 533.0
 offset_right = 837.0
 offset_bottom = 614.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 21
 text = "Prime Suspect: Margaret Woodman
 
@@ -80,7 +80,7 @@ offset_top = 631.0
 offset_right = 837.0
 offset_bottom = 779.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 21
 text = "Cause: Suspect was only other individual with keys to Subject’s apartment. Apartment was found locked, with Subject’s key still inside."
 
@@ -90,9 +90,9 @@ offset_left = 886.0
 offset_top = 921.0
 offset_right = 995.0
 offset_bottom = 1021.0
-texture_normal = ExtResource("3_20ofu")
-texture_pressed = ExtResource("3_20ofu")
-texture_hover = ExtResource("3_20ofu")
+texture_normal = ExtResource("4_2ux5b")
+texture_pressed = ExtResource("4_2ux5b")
+texture_hover = ExtResource("4_2ux5b")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2059390124]
 visible = false
@@ -103,7 +103,7 @@ anchor_bottom = 1.0
 offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6cv16")
+texture = ExtResource("5_bfwwa")
 stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2" unique_id=1326185793]
@@ -113,7 +113,7 @@ offset_top = 194.0
 offset_right = 872.0
 offset_bottom = 802.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 24
 text = "The state of the subject’s apartment was as follows.
 
@@ -132,7 +132,7 @@ anchor_bottom = 1.0
 offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6cv16")
+texture = ExtResource("5_bfwwa")
 stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect3" unique_id=1433631851]
@@ -142,7 +142,7 @@ offset_top = 194.0
 offset_right = 872.0
 offset_bottom = 802.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 23
 text = "In the bathroom, among shards of broken glass, was a tube of uncapped lipstick. It had a dent on the bottom, as if it had fallen and hit the ground. Our conclusion: The attacker interrupted the victim whilst she was preparing to leave.
 
@@ -160,7 +160,7 @@ anchor_bottom = 1.0
 offset_bottom = -169.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6cv16")
+texture = ExtResource("5_bfwwa")
 stretch_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect4" unique_id=19476672]
@@ -170,7 +170,7 @@ offset_top = 194.0
 offset_right = 872.0
 offset_bottom = 802.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_qjqth")
+theme_override_fonts/normal_font = ExtResource("3_miv8r")
 theme_override_font_sizes/normal_font_size = 24
 text = "Finally, all pictures of the Subject were missing. Family portraits, self-photos, photos with friends. The Subject had been torn and ripped out of them all. Attached is the only surviving photo of the Subject, surrendered to the police by her sister.
 
@@ -195,17 +195,17 @@ offset_bottom = 849.25793
 rotation = -0.7853982
 
 [node name="OpenFiles" type="AudioStreamPlayer" parent="." unique_id=1221402306]
-stream = ExtResource("4_6cv16")
+stream = ExtResource("6_3pt3b")
 volume_db = -5.0
 bus = &"SFX"
 
 [node name="CloseFiles" type="AudioStreamPlayer" parent="." unique_id=1665563390]
-stream = ExtResource("5_38ygb")
+stream = ExtResource("7_yvu64")
 volume_db = -5.0
 bus = &"SFX"
 
 [node name="RustleRustling" type="AudioStreamPlayer" parent="." unique_id=1702732039]
-stream = ExtResource("6_xjs7f")
+stream = ExtResource("8_i4ebl")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

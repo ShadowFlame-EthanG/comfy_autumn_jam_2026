@@ -13,6 +13,8 @@
 [sub_resource type="GDScript" id="GDScript_28flt"]
 script/source = "extends PanelContainer
 
+
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var menu = $HBoxContainer/Menu
 @onready var settings = $HBoxContainer/Panels/SettingsPanel
 @onready var credits = $TextureRect2
@@ -22,8 +24,10 @@ script/source = "extends PanelContainer
 
 func _ready() -> void:
 	menu.visible = true
-	
-
+	audio_player.play(25)
+	audio_player.volume_db = -35.0
+	var tween = create_tween()
+	tween.tween_property(audio_player, \"volume_db\", 0.0, 1)
 
 func _on_settings_button_pressed() -> void:
 	if settings.visible == false:
@@ -51,18 +55,16 @@ func _on_credits_button_pressed() -> void:
 		credits.visible = false
 		credits_img.visible = false
 		title_img.visible = true
+
+
+func _on_start_button_pressed() -> void:
+	NavigationManager.go_to_diner()
+	var tween = create_tween()
+	tween.tween_property(audio_player, \"volume_db\", -80.0, 2)
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="GDScript" id="GDScript_48xlc"]
-script/source = "extends Button
-
-
-func _on_pressed() -> void:
-	NavigationManager.go_to_diner()
-"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -120,11 +122,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_f6flb")
 script = SubResource("GDScript_28flt")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1417581852]
-stream = ExtResource("1_cp0ys")
-autoplay = true
-bus = &"Music"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2014790652]
 layout_mode = 2
@@ -260,7 +257,6 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
 text = "Play"
 alignment = 0
-script = SubResource("GDScript_48xlc")
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer/Menu" unique_id=1072074112]
 layout_mode = 2
@@ -379,7 +375,12 @@ text = "Assets Used:"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[connection signal="pressed" from="HBoxContainer/Menu/StartButton" to="HBoxContainer/Menu/StartButton" method="_on_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=131896816]
+stream = ExtResource("1_cp0ys")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="HBoxContainer/Menu/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Menu/QuitButton" to="HBoxContainer/Menu/QuitButton" method="_on_pressed"]
