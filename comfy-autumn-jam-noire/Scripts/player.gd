@@ -67,6 +67,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				NarrationManager.start_dialogue("katietalk")
 			else:
 				gunshot.play()
+				NarrationManager.final_scene = false
+				NarrationManager.newspaper_count = 0
 				NarrationManager.katie_dies = true
 				NavigationManager.go_to_choice()
 		if item and item.name == "Dopp" and NarrationManager.final_scene == true and NarrationManager.interact == true:
@@ -74,6 +76,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				NarrationManager.start_dialogue("dopptalk")
 			else:
 				gunshot.play()
+				NarrationManager.final_scene = false
+				NarrationManager.newspaper_count = 0
 				NavigationManager.go_to_choice()
 		if item and item.name == "Gun"and NarrationManager.final_scene == true and NarrationManager.interact == true:
 			show_gun()

@@ -9,8 +9,10 @@ var dial_seen = true
 var change_seen = true
 
 func _ready() -> void:
-	pass
-
+	if NarrationManager.final_scene == false:
+		dial_seen = true
+		seen = false
+		
 func _on_texture_rect_pressed() -> void:
 	hide()
 	button.hide()

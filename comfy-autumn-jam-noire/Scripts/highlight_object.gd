@@ -45,9 +45,9 @@ func see_katie_dopp() -> void:
 		if area.name == "Sister" and NarrationManager.final_scene == true:
 			print("Sister change!")
 			area.collision_layer = 1
-		if area.name == "Newspaper" or area.name == "Files" or area.name == "Coffee":
+		if area.name == "Newspaper" or area.name == "Files" or area.name == "Coffee" and NarrationManager.final_scene == true:
 			area.collision_layer = 1
-		if area.name == "Gun":
+		if area.name == "Gun" and NarrationManager.final_scene == true:
 			mesh.visible = true
 			area.collision_layer = 2
 

@@ -746,6 +746,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.157986, 0.48458505, 4.2928
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2583532, 0, 2.6416225)
 
 [node name="ChoiceLights" type="Node3D" parent="Lights" unique_id=58897572]
+visible = false
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="Lights/ChoiceLights" unique_id=1638395904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.304, 0.75, 6.2609997)

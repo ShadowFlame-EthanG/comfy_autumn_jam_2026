@@ -49,59 +49,73 @@ a
 -> DONE
 
 === sister_intro
+~ halloween = false
+~ changelings = false
+~ whole_case = false
+~ whole_news = false
+~ margaret_1 = false
+~ margaret_2 = false
+~ waitress_1 = false
+~ waitress_2 = false
+~ finalkatie = 0
+~ finaldopp = 0
+~ katie = false
+~ talkgirls = false
 Oh thank God, they said you’d be here. My name's Margaret. I’m in a real bad way, I tell you. I’m sorry to barge in on a private detective like this without an appointment, but I haven’t got much time.
 
 \*
 
-* [Charmed. In that case, let’s not waste any time on pleasantries. Tell me about the case.] 
++ [Charmed. In that case, let’s not waste any time on pleasantries. Tell me about the case.] 
     It’s my sister, see. She’s missing. The cops think I did it. Like I’d hurt her, or something. I swear I didn’t. I need your help, bad. You’ve got to find her and clear my name. The cops will be here for me any minute now.
 
 - So. Will you help me?
 
 \*
 
-* [I'll take the case.]
++ [I'll take the case.]
     Thanks. I heard you’re the best around. Here - as a token of my appreciation.
     
     It’s my sister’s - but if you find her, keep it. As a reward. She left it at my place, I was going to return it the night she disappeared, but by the time I got to her place, she was already gone.
     \*
     
-* [I'll help, but I don't work for free.]
++ [I'll help, but I don't work for free.]
     I wouldn't expect you to. I've got money. My family's rich, see? Katie doesn’t like to flaunt our money around, but in this case, I’d say it’s worth it, don’tcha think?
     
     An advance. There’s more where that came from if you find her. 
     
     \*
 
-- * [So, tell me about your sister.]
+- + [So, tell me about your sister.]
     -> question_sister
   
 === done_questioning
+~ asked = 0
 - Here. I swiped the case file from the police officers. I know that makes me look more guilty, but they already think I did it. What else could I do? You’re my last hope. Please, find my sister.
 
 They’ll have already noticed that I took the file and are looking for me. We haven’t got a lot of time before they find out where I ran off to. Please, if anyone can solve this, you can.
 
 \*
 
-* [Okay, I’ll do what I can.]
++ [Okay, I’ll do what I can.]
 
 -> DONE
 
 === question_sister
-{asked < 3: \*} 
-* [When was the last place you saw her?]
+\*
+
++ [When was the last place you saw her?]
     A few days before she disappeared. At my place. She left some things there and I was going to return them to her when we went out dancing.
     ~ asked += 1
     -> question_sister
- * [Had you noticed anything strange about her recently?]
+ + [Had you noticed anything strange about her recently?]
     Yeah. She’d been acting real paranoid. Always checking over her shoulder, like someone was following her. And she wouldn’t look in the mirror anymore. It was weird.
     ~ asked += 1
     -> question_sister
-* [Know anyone who’d want to hurt her?]
++ [Know anyone who’d want to hurt her?]
     Everyone loved Katie. I can't imagine anyone doing anything like this to her.
     ~ asked += 1
     -> question_sister
-* ->
++ {asked >= 3}[I think that's everything.]
     -> done_questioning
     
 
@@ -114,12 +128,12 @@ They’ll have already noticed that I took the file and are looking for me. We h
 + [Anything else you can tell me about your sister?]
     Um. No, I think that’s about it. She likes to go out dancing. She’s left handed. Little stuff like that, but I’m not sure how that helps the case. 
     -> margaret_loop
-* {whole_case}[How do I know you're really innocent?]
++ {whole_case}[How do I know you're really innocent?]
     You really think I’d do that to my own sister and then run straight to a private detective? I guess you’ll just have to take my word for it. But there are things in that case file that just don’t add up.
     
     \*
     
-    * * [Like what?]
+    + + [Like what?]
         Well, it’s true that I have the only other key. But I’m telling you, I wasn’t there. So how’d the door get locked? I had my keys the whole time.
         -> margaret_loop
 
@@ -162,11 +176,11 @@ Really? Are you sure?
 + [Could I get more coffee?]
     Sure thing, hon.
     -> END
-* {halloween}[What are you going as for Halloween?]
++ {halloween}[What are you going as for Halloween?]
     Hmmm. Why don’t I go as a private detective like you? No... A cop? Nah. A photographer, or maybe a professor! No no... Oh! I’ve got it. I’ll be a witch! 
     -> waitress_loop
 
-* {changelings}[I read something in the paper about changeling doubles. Know anything about that?]
++ {changelings}[I read something in the paper about changeling doubles. Know anything about that?]
     Oh yeah, tons. When I was a little girl, my gramma told me that they steal people through the mirror and take their place! Creepy, right?
     You can tell the difference, though. Doubles are always reverse copies of the original. ‘Cause they came from the mirror world. I knew a fella, Ed was his name, who had a mole on one side of his face. Shows up one day and it’s clear over on the other side! 
     He said it had always been that way, but I knew better. One o’ them doubles got him! No one ever believed me, though.
