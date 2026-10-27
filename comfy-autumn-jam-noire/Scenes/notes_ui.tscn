@@ -267,6 +267,7 @@ offset_right = -91.0
 offset_bottom = -64.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_default_cursor_shape = 16
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect5" unique_id=480187414]
 layout_mode = 1
@@ -313,6 +314,7 @@ offset_left = 1528.0
 offset_top = 962.0
 offset_right = 1637.0
 offset_bottom = 1062.0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("5_gn1co")
 texture_pressed = ExtResource("5_gn1co")
 texture_hover = ExtResource("5_gn1co")
@@ -344,6 +346,7 @@ offset_bottom = -85.72717
 grow_horizontal = 0
 grow_vertical = 0
 rotation = -1.5707964
+mouse_default_cursor_shape = 16
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=60326147]
 layout_mode = 1
@@ -359,6 +362,7 @@ offset_bottom = -167.09082
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 7.8539815
+mouse_default_cursor_shape = 16
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]

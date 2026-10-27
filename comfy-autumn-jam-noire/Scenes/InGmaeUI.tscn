@@ -90,6 +90,7 @@ offset_left = 886.0
 offset_top = 921.0
 offset_right = 995.0
 offset_bottom = 1021.0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("4_2ux5b")
 texture_pressed = ExtResource("4_2ux5b")
 texture_hover = ExtResource("4_2ux5b")
@@ -185,6 +186,7 @@ offset_top = 770.00006
 offset_right = 462.82327
 offset_bottom = 852.7288
 rotation = -0.7853982
+mouse_default_cursor_shape = 16
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=722384131]
 layout_mode = 1
@@ -193,6 +195,7 @@ offset_top = 757.317
 offset_right = 960.86176
 offset_bottom = 849.25793
 rotation = -0.7853982
+mouse_default_cursor_shape = 16
 
 [node name="OpenFiles" type="AudioStreamPlayer" parent="." unique_id=1221402306]
 stream = ExtResource("6_3pt3b")

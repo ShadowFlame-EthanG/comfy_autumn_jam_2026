@@ -11,7 +11,6 @@ extends Control
 
 var page = 1
 var seen = true
-var dial_seen = true
 
 func _ready() -> void:
 	MousePosition.open_files.connect(files_opened)
@@ -39,9 +38,6 @@ func _on_texture_button_2_pressed() -> void:
 				if seen == true:
 					NarrationManager.talk_to_them()
 					seen = false
-				if dial_seen == true and NarrationManager.get_variable("whole_news") and NarrationManager.get_variable("whole_case"):
-					NarrationManager.talk_to_them()
-					dial_seen = false
 				
 	rustle.play()
 	

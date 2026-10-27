@@ -1,9 +1,8 @@
 extends Node3D
 
 @onready var waitress_timer = $WaitressTimer
-@onready var waitress_pour = $Waitress_Rig_WipingCounter
 @onready var waitress_sit = $Waitress_Rig_StoolSitting
-@onready var waitress_wipe = $Waitress_Rig_PouringCoffee
+@onready var waitress_wipe = $Waitress_Rig_WipingCounter
 
 var all_names
 var waitress_names: Array[String]
@@ -15,7 +14,7 @@ func _ready() -> void:
 	Watching.isSeen.connect(get_tree_names)
 
 func waitress_swap(names) -> void:
-	if waitress_pour.name in names or waitress_sit.name in names or waitress_wipe.name in names:
+	if waitress_sit.name in names or waitress_wipe.name in names:
 		waitress_timer.paused = true
 	else:
 		waitress_timer.paused = false
@@ -39,22 +38,10 @@ func get_tree_names(names) -> void:
 func _on_waitress_timer_timeout() -> void:
 	if waitress_wipe.visible == true:
 		waitress_wipe.visible = false
-		var choose = randi_range(0, 1)
-		if choose == 1:
-			waitress_pour.visible = true
-		else:
-			waitress_sit.visible = true
+		waitress_sit.visible = true
+	
 	if waitress_sit.visible == true:
 		waitress_sit.visible = false
-		var choose = randi_range(0, 1)
-		if choose == 1:
-			waitress_wipe.visible = true
-		else:
-			waitress_pour.visible = true
-	if waitress_pour.visible == true:
-		waitress_pour.visible = false
-		var choose = randi_range(0, 1)
-		if choose == 1:
-			waitress_sit.visible = true
-		else:
-			waitress_wipe.visible = true
+		waitress_wipe.visible = true
+
+		

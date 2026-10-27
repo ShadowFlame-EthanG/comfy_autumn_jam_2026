@@ -17,12 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dd3dkoijushhh" path="res://Scenes/narrative_panel.tscn" id="9_caap6"]
 [ext_resource type="Texture2D" uid="uid://dgcuevnm7mbl3" path="res://Assets/3D_Textures/3D-Textures/Coffee_Cup_mat.png" id="9_sbue7"]
 [ext_resource type="PackedScene" uid="uid://d0x0xdp166vv3" path="res://Scenes/coffee.tscn" id="12_f6flb"]
-[ext_resource type="PackedScene" uid="uid://do5py0tctfsuv" path="res://Scenes/police_timer.tscn" id="13_wi4wa"]
 [ext_resource type="PackedScene" uid="uid://dw7yp0dvuhmmn" path="res://Scenes/sister_rig_sitting_holding_coffee.tscn" id="15_7swlq"]
 [ext_resource type="Script" uid="uid://p6phpjc2kp8u" path="res://Scenes/waitress_swap.gd" id="15_ohgys"]
 [ext_resource type="AudioStream" uid="uid://cv0muh3ri1k6x" path="res://Assets/Ambience/Diner ambience.wav" id="15_tr1nw"]
 [ext_resource type="PackedScene" uid="uid://ddirhnrx3hklw" path="res://Scenes/cjgg_2026_environment_v_1.tscn" id="16_7swlq"]
-[ext_resource type="PackedScene" uid="uid://b5i7aahafq07o" path="res://Scenes/waitress_rig_pouring_coffee.tscn" id="16_w734i"]
 [ext_resource type="PackedScene" uid="uid://3b0xgmv6yngo" path="res://Scenes/waitress_rig_stool_sitting.tscn" id="17_ohgys"]
 [ext_resource type="PackedScene" uid="uid://dtsmbrk7ttoac" path="res://Scenes/waitress_rig_wiping_counter.tscn" id="18_mnbyv"]
 [ext_resource type="AudioStream" uid="uid://sp8uyvfsuahq" path="res://Assets/SFX/Typewriter/typewriter reset.wav" id="19_212qh"]
@@ -47,6 +45,8 @@ script/source = "extends Node3D
 @onready var main_music: AudioStreamPlayer = $MusicController/Music
 @onready var musicON = $Music_on
 @onready var musicOFF = $Music_off
+@onready var waitressSit = $Characters/Waitress_Rig_StoolSitting
+@onready var waitressWipe = $Characters/Waitress_Rig_WipingCounter
 
 func _ready() -> void:
 	$Timer.start()
@@ -74,6 +74,8 @@ func change_lights() -> void:
 		$Narration/HideScreen.visible = false
 		diner_lights.visible = false
 		street_lamps.visible = false
+		waitressSit.visible = false
+		waitressWipe.visible = false
 		margaret.visible = false
 		newspaper.visible = false
 		coffee.visible = false
@@ -966,17 +968,6 @@ visible = false
 
 [node name="Narration" type="CanvasLayer" parent="." unique_id=624770844]
 
-[node name="PoliceTimer" parent="Narration" unique_id=1835233824 instance=ExtResource("13_wi4wa")]
-visible = false
-anchors_preset = 5
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -36.0
-offset_top = 23.0
-offset_right = -36.0
-offset_bottom = 23.0
-grow_vertical = 1
-
 [node name="HideScreen" type="PanelContainer" parent="Narration" unique_id=554950137]
 visible = false
 anchors_preset = 15
@@ -1035,10 +1026,6 @@ script = ExtResource("15_ohgys")
 [node name="Sister_Rig_SittingHoldingCoffee2" parent="Characters" unique_id=109918414 instance=ExtResource("15_7swlq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1436367, -0.9741989, 8.972402)
 
-[node name="Waitress_Rig_PouringCoffee" parent="Characters" unique_id=1662026296 instance=ExtResource("16_w734i")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9384336, -0.9704482, 3.2931178)
-visible = false
-
 [node name="Waitress_Rig_StoolSitting" parent="Characters" unique_id=917316413 instance=ExtResource("17_ohgys")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.9384995, -0.68634236, 9.039083)
 visible = false
@@ -1073,19 +1060,19 @@ one_shot = true
 [node name="Music_off" type="Timer" parent="." unique_id=560178575]
 one_shot = true
 
-[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
+[connection signal="input_event" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_input_event"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Files/Files" to="DinerObjects/TableObjects/Files" method="_on_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Coffee/Coffee" to="DinerObjects/TableObjects/Coffee" method="_on_static_body_3d_mouse_exited"]
 [connection signal="input_event" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_input_event"]
-[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_entered" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_static_body_3d_mouse_exited"]
+[connection signal="mouse_exited" from="DinerObjects/TableObjects/Newspaper/Newspaper" to="DinerObjects/TableObjects/Newspaper" method="_on_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_entered"]
 [connection signal="mouse_exited" from="DinerObjects/TableObjects/Notepad/Notepad" to="DinerObjects/TableObjects/Notepad" method="_on_static_body_3d_mouse_exited"]
 [connection signal="mouse_entered" from="DinerObjects/TableObjects/EvidenceBag/EvidenceBag" to="DinerObjects/TableObjects/EvidenceBag" method="_on_static_body_3d_mouse_entered"]

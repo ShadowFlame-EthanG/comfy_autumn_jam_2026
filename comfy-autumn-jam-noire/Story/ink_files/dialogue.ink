@@ -5,7 +5,6 @@ VAR finaldopp = 0
 VAR katie = false
 VAR talkgirls = false
 VAR whole_case = false
-VAR whole_news = false
 VAR halloween = false
 VAR changelings = false
 VAR margaret_1 = false
@@ -52,7 +51,6 @@ a
 ~ halloween = false
 ~ changelings = false
 ~ whole_case = false
-~ whole_news = false
 ~ margaret_1 = false
 ~ margaret_2 = false
 ~ waitress_1 = false
@@ -137,8 +135,7 @@ They’ll have already noticed that I took the file and are looking for me. We h
         Well, it’s true that I have the only other key. But I’m telling you, I wasn’t there. So how’d the door get locked? I had my keys the whole time.
         -> margaret_loop
 
-
-+ {whole_case and whole_news} [I've solved the case!]
++ [I've solved the case!]
     -> case_solved
 + [Actually, one moment.]
     -> END

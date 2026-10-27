@@ -252,6 +252,7 @@ texture = ExtResource("6_yhxw7")
 
 [node name="StartButton" type="Button" parent="HBoxContainer/Menu" unique_id=1862420641]
 layout_mode = 2
+mouse_default_cursor_shape = 16
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
@@ -260,6 +261,7 @@ alignment = 0
 
 [node name="SettingsButton" type="Button" parent="HBoxContainer/Menu" unique_id=1072074112]
 layout_mode = 2
+mouse_default_cursor_shape = 16
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
@@ -268,6 +270,7 @@ alignment = 0
 
 [node name="CreditsButton" type="Button" parent="HBoxContainer/Menu" unique_id=85895454]
 layout_mode = 2
+mouse_default_cursor_shape = 16
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ce3w2")
@@ -276,6 +279,7 @@ alignment = 0
 
 [node name="QuitButton" type="Button" parent="HBoxContainer/Menu" unique_id=1684992423]
 layout_mode = 2
+mouse_default_cursor_shape = 16
 theme_override_fonts/font = ExtResource("1_28flt")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_n45e2")
@@ -327,6 +331,7 @@ vertical_alignment = 1
 
 [node name="AudioSlider" type="HSlider" parent="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer" unique_id=580928129]
 layout_mode = 2
+mouse_default_cursor_shape = 16
 theme_override_styles/slider = SubResource("StyleBoxLine_28flt")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_48xlc")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_1ehe0")
@@ -384,4 +389,6 @@ bus = &"Music"
 [connection signal="pressed" from="HBoxContainer/Menu/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Menu/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Menu/QuitButton" to="HBoxContainer/Menu/QuitButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/AudioSlider" to="." method="_on_audio_slider_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/AudioSlider" to="." method="_on_audio_slider_mouse_exited"]
 [connection signal="value_changed" from="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/AudioSlider" to="HBoxContainer/Panels/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/AudioSlider" method="_on_value_changed"]

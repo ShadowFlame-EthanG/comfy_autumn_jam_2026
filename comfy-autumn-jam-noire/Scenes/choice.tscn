@@ -45,6 +45,7 @@ button = NodePath("Button")
 
 [node name="Button" type="Button" parent="." unique_id=89331281]
 layout_mode = 2
+mouse_default_cursor_shape = 16
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_y0ppu")
 theme_override_font_sizes/font_size = 30

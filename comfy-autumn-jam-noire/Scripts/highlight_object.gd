@@ -37,13 +37,16 @@ func can_interact() -> void:
 	if area:
 		if area.name == "Sister" and NarrationManager.final_scene == false:
 			area.collision_layer = 2
-
+		if area.name == "WaitressSit" or area.name == "WaitressWipe" and NarrationManager.final_scene == false:
+			area.collision_layer = 2
 func see_katie_dopp() -> void:
 	if area:
 		if area.name == "Katie" or area.name == "Dopp" and NarrationManager.final_scene == true:
 			area.collision_layer = 2
 		if area.name == "Sister" and NarrationManager.final_scene == true:
 			print("Sister change!")
+			area.collision_layer = 1
+		if area.name == "WaitressSit" or area.name == "WaitressWipe" and NarrationManager.final_scene == true:
 			area.collision_layer = 1
 		if area.name == "Newspaper" or area.name == "Files" or area.name == "Coffee" and NarrationManager.final_scene == true:
 			area.collision_layer = 1

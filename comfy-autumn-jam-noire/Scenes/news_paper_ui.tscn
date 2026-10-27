@@ -149,6 +149,7 @@ offset_left = 187.5
 offset_top = 376.0
 offset_right = 622.5
 offset_bottom = 756.0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("7_3qsot")
 texture_hover = ExtResource("8_gfsyn")
 
@@ -158,6 +159,7 @@ offset_left = 655.5
 offset_top = 75.0
 offset_right = 1082.5
 offset_bottom = 406.0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("9_083ws")
 texture_hover = ExtResource("10_tgj6l")
 
@@ -269,6 +271,7 @@ offset_left = 181.5
 offset_top = 299.0
 offset_right = 616.5
 offset_bottom = 706.0
+mouse_default_cursor_shape = 16
 texture = ExtResource("7_3qsot")
 
 [node name="FakeTextRight" type="TextureRect" parent="Page3" unique_id=1419569435]
@@ -277,6 +280,7 @@ offset_left = 662.5
 offset_top = 666.0
 offset_right = 1089.5
 offset_bottom = 744.0
+mouse_default_cursor_shape = 16
 texture = ExtResource("11_v7yyg")
 
 [node name="Lines" type="TextureRect" parent="Page3" unique_id=445356029]
@@ -476,6 +480,7 @@ offset_right = -517.0
 offset_bottom = -253.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("14_dcryu")
 texture_hover = ExtResource("15_usvqm")
 
@@ -490,6 +495,7 @@ offset_right = -957.0
 offset_bottom = -254.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 16
 texture_hover = ExtResource("16_rtkeo")
 
 [node name="page5" type="TextureRect" parent="." unique_id=1094396003]
@@ -619,6 +625,7 @@ offset_right = -978.0
 offset_bottom = -250.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 16
 texture_hover = ExtResource("19_0rh8v")
 
 [node name="TextureRect2" type="TextureButton" parent="page5" unique_id=1291759684]
@@ -632,6 +639,7 @@ offset_right = -476.0
 offset_bottom = -263.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("20_p31ur")
 texture_hover = ExtResource("21_6iap4")
 
@@ -692,6 +700,7 @@ offset_top = 26.0
 offset_right = -325.0
 offset_bottom = 124.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("24_mc2un")
 
 [node name="Page4_full" type="TextureRect" parent="." unique_id=874139214]
@@ -711,6 +720,7 @@ offset_top = 26.0
 offset_right = -325.0
 offset_bottom = 124.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("24_mc2un")
 
 [node name="Page5_full2" type="TextureRect" parent="." unique_id=1252067930]
@@ -730,6 +740,7 @@ offset_top = 26.0
 offset_right = -325.0
 offset_bottom = 124.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("24_mc2un")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=1067324304]
@@ -738,6 +749,7 @@ offset_left = 462.0
 offset_top = 115.0
 offset_right = 550.0
 offset_bottom = 212.0
+mouse_default_cursor_shape = 16
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=1844135167]
 layout_mode = 0
@@ -745,6 +757,7 @@ offset_left = 1397.0
 offset_top = 110.0
 offset_right = 1485.0
 offset_bottom = 207.0
+mouse_default_cursor_shape = 16
 
 [node name="Button" type="TextureButton" parent="." unique_id=574457226]
 layout_mode = 1
@@ -756,6 +769,7 @@ offset_top = 26.0
 offset_right = -325.0
 offset_bottom = 124.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("24_mc2un")
 
 [node name="RustleRustling" type="AudioStreamPlayer" parent="." unique_id=407352314]
