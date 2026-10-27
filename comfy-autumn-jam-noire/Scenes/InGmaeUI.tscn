@@ -4,12 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cl4mgiroel0cf" path="res://Assets/2D_assets/folderwithline.png" id="2_we2xp"]
 [ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_miv8r"]
 [ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="4_2ux5b"]
+[ext_resource type="Texture2D" uid="uid://chfbbsl0ktkuk" path="res://Assets/2D_assets/filefolderleftBlue.png" id="4_miv8r"]
+[ext_resource type="Texture2D" uid="uid://eqe4gk6u708e" path="res://Assets/2D_assets/filefolderrightblue.png" id="5_2ux5b"]
 [ext_resource type="Texture2D" uid="uid://5235ykgmhxhl" path="res://Assets/2D_assets/filefolder.png" id="5_bfwwa"]
 [ext_resource type="AudioStream" uid="uid://bhu2hvelw5sx0" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v3.wav" id="6_3pt3b"]
 [ext_resource type="AudioStream" uid="uid://exj2fkd6lyqr" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v2.wav" id="7_yvu64"]
 [ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="8_i4ebl"]
 
 [node name="InGameUI" type="Control" unique_id=429166608]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -180,22 +183,26 @@ Conclusion:
 Because the door was locked, we conclude that the prime suspect is anyone who possesses a copy of the keys. Our investigation uncovered that there is only one copy, and it belongs to one Margaret Woodman, the sister of the Subject. "
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=2052589883]
+texture_filter = 1
 layout_mode = 1
-offset_left = 393.00003
-offset_top = 770.00006
-offset_right = 462.82327
-offset_bottom = 852.7288
-rotation = -0.7853982
+offset_left = 384.0
+offset_top = 704.0
+offset_right = 524.0
+offset_bottom = 884.0
 mouse_default_cursor_shape = 16
+texture_pressed = ExtResource("4_miv8r")
+texture_hover = ExtResource("4_miv8r")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=722384131]
+texture_filter = 1
 layout_mode = 1
-offset_left = 828.683
-offset_top = 757.317
-offset_right = 960.86176
-offset_bottom = 849.25793
-rotation = -0.7853982
+offset_left = 784.0
+offset_top = 663.0
+offset_right = 954.0
+offset_bottom = 823.0
 mouse_default_cursor_shape = 16
+texture_pressed = ExtResource("5_2ux5b")
+texture_hover = ExtResource("5_2ux5b")
 
 [node name="OpenFiles" type="AudioStreamPlayer" parent="." unique_id=1221402306]
 stream = ExtResource("6_3pt3b")
