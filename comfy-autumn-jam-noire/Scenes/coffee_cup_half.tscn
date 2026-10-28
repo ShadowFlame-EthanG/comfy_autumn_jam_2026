@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bsn5jbvcy8vls"]
+
+[ext_resource type="PackedScene" uid="uid://c6lcwh1uc0l4q" path="res://Assets/3D_Textures/New Coffee Cups-20261028T203232Z-1-001/New Coffee Cups/Coffee Cup_Half.fbx" id="1_6pdqq"]
+[ext_resource type="Texture2D" uid="uid://mttqugrf04h2" path="res://Assets/3D_Textures/New Coffee Cups-20261028T203232Z-1-001/New Coffee Cups/Coffee Cup_Half_mat.png" id="2_nqcgi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqcul"]
+albedo_texture = ExtResource("2_nqcgi")
+
+[node name="Coffee Cup_Half" unique_id=909122269 instance=ExtResource("1_6pdqq")]
+
+[node name="New_Cup_v2_002" parent="." index="0" unique_id=1972545786]
+material_override = SubResource("StandardMaterial3D_iqcul")

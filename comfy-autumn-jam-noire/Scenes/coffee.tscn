@@ -9,6 +9,11 @@
 script/source = "extends Control
 
 var drinkable = false
+var isEmpty = false
+var coffee_amt = 2
+
+func _ready() -> void:
+	MousePosition.fill_coffee.connect(get_coffee)
 
 func _on_texture_button_pressed() -> void:
 	hide()
@@ -16,18 +21,30 @@ func _on_texture_button_pressed() -> void:
 
 
 func _on_texture_rect_mouse_entered() -> void:
-	$Label.visible = true
-	drinkable = true
+	if isEmpty == false:
+		$Label.visible = true
+		drinkable = true
 
 
 func _on_texture_rect_mouse_exited() -> void:
-	$Label.visible = false
-	drinkable = false
+	if isEmpty == false:
+		$Label.visible = false
+		drinkable = false
 
+func get_coffee() -> void:
+	isEmpty = false
+	coffee_amt = 2
 
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and drinkable == true:
 		$AudioStreamPlayer.play()
+		coffee_amt -= 1
+		MousePosition.coffee_drank()
+		if coffee_amt < 1:
+			MousePosition.no_coffee()
+			isEmpty = true
+			$Label.visible = false
+			drinkable = false
 "
 
 [node name="Coffee" type="Control" unique_id=715525205]

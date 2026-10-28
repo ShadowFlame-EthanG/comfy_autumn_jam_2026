@@ -95,4 +95,6 @@ func end_it(choice) -> void:
 		skipped = 0
 		dopp_talk = true
 		TransitionScreen.transition()
+	if choice == "Could I get more coffee?":
+		MousePosition.order_coffee()
 		

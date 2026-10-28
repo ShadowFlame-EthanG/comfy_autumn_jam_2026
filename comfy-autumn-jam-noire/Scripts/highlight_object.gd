@@ -6,6 +6,8 @@ extends Node3D
 @export var hideMaterial: Material
 @export var gunMaterial: Material
 @export var newDialogueMaterial: Material
+@export var coffee_half: MeshInstance3D
+@export var coffee_empty: MeshInstance3D
 
 
 func _ready() -> void:
@@ -14,6 +16,9 @@ func _ready() -> void:
 	TransitionScreen.on_transition_finished.connect(see_katie_dopp)
 	MousePosition.gun_choice.connect(show_hide_gun)
 	NarrationManager.intro.connect(can_interact)
+	MousePosition.coffee_empty.connect(empty_cup)
+	MousePosition.drink_coffee.connect(half_cup)
+	MousePosition.fill_coffee.connect(coffee_back)
 	
 func highlight(h_name: String) -> void:
 	if h_name == name:
@@ -28,10 +33,37 @@ func highlight(h_name: String) -> void:
 			mesh.material_overlay = newDialogueMaterial
 		else:
 			mesh.material_overlay = outlineMaterial
+			if mesh.name == "New_Cup_v2_001":
+				if coffee_half.visible:
+					coffee_half.material_overlay = outlineMaterial
+				if coffee_empty.visible:
+					coffee_empty.material_overlay = outlineMaterial
+
+func empty_cup() -> void:
+	if mesh.name == "New_Cup_v2_001":
+		mesh.visible = false
+		coffee_half.visible = false
+		coffee_empty.visible = true
+	
+func half_cup() -> void:
+	if mesh.name == "New_Cup_v2_001":
+		mesh.visible = false
+		coffee_half.visible = true
+
+func coffee_back() -> void:
+	if mesh.name == "New_Cup_v2_001":
+		coffee_empty.visible = false
+		mesh.visible = true
+		
 
 func not_highlighted(h_name: String) -> void:
 	if h_name == name:
 		mesh.material_overlay = null
+	if mesh.name == "New_Cup_v2_001":
+		if coffee_half.visible:
+			coffee_half.material_overlay = null
+		if coffee_empty.visible:
+			coffee_empty.material_overlay = null
 
 func can_interact() -> void:
 	if area:

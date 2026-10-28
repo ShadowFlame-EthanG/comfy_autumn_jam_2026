@@ -13,6 +13,9 @@ signal open_newspaper
 signal open_files
 signal open_notes
 signal gun_choice
+signal drink_coffee
+signal fill_coffee
+signal coffee_empty
 
 func newspaper_selected() -> void:
 	open_newspaper.emit()
@@ -25,3 +28,12 @@ func notes_selected() -> void:
 	
 func make_choice() -> void:
 	gun_choice.emit()
+	
+func coffee_drank() -> void:
+	drink_coffee.emit()
+
+func order_coffee() -> void:
+	fill_coffee.emit()
+
+func no_coffee() -> void:
+	coffee_empty.emit()
