@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://dhyvtwt5v33ho"]
+[gd_scene format=3 uid="uid://emlaewav1rp5"]
 
-[ext_resource type="Script" uid="uid://srinfwy348tj" path="res://Scripts/notes_ui.gd" id="1_pk0ap"]
-[ext_resource type="Texture2D" uid="uid://cunookrb8wqd6" path="res://Assets/notpad.png" id="2_tp1dx"]
-[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_8hv8d"]
-[ext_resource type="Texture2D" uid="uid://ssbnc6joup6o" path="res://Assets/2D_assets/notpad.png" id="4_6efyt"]
-[ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="5_gn1co"]
-[ext_resource type="AudioStream" uid="uid://w6l55gfyefvh" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v4.wav" id="6_4g7fy"]
-[ext_resource type="AudioStream" uid="uid://cn7tqw5ntiqik" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v5.wav" id="7_8rijn"]
-[ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="8_1ph7d"]
+[ext_resource type="Texture2D" uid="uid://cunookrb8wqd6" path="res://Assets/notpad.png" id="2_dm5wb"]
+[ext_resource type="Texture2D" uid="uid://d0yasqfrvmye4" path="res://Assets/2D_assets/backbutton.png" id="3_ui88b"]
+[ext_resource type="FontFile" uid="uid://chc8twkinnhlk" path="res://Assets/PixelOperator-Bold.ttf" id="3_ukgpq"]
+[ext_resource type="Texture2D" uid="uid://ssbnc6joup6o" path="res://Assets/2D_assets/notpad.png" id="4_bainf"]
+[ext_resource type="AudioStream" uid="uid://w6l55gfyefvh" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v4.wav" id="4_xa3ed"]
+[ext_resource type="AudioStream" uid="uid://cn7tqw5ntiqik" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v5.wav" id="5_ukgpq"]
+[ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="7_mqpnv"]
+[ext_resource type="Texture2D" uid="uid://db1jhepdogrwp" path="res://Assets/2D_assets/notpadRightblue.png" id="9_bainf"]
+[ext_resource type="Texture2D" uid="uid://wlc76yw4ebe7" path="res://Assets/2D_assets/notpadleftBlue.png" id="9_h3n5m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xa3ed"]
 
@@ -22,7 +23,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pk0ap")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1471037444]
 layout_mode = 1
@@ -35,7 +35,7 @@ offset_right = -17.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_tp1dx")
+texture = ExtResource("2_dm5wb")
 stretch_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect" unique_id=1422534169]
@@ -61,7 +61,7 @@ theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.3882353)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
-theme_override_fonts/font = ExtResource("3_8hv8d")
+theme_override_fonts/font = ExtResource("3_ukgpq")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
@@ -78,7 +78,6 @@ wrap_mode = 1
 minimap_width = 40
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1001925085]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,7 +88,7 @@ offset_right = -17.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_6efyt")
+texture = ExtResource("4_bainf")
 stretch_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect2" unique_id=574906934]
@@ -115,7 +114,7 @@ theme_override_colors/font_placeholder_color = Color(0, 0, 0, 0.3882353)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
-theme_override_fonts/font = ExtResource("3_8hv8d")
+theme_override_fonts/font = ExtResource("3_ukgpq")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
@@ -132,7 +131,6 @@ wrap_mode = 1
 minimap_width = 40
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1812198040]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,7 +141,7 @@ offset_right = -17.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_6efyt")
+texture = ExtResource("4_bainf")
 stretch_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect3" unique_id=863750651]
@@ -169,7 +167,7 @@ theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
-theme_override_fonts/font = ExtResource("3_8hv8d")
+theme_override_fonts/font = ExtResource("3_ukgpq")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
@@ -186,7 +184,6 @@ wrap_mode = 1
 minimap_width = 40
 
 [node name="TextureRect4" type="TextureRect" parent="." unique_id=477679264]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,7 +194,7 @@ offset_right = -17.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_6efyt")
+texture = ExtResource("4_bainf")
 stretch_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect4" unique_id=1849401610]
@@ -223,7 +220,7 @@ theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
-theme_override_fonts/font = ExtResource("3_8hv8d")
+theme_override_fonts/font = ExtResource("3_ukgpq")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
@@ -251,7 +248,7 @@ offset_right = -17.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_6efyt")
+texture = ExtResource("4_bainf")
 stretch_mode = 2
 
 [node name="TextureButton2" type="TextureButton" parent="TextureRect5" unique_id=986168013]
@@ -267,7 +264,6 @@ offset_right = -91.0
 offset_bottom = -64.0
 grow_horizontal = 0
 grow_vertical = 0
-mouse_default_cursor_shape = 16
 
 [node name="TextEdit" type="TextEdit" parent="TextureRect5" unique_id=480187414]
 layout_mode = 1
@@ -292,7 +288,7 @@ theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/current_line_color = Color(0, 0, 0, 1)
 theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 28
-theme_override_fonts/font = ExtResource("3_8hv8d")
+theme_override_fonts/font = ExtResource("3_ukgpq")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xa3ed")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ukgpq")
@@ -314,23 +310,22 @@ offset_left = 1528.0
 offset_top = 962.0
 offset_right = 1637.0
 offset_bottom = 1062.0
-mouse_default_cursor_shape = 16
-texture_normal = ExtResource("5_gn1co")
-texture_pressed = ExtResource("5_gn1co")
-texture_hover = ExtResource("5_gn1co")
+texture_normal = ExtResource("3_ui88b")
+texture_pressed = ExtResource("3_ui88b")
+texture_hover = ExtResource("3_ui88b")
 
 [node name="OpenNotes" type="AudioStreamPlayer" parent="." unique_id=321479084]
-stream = ExtResource("6_4g7fy")
+stream = ExtResource("4_xa3ed")
 volume_db = -5.0
 bus = &"SFX"
 
 [node name="CloseNotes" type="AudioStreamPlayer" parent="." unique_id=984169896]
-stream = ExtResource("7_8rijn")
+stream = ExtResource("5_ukgpq")
 volume_db = -5.0
 bus = &"SFX"
 
 [node name="RustleRustling" type="AudioStreamPlayer" parent="." unique_id=1926517088]
-stream = ExtResource("8_1ph7d")
+stream = ExtResource("7_mqpnv")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=132107492]
 layout_mode = 1
@@ -339,14 +334,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -174.0
-offset_top = -173.0
-offset_right = -89.54541
-offset_bottom = -85.72717
+offset_left = -186.0
+offset_top = -281.0
+offset_right = -36.0
+offset_bottom = -131.0
 grow_horizontal = 0
 grow_vertical = 0
-rotation = -1.5707964
-mouse_default_cursor_shape = 16
+texture_pressed = ExtResource("9_bainf")
+texture_hover = ExtResource("9_bainf")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=60326147]
 layout_mode = 1
@@ -355,15 +350,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -529.0
-offset_top = -248.0
-offset_right = -451.8181
-offset_bottom = -167.09082
+offset_left = -617.8181
+offset_top = -281.09082
+offset_right = -467.8181
+offset_bottom = -131.09082
 grow_horizontal = 0
 grow_vertical = 0
-rotation = 7.8539815
-mouse_default_cursor_shape = 16
+texture_pressed = ExtResource("9_h3n5m")
+texture_hover = ExtResource("9_h3n5m")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="TextureButton2" to="." method="_on_texture_button_2_focus_entered"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

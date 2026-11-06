@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://cryu3uy2tgfwc" path="res://Assets/2D_assets/PG4_full_view.png" id="25_j8ppr"]
 [ext_resource type="Texture2D" uid="uid://cfkwtslqcd11b" path="res://Assets/2D_assets/full veiw pg.5.png" id="26_fwp65"]
 [ext_resource type="AudioStream" uid="uid://bbv2u7yf735y4" path="res://Assets/SFX/Paper Rustling variations/rustleRustling.wav" id="27_55aco"]
+[ext_resource type="Texture2D" uid="uid://cvjo2o7sdju23" path="res://Assets/2D_assets/news paper base left blue.png" id="27_tpfyh"]
+[ext_resource type="Texture2D" uid="uid://cyd1p8coy6jid" path="res://Assets/2D_assets/news paper base Right Blue.png" id="28_dcews"]
 [ext_resource type="AudioStream" uid="uid://w6l55gfyefvh" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v4.wav" id="28_uwfkw"]
 [ext_resource type="AudioStream" uid="uid://cn7tqw5ntiqik" path="res://Assets/SFX/Paper Rustling variations/rustleRustling v5.wav" id="29_001bc"]
 
@@ -745,19 +747,23 @@ texture_normal = ExtResource("24_mc2un")
 
 [node name="TextureButton2" type="TextureButton" parent="." unique_id=1067324304]
 layout_mode = 0
-offset_left = 462.0
-offset_top = 115.0
-offset_right = 550.0
-offset_bottom = 212.0
+offset_left = 445.0
+offset_top = 113.0
+offset_right = 555.0
+offset_bottom = 223.0
 mouse_default_cursor_shape = 16
+texture_pressed = ExtResource("27_tpfyh")
+texture_hover = ExtResource("27_tpfyh")
 
 [node name="TextureButton3" type="TextureButton" parent="." unique_id=1844135167]
 layout_mode = 0
-offset_left = 1397.0
-offset_top = 110.0
-offset_right = 1485.0
-offset_bottom = 207.0
+offset_left = 1394.0
+offset_top = 115.0
+offset_right = 1504.0
+offset_bottom = 225.0
 mouse_default_cursor_shape = 16
+texture_pressed = ExtResource("28_dcews")
+texture_hover = ExtResource("28_dcews")
 
 [node name="Button" type="TextureButton" parent="." unique_id=574457226]
 layout_mode = 1
